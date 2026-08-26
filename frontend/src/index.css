@@ -1,0 +1,286 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap');
+@import "tailwindcss";
+
+ 
+/**
+ * dailyDrop — Tailwind v4 theme
+ * Concept: "morning freshness" — deep leaf green + citrus mango accent
+ * on a soft minty-white background, with a "drop" signature shape
+ * used for freshness/offer badges.
+ *
+ * In v4, every token below becomes a real utility class automatically:
+ * --color-forest  -> bg-forest / text-forest / border-forest
+ * --font-display  -> font-display
+ * --text-hero     -> text-hero
+ * --spacing-*     -> p-*, m-*, gap-*, py-*, px-* etc.
+ * --radius-card   -> rounded-card
+ * --shadow-card   -> shadow-card
+ */
+@theme {
+  /* ---- Brand colors ---- */
+  /* 	প্রধান ব্র্যান্ড রঙ — হেডার, লোগো, প্রাইমারি বাটন */
+  --color-forest-50: #EAF3EF;
+  --color-forest-100: #CFE4DA;
+  --color-forest-300: #7FAE96;
+  --color-forest-500: #2F6B4F;
+  --color-forest-700: #1B4332;
+  --color-forest-900: #0E2A1E;
+  --color-forest: #1B4332; /* DEFAULT */
+
+  /* 	সেকেন্ডারি — hover state, লিংক, আইকন */
+  --color-leaf-100: #DCE8E4;
+  --color-leaf-300: #93B3AA;
+  --color-leaf-500: #52796F;
+  --color-leaf-700: #385750;
+  --color-leaf: #52796F; /* DEFAULT */
+
+  /* CTA অ্যাকসেন্ট — "Add to Cart", অফার ব্যাজ */
+  --color-mango-100: #FFE9CC;
+  --color-mango-300: #FFC169;
+  --color-mango-500: #FF9F1C;
+  --color-mango-700: #CC7A00;
+  --color-mango: #FF9F1C; /* DEFAULT */
+
+/* পুরো সাইটের ব্যাকগ্রাউন্ড (সাদার বদলে হালকা মিন্টি টোন) */
+  --color-mist-50: #FBFDFC;
+  --color-mist-100: #F1F7F3;
+  --color-mist-200: #E1EEE6;
+  --color-mist: #F1F7F3; /* DEFAULT */
+
+/* 	টেক্সট কালার — খাঁটি কালোর বদলে সবুজ-মেশানো গাঢ় শেড */
+  --color-charcoal-400: #6B7A70;
+  --color-charcoal-600: #3A4A40;
+  --color-charcoal: #1A2E22; /* DEFAULT */
+
+/* ছাড়/discount ট্যাগ, urgency আইটেম */
+  --color-tomato-100: #FBDCD2;
+  --color-tomato-500: #E8542F;
+  --color-tomato: #E8542F; /* DEFAULT */
+
+  --color-gold: #F2B705;
+
+  /* ---- Typography ---- */
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --text-hero: 3.5rem;
+  --text-hero--line-height: 1.05;
+  --text-hero--letter-spacing: -0.02em;
+  --text-hero--font-weight: 700;
+
+  --text-h1: 2.5rem;
+  --text-h1--line-height: 1.1;
+  --text-h1--letter-spacing: -0.01em;
+  --text-h1--font-weight: 700;
+
+  --text-h2: 2rem;
+  --text-h2--line-height: 1.15;
+  --text-h2--letter-spacing: -0.01em;
+  --text-h2--font-weight: 600;
+
+  --text-h3: 1.5rem;
+  --text-h3--line-height: 1.25;
+  --text-h3--font-weight: 600;
+
+  --text-h4: 1.125rem;
+  --text-h4--line-height: 1.35;
+  --text-h4--font-weight: 600;
+
+  --text-body: 1rem;
+  --text-body--line-height: 1.6;
+
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1.4;
+  --text-caption--letter-spacing: 0.02em;
+
+  --text-price: 1.25rem;
+  --text-price--line-height: 1;
+  --text-price--font-weight: 700;
+
+  /* ---- Spacing (section/card rhythm) ---- */
+  --spacing-4_5: 1.125rem;
+  --spacing-13: 3.25rem;
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-section-y: 5rem;
+  --spacing-section-y-lg: 7.5rem;
+  --spacing-card-gap: 1.5rem;
+  --spacing-gutter: 1.25rem;
+
+  /* ---- Layout ---- */
+  --container-container: 1280px;
+
+  /* ---- Radius ---- */
+  --radius-card: 1rem;
+  --radius-pill: 9999px;
+  --radius-drop: 9999px 9999px 9999px 0px; /* signature drop shape */
+
+  /* ---- Shadows ---- */
+  --shadow-card: 0 2px 10px -2px rgba(27, 67, 50, 0.08);
+  --shadow-card-hover: 0 12px 24px -6px rgba(27, 67, 50, 0.16);
+  --shadow-badge: 0 4px 10px -2px rgba(255, 159, 28, 0.35);
+
+  /* ---- Easing ---- */
+  --ease-drop: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/**
+ * Base defaults — applied once, site-wide, so raw HTML elements
+ * already look "on brand" before you add a single className.
+ */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+ 
+  html {
+    scroll-behavior: smooth;
+  }
+ 
+  body {
+    background-color: var(--color-mist);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    -webkit-font-smoothing: antialiased;
+  }
+ 
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--color-forest-700);
+    margin: 0;
+  }
+ 
+  h1 { font-size: var(--text-h1); line-height: var(--text-h1--line-height); letter-spacing: var(--text-h1--letter-spacing); font-weight: var(--text-h1--font-weight); }
+  h2 { font-size: var(--text-h2); line-height: var(--text-h2--line-height); letter-spacing: var(--text-h2--letter-spacing); font-weight: var(--text-h2--font-weight); }
+  h3 { font-size: var(--text-h3); line-height: var(--text-h3--line-height); font-weight: var(--text-h3--font-weight); }
+  h4 { font-size: var(--text-h4); line-height: var(--text-h4--line-height); font-weight: var(--text-h4--font-weight); }
+ 
+  p {
+    margin: 0 0 1rem 0;
+  }
+ 
+  a {
+    color: var(--color-leaf-700);
+    text-decoration: none;
+    transition: color 0.15s var(--ease-drop);
+  }
+  a:hover {
+    color: var(--color-mango-700);
+  }
+ 
+  button {
+    font-family: var(--font-display);
+    cursor: pointer;
+  }
+ 
+  /* Visible keyboard focus everywhere — accessibility floor */
+  :focus-visible {
+    outline: 2px solid var(--color-mango);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+ 
+  /* Text selection matches brand instead of default blue */
+  ::selection {
+    background-color: var(--color-mango-100);
+    color: var(--color-forest-900);
+  }
+ 
+  /* Respect users who've asked for less motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+
+.flex-center {
+    @apply flex items-center justify-center;
+}
+
+.dropdown-link {
+    @apply flex items-center gap-3 px-4 py-2.5 text-sm text-zinc-500 hover:bg-orange-50/80 hover:text-zinc-900 transition-colors;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse-soft {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out forwards;
+}
+
+.animate-slide-in-up {
+    animation: slideInUp 0.4s ease-out forwards;
+}
+
+.animate-pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+}
+@utility scrollbar-hide {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;     
+  &::-webkit-scrollbar {
+    display: none;         
+  }
+}
