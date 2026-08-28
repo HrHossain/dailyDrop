@@ -13,6 +13,7 @@ import adminRouter from './routes/admin.router.js';
 import cookieParser from 'cookie-parser';
 import productRouter from './routes/product.router.js';
 import orderRouter from './routes/order.router.js';
+import uploadRouter from './routes/upload.router.js';
 const app = express();
 
 app.use(helmet());
@@ -48,7 +49,8 @@ app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/user', secureRouter);
 app.use('/api/v1/admin', adminRouter);
 app.use('/api/v1/products', productRouter);
-app.use('/api/v1/orders',orderRouter)
+app.use('/api/v1/orders', orderRouter);
+app.use('api/v1/upload', uploadRouter);
 app.use((_req, _res, next) => {
   next(createError(404, 'Route not found!'));
 });

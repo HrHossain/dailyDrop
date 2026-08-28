@@ -222,8 +222,6 @@ export const getOrder = async (
 // Update order status (admin)
 // PUT /api/orders/:id/status
 
-
-
 interface StatusHistoryItem {
   status: string;
   note: string;
@@ -238,7 +236,6 @@ export const updateOrderStatus = async (
   const { status, note } = req.body;
   const { id } = req.params;
 
-  
   const order = await prisma.order.findUnique({
     where: { id: id as string },
   });
@@ -247,7 +244,6 @@ export const updateOrderStatus = async (
     return next(createHttpError(404, 'Order not found'));
   }
 
-  
   const existingHistory: any = Array.isArray(order.statusHistory)
     ? order.statusHistory
     : [];
@@ -260,7 +256,6 @@ export const updateOrderStatus = async (
 
   const updatedHistory = [...existingHistory, newHistoryItem];
 
-  
   const updatedOrder = await prisma.order.update({
     where: { id: id as string },
     data: {
@@ -315,14 +310,15 @@ export const getOrderLocation = async (
   res: Response,
   next: NextFunction
 ) => {
-    const order = await prisma.order.findFirst({
-        where:{
-            id:req.params.id as string,userId:req.user?.id
-        },
-        select:{liveLocation:true,status:true}
-    })
+  const order = await prisma.order.findFirst({
+    where: {
+      id: req.params.id as string,
+      userId: req.user?.id,
+    },
+    select: { liveLocation: true, status: true },
+  });
 
-    if (!order) {
+  if (!order) {
     return next(createHttpError(404, 'Order not found'));
   }
   return res.status(200).json(
@@ -330,9 +326,9 @@ export const getOrderLocation = async (
       statusCode: 200,
       message: 'All orders list here',
       data: {
-        liveLocation:order.liveLocation,
-        status:order.status
+        liveLocation: order.liveLocation,
+        status: order.status,
       },
     })
   );
-}
+};

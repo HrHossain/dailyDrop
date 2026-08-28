@@ -1,15 +1,10 @@
 import { Router } from 'express';
 import { requireAuth } from '../middlewares/requireAuth.js';
 import multer from 'multer';
+import { upload } from '../middlewares/upload.middleware.js';
 
 const uploadRouter = Router();
 
-const storage = multer.memoryStorage();
-const upload = multer({ storage });
+uploadRouter.post('/', requireAuth, upload.single('image'), uploadRouter);
 
-uploadRouter.post(
-  '/',
-  requireAuth,
-  upload.single('image'),
-  async (req, res) => {}
-);
+export default uploadRouter;

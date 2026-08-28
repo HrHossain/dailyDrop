@@ -25,6 +25,15 @@ const envSchema = z.object({
     .url({ message: 'APP_URL must be a valid URL' })
     .optional(),
   ADMIN_EMAILS: z.string({ message: 'admin have must valid email' }),
+  CLOUDINARY_CLOUD_NAME: z.string({
+    message: 'cloudinary cloud name must be string',
+  }),
+  CLOUDINARY_API_KEY: z.string({
+    message: 'cloudinary api key must be string',
+  }),
+  CLOUDINARY_API_SECRET: z.string({
+    message: 'cloudinary api secret name must be string',
+  }),
 });
 
 const _env = envSchema.safeParse(process.env);
