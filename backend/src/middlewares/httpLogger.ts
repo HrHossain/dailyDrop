@@ -1,10 +1,9 @@
-import morgan, { type StreamOptions } from 'morgan'
+import morgan, { type StreamOptions } from 'morgan';
 import { logger } from '../lib/logger.js';
 
-
 // Morgan-এর আউটপুট Winston HTTP লেভেলে রিডাইরেক্ট করা
-const stream:StreamOptions = {
-  write: (message:string) => logger.http(message.trim()),
+const stream: StreamOptions = {
+  write: (message: string) => logger.http(message.trim()),
 };
 
 // Development-এ সংক্ষেপ এবং Production-এ বিস্তারিত লগিন

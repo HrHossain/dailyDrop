@@ -1,8 +1,7 @@
-
-import nodemailer from 'nodemailer'
+import nodemailer from 'nodemailer';
 import { env } from '../validations/env.schema.js';
 
-// first transporter configuration 
+// first transporter configuration
 const transporter = nodemailer.createTransport({
   service: 'gmail', // true for 465, false for other ports
   auth: {
@@ -11,17 +10,21 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-export const mailService = async (to: string[], subject: string,text:string, html: string) => {
+export const mailService = async (
+  to: string[],
+  subject: string,
+  text: string,
+  html: string
+) => {
   try {
     await transporter.sendMail({
-        from:`"AI SEO checker" <${env.GOOGLE_APP_EMAIL}>`, // sender address
-        to: to.join(','), // list of receivers
-        text, // plain text body
-        subject, // Subject line
-        html, // html body
-      });
-     
+      from: `"AI SEO checker" <${env.GOOGLE_APP_EMAIL}>`, // sender address
+      to: to.join(','), // list of receivers
+      text, // plain text body
+      subject, // Subject line
+      html, // html body
+    });
   } catch (error) {
-    throw (`Failed to send email ${error}`);
-  } 
-}
+    throw `Failed to send email ${error}`;
+  }
+};

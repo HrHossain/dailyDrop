@@ -14,7 +14,6 @@ const colors = {
 
 winston.addColors(colors);
 
-
 // টার্মিনালে দেখানোর জন্য ফরম্যাট (Colorized + Readable)
 const consoleFormat = winston.format.combine(
   winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
@@ -35,10 +34,10 @@ const fileRotateTransport = new winston.transports.DailyRotateFile({
   filename: 'logs/%DATE%-combined.log',
   datePattern: 'YYYY-MM-DD',
   zippedArchive: true, // পুরনো ফাইলগুলো zip করে জায়গা বাঁচাবে
-  maxSize: '20m',      // সর্বোচ্চ ২০ মেগাবাইট হলে ফাইল স্প্লিট করবে
-  maxFiles: '14d',     // ১৪ দিন পর পুরনো লগ ফাইল ডিলিট করে দেবে
+  maxSize: '20m', // সর্বোচ্চ ২০ মেগাবাইট হলে ফাইল স্প্লিট করবে
+  maxFiles: '14d', // ১৪ দিন পর পুরনো লগ ফাইল ডিলিট করে দেবে
   format: fileFormat,
-}); 
+});
 
 const errorFileRotateTransport = new winston.transports.DailyRotateFile({
   level: 'error',
@@ -58,4 +57,3 @@ export const logger = winston.createLogger({
     errorFileRotateTransport,
   ],
 });
-

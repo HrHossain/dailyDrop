@@ -1,7 +1,5 @@
-
-import jwt, {type JwtPayload} from 'jsonwebtoken';
+import jwt, { type JwtPayload } from 'jsonwebtoken';
 import { env } from '../validations/env.schema.js';
-
 
 type ExpiresIn = string | number | undefined;
 const JWT_SECRET = env.JWT_SECRET;
@@ -11,26 +9,27 @@ type AuthPayload = {
 };
 type EmailVerificationPayload = {
   userId: string;
-}
+};
 
 // generic token
-const signToken = <T extends object>(payload:T,expiresIn:ExpiresIn) => {
- 
+const signToken = <T extends object>(payload: T, expiresIn: ExpiresIn) => {
   return jwt.sign(payload, JWT_SECRET, { expiresIn });
-}
+};
 
 // generic token verification
 const verifyToken = <T extends JwtPayload>(token: string): T => {
   return jwt.verify(token, JWT_SECRET) as T;
-}
+};
 
 // email verification token
-export const generateEmailVerificationToken = (userId:string) => {
-    return signToken<EmailVerificationPayload>({ userId }, '15m');
-}
-export const verifyEmailVerificationToken = (token: string): EmailVerificationPayload => {
-    return verifyToken<EmailVerificationPayload>(token);
-}
+export const generateEmailVerificationToken = (userId: string) => {
+  return signToken<EmailVerificationPayload>({ userId }, '15m');
+};
+export const verifyEmailVerificationToken = (
+  token: string
+): EmailVerificationPayload => {
+  return verifyToken<EmailVerificationPayload>(token);
+};
 
 // access token
 

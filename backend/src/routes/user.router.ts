@@ -1,10 +1,9 @@
-import { Router } from "express";
-import { requireAuth } from "../middlewares/requireAuth.js";
-import { secureUser } from "../controllers/secure/me.controller.js";
+import { Router } from 'express';
+import { requireAuth } from '../middlewares/requireAuth.js';
+import { secureUser } from '../controllers/secure/me.controller.js';
 
-const router = Router()
+const router = Router();
 
-router.get("/me",requireAuth,secureUser)
-
+router.get('/me', requireAuth, secureUser);
 
 export default router;
