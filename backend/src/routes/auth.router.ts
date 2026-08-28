@@ -1,11 +1,14 @@
 import {Router} from "express";
-import {forgotPassword, logoutHandler, refreshTokenHandler, resetPassword, signup } from "../controllers/auth/auth.controller.js";
-import { signin } from "../controllers/auth/auth.controller.js";
+import {forgotPassword, logoutHandler, refreshTokenHandler, registerUser, resetPassword } from "../controllers/auth/auth.controller.js";
+import { loginUser } from "../controllers/auth/auth.controller.js";
 import { verifyEmail } from "../controllers/auth/auth.controller.js";
 import { requireAuth } from "../middlewares/requireAuth.js";
+import { validateLoginRequest, validateRequest } from "../middlewares/userValidation.middleware.js";
+import { userRegistrationSchema } from "../validations/registerSchema.js";
+import { UserLoginInput, userLoginSchema } from "../validations/loginSchema.js";
 const authRouter = Router();
 
-authRouter.post("/signup", signup).post("/signin", signin);
+authRouter.post("/register",validateRequest(userRegistrationSchema), registerUser).post("/login",validateLoginRequest(userLoginSchema),loginUser);
 authRouter.get('/verify-email',verifyEmail );
 authRouter.post("/refresh-token",refreshTokenHandler)
 authRouter.post("/logout",logoutHandler)

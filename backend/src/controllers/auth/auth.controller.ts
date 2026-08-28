@@ -17,27 +17,23 @@ import crypto from 'crypto'
 import {sendPasswordResetEmail} from "../../services/auth.service.js"
 
 
- export const signup = async (req: Request, res: Response, next: NextFunction) => {
-    const body = req.body;
-    const result = registerSchema.safeParse(body);
-    if (!result.success) {
-        return next(result.error);
-    }   
-
+ export const registerUser = async (req: Request, res: Response, next: NextFunction) => {
+    const {name,email,password:pass} = req.body;
     
-    const isEmailExist = await prisma.users.findUnique({
+    const isEmailExist = await prisma.user.findUnique({
         where: {
-            email: result.data.email,
+            email:email,
         },
     });
     if (isEmailExist) {
         return next(createError(400, "Email already exists"));
     }
 
-    const newUser = await prisma.users.create({
+    const newUser = await prisma.user.create({
         data: {
-            ...result.data,
-            password: await hashedPassword(result.data.password),
+            name,
+            email,
+            password: await hashedPassword(pass),
         },
     })
 
@@ -52,23 +48,19 @@ import {sendPasswordResetEmail} from "../../services/auth.service.js"
     )
 }
 
-export const signin = async(req: Request, res: Response, next: NextFunction)=>{
+export const loginUser = async(req: Request, res: Response, next: NextFunction)=>{
     
-    const result = loginSchema.safeParse(req.body);
-    if (!result.success) {
-        return next(result.error);
-    }
-
-    const isUserExist = await prisma.users.findUnique({
+    const{email,password:pass} = req.body
+    const isUserExist = await prisma.user.findUnique({
         where: {
-            email: result.data.email,    
+             email,    
     },
     });
     if(!isUserExist){
         return next(createError(400, "User not found"));
     }
      
-    const isPasswordValid = await bcrypt.compare(result.data.password, isUserExist.password);
+    const isPasswordValid = await bcrypt.compare(pass, isUserExist.password);
     if(!isPasswordValid){
         return next(createError(401, "Invalid Email or Password"));
     }
@@ -101,6 +93,8 @@ export const signin = async(req: Request, res: Response, next: NextFunction)=>{
         })
     )
 }
+
+
 
 export const verifyEmail = async(req: Request, res: Response, next: NextFunction) => {
     const { token } = req.query;
@@ -148,7 +142,7 @@ export const refreshTokenHandler = async(req: Request, res: Response, next: Next
         return next(createHttpError('401','refresh token payload missing'))
        }
        const { userId , email } = payload
-       const user = await prisma.users.findUnique({
+       const user = await prisma.user.findUnique({
         where:{
             email
         }
@@ -190,7 +184,7 @@ export const forgotPassword = async (req: Request, res: Response,next: NextFunct
         return next(createError('401','Invalid your email address'))
     }
 
-    const user = await prisma.users.findUnique({
+    const user = await prisma.user.findUnique({
         where:{
             email:result.data.email
         }
@@ -202,7 +196,7 @@ export const forgotPassword = async (req: Request, res: Response,next: NextFunct
     const hashedToken:string = crypto.createHash('sha256').update(resetToken).digest("hex")
     const expiresAt:Date = new Date(Date.now() + 15 * 60 * 1000)
 
-    await prisma.users.update({
+    await prisma.user.update({
         where:{email:user.email},
         data:{
             resetPasswordToken:hashedToken,
@@ -235,7 +229,7 @@ export const resetPassword = async (req: Request, res: Response,next: NextFuncti
 
     const hashedToken = crypto.createHash('sha256').update(token).digest("hex")
 
-    const user = await prisma.users.findFirst({
+    const user = await prisma.user.findFirst({
         where:{
             resetPasswordToken:hashedToken,
             restPasswordTokenExpiry:{

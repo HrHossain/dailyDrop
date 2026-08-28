@@ -1,0 +1,58 @@
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-27 06:35:27"}
+{"level":"http","message":"POST /api/v1/auth/register 400 1256 - 17.407 ms","timestamp":"2026-08-27 06:37:13"}
+{"level":"http","message":"POST /api/v1/auth/register 200 279 - 8389.964 ms","timestamp":"2026-08-27 06:38:06"}
+{"level":"http","message":"POST /api/v1/auth/register 400 1260 - 1.920 ms","timestamp":"2026-08-27 06:39:17"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-27 06:40:05"}
+{"level":"http","message":"POST /api/v1/auth/register 400 1260 - 12.787 ms","timestamp":"2026-08-27 06:40:09"}
+{"level":"http","message":"POST /api/v1/auth/register 400 222 - 1031.720 ms","timestamp":"2026-08-27 06:41:38"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-27 06:43:18"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-27 06:43:43"}
+{"level":"http","message":"POST /api/v1/auth/register 400 1260 - 9.816 ms","timestamp":"2026-08-27 06:43:58"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-27 06:44:45"}
+{"level":"http","message":"POST /api/v1/auth/register 400 1260 - 7.497 ms","timestamp":"2026-08-27 06:44:47"}
+{"level":"http","message":"POST /api/v1/auth/register 400 1260 - 2.021 ms","timestamp":"2026-08-27 06:44:54"}
+{"level":"http","message":"POST /api/v1/auth/register 400 1260 - 1.207 ms","timestamp":"2026-08-27 06:44:58"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-27 06:45:20"}
+{"level":"http","message":"POST /api/v1/auth/register 400 222 - 1139.854 ms","timestamp":"2026-08-27 06:45:24"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-27 06:45:45"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-27 07:22:16"}
+{"level":"http","message":"POST /api/v1/auth/register 400 1260 - 11.791 ms","timestamp":"2026-08-27 07:22:42"}
+{"level":"info","message":{"email":"mofaz@gmail.com","name":"mofazzel hossain","password":"mofazzel","phone":""},"timestamp":"2026-08-27 07:23:28"}
+{"level":"http","message":"POST /api/v1/auth/register 200 280 - 7625.919 ms","timestamp":"2026-08-27 07:23:36"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-27 07:42:10"}
+{"level":"http","message":"POST /api/v1/auth/register 400 1287 - 31.480 ms","timestamp":"2026-08-27 07:42:20"}
+{"level":"info","message":{"email":"mofaz@gmail.com","name":"mcc","password":"mofazzel","phone":""},"timestamp":"2026-08-27 07:44:14"}
+{"level":"http","message":"POST /api/v1/auth/register 400 222 - 2643.794 ms","timestamp":"2026-08-27 07:44:17"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-27 07:44:54"}
+{"level":"http","message":"POST /api/v1/auth/register 400 1287 - 8.896 ms","timestamp":"2026-08-27 07:45:02"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-27 07:54:42"}
+{"level":"http","message":"POST /api/v1/auth/register 400 1196 - 12.467 ms","timestamp":"2026-08-27 07:55:16"}
+{"level":"http","message":"POST /api/v1/auth/register 400 1196 - 2.327 ms","timestamp":"2026-08-27 07:55:30"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-27 07:56:42"}
+{"level":"http","message":"POST /api/v1/auth/register 400 1551 - 12.240 ms","timestamp":"2026-08-27 07:56:48"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-27 07:59:35"}
+{"level":"http","message":"POST /api/v1/auth/register 400 1366 - 10.670 ms","timestamp":"2026-08-27 07:59:54"}
+{"level":"info","message":{"email":"mofaz@gmail.com","name":"masdsd","password":"mofazzel","phone":""},"timestamp":"2026-08-27 08:00:09"}
+{"level":"http","message":"POST /api/v1/auth/register 500 153 - 3.188 ms","timestamp":"2026-08-27 08:00:09"}
+{"level":"http","message":"POST /api/v1/auth/register 400 1365 - 1.545 ms","timestamp":"2026-08-27 08:01:24"}
+{"level":"info","message":{"email":"mofaz@gmail.com","name":"mofassel hossain","password":"mofazzel","phone":""},"timestamp":"2026-08-27 08:01:47"}
+{"level":"http","message":"POST /api/v1/auth/register 500 163 - 2.396 ms","timestamp":"2026-08-27 08:01:47"}
+{"level":"http","message":"POST /api/v1/auth/register 400 1346 - 1.605 ms","timestamp":"2026-08-27 08:02:57"}
+{"level":"info","message":{"email":"mofazz@gmail.com","name":"mofassel hossain","password":"mofazzel","phone":""},"timestamp":"2026-08-27 08:03:11"}
+{"level":"http","message":"POST /api/v1/auth/register 500 164 - 1.938 ms","timestamp":"2026-08-27 08:03:11"}
+{"level":"info","message":{"email":"mofazz@gmail.com","name":"mofassel hossain","password":"mofazzel","phone":""},"timestamp":"2026-08-27 08:04:45"}
+{"level":"http","message":"POST /api/v1/auth/register 500 164 - 46.148 ms","timestamp":"2026-08-27 08:04:45"}
+{"level":"info","message":{"email":"mo@gmail.com","name":"mofassel hossain","password":"mofazzel","phone":""},"timestamp":"2026-08-27 08:05:01"}
+{"level":"http","message":"POST /api/v1/auth/register 500 160 - 3.209 ms","timestamp":"2026-08-27 08:05:01"}
+{"level":"info","message":{"email":"mo@gmail.com","name":"mohib molla","password":"mofazzeld","phone":""},"timestamp":"2026-08-27 08:05:34"}
+{"level":"http","message":"POST /api/v1/auth/register 500 156 - 38.883 ms","timestamp":"2026-08-27 08:05:34"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-27 08:06:20"}
+{"level":"info","message":{"email":"mo@gmail.com","name":"mohib molla","password":"mofazzeld","phone":""},"timestamp":"2026-08-27 08:06:30"}
+{"level":"http","message":"POST /api/v1/auth/register 200 272 - 12525.391 ms","timestamp":"2026-08-27 08:06:43"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-27 16:52:33"}
+{"level":"http","message":"GET /health 200 195 - 13.917 ms","timestamp":"2026-08-27 16:56:13"}
+{"level":"http","message":"POST /api/v1/auth/login 400 1383 - 9.429 ms","timestamp":"2026-08-27 16:57:44"}
+{"level":"http","message":"POST /api/v1/auth/login 200 60 - 1.186 ms","timestamp":"2026-08-27 16:57:53"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-27 17:03:44"}
+{"level":"http","message":"POST /api/v1/auth/login 200 763 - 2336.184 ms","timestamp":"2026-08-27 17:03:52"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-27 17:06:12"}

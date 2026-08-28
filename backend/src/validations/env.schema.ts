@@ -12,6 +12,7 @@ const envSchema = z.object({
     GOOGLE_APP_PASS: z.string().min(10, { message: 'GOOGLE_APP_PASS must be at least 32 characters long' }),
     GOOGLE_APP_EMAIL: z.string().email({ message: 'GOOGLE_APP_EMAIL must be a valid email address' }),
     APP_URL: z.string().url({ message: 'APP_URL must be a valid URL' }).optional(),
+    ADMIN_EMAILS:z.string({message:"admin have must valid email"})
   
 })
 

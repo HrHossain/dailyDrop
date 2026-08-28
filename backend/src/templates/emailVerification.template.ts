@@ -28,7 +28,7 @@ style="background:#ffffff;border-radius:10px;overflow:hidden;">
 <tr>
 <td style="background:#2563eb;padding:30px;text-align:center;">
 <h1 style="color:white;margin:0;">
-AI SEO Checker
+dailyDrop Grocery Shop
 </h1>
 </td>
 </tr>
@@ -81,7 +81,7 @@ If you didn't create this account, simply ignore this email.
 
 <p>
 Regards,<br>
-<b>AI SEO Checker Team</b>
+<b>dailyDrop grocery shop</b>
 </p>
 
 </td>
@@ -90,7 +90,7 @@ Regards,<br>
 <tr>
 <td
 style="background:#f8f8f8;padding:20px;text-align:center;font-size:12px;color:#777;">
-© ${new Date().getFullYear()} AI SEO Checker
+© ${new Date().getFullYear()} dailyDrop grocery shop
 </td>
 </tr>
 

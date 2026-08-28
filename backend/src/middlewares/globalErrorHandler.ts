@@ -18,11 +18,16 @@ const globalErrorHandler = (
     }
     // ১. Zod Validation Error Handling
     if (err instanceof ZodError) {
+        const formattedErrors = err.issues.map((issue) => ({
+            field: issue.path.join('.'),
+            message: issue.message,
+        }));
         return res.status(400).json({
             status: "error",
             statusCode: 400,
             success: false,
             message: "Validation Error",
+            error:formattedErrors,
             stack:env.NODE_ENV === "development" ? err.stack : undefined,
         });
     }

@@ -11,6 +11,7 @@ import authRouter from './routes/auth.router.js';
 import secureRouter from './routes/user.router.js';
 import adminRouter from './routes/admin.router.js';
 import cookieParser from 'cookie-parser';
+import productRouter from './routes/product.router.js';
 const app = express();
 
 app.use(helmet());
@@ -43,12 +44,10 @@ app.get('/health', (_req:Request, res:Response) => {
     })
   );
 });
-
-
-
 app.use("/api/v1/auth",authRouter)
 app.use("/api/v1/user",secureRouter)
 app.use("/api/v1/admin",adminRouter)
+app.use("/api/v1/products",productRouter)
 app.use((_req,_res,next)=>{
     next(createError(404,"Route not found!"))
 })

@@ -14,7 +14,7 @@ export const requireAuth = async (req:Request,res:Response,next:NextFunction)=>{
         return next(createHttpError(401,'You are not auth user!'))
     }
     const {userId} = user
-    const foundUser = await prisma.users.findFirst({
+    const foundUser = await prisma.user.findFirst({
         where:{
             id:userId
         }
@@ -27,8 +27,7 @@ export const requireAuth = async (req:Request,res:Response,next:NextFunction)=>{
         id:foundUser.id,
         email:foundUser.email,
         name:foundUser.name,
-        role:foundUser.role,
-        isEmailVerified:foundUser.isEmailVerified
+        isAdmin:false
     }
     next()
 }

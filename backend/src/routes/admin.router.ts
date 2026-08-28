@@ -1,22 +1,20 @@
 import { Router } from "express";
 import { Request,Response,NextFunction } from "express";
 import { requireAuth } from "../middlewares/requireAuth.js";
-import { requireRole } from "../middlewares/requireRole.js";
+import { admin, requireRole } from "../middlewares/requireRole.js";
 import { prisma } from "../lib/prisma.js";
 import createHttpError from "http-errors";
 
 const router = Router();
 
-router.get("/users",requireAuth,requireRole('admin'),async(req:Request,res:Response,next:NextFunction)=>{
-    const users = await prisma.users.findMany({
+router.get("/users",requireAuth,admin,async(req:Request,res:Response,next:NextFunction)=>{
+    const users = await prisma.user.findMany({
         orderBy:{
-            timestamps:'desc'
+            createdAt:'desc'
         },
         select:{
             name:true,
             email:true,
-            role:true,
-            isEmailVerified:true,
             avatar:true
         }
     })
