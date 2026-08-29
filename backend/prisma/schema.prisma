@@ -51,8 +51,12 @@ model Product {
   isOrganic     Boolean? @default(false)
   rating        Float?   @default(0)
   reviewCount   Int?     @default(0)
+  lastNotifiedAt DateTime?
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
+  
+  @@index([stock])
+  @@index([lastNotifiedAt])
 }
 
 model Order {
@@ -91,4 +95,15 @@ model DeliveryPartner {
   orders      Order[]
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+}
+
+model StockAlertLog {
+  id              Int      @id @default(autoincrement())
+  productId       Int
+  productName     String
+  stockAtAlert    Int
+  sentAt          DateTime @default(now())
+  recipientEmail  String
+  status          String   // SUCCESS, FAILED
+  errorMessage    String?  // যদি ফেইল হয়
 }

@@ -18,7 +18,7 @@ export const mailService = async (
 ) => {
   try {
     await transporter.sendMail({
-      from: `"AI SEO checker" <${env.GOOGLE_APP_EMAIL}>`, // sender address
+      from: `"dailyDrop grocery shop" <${env.GOOGLE_APP_EMAIL}>`, // sender address
       to: to.join(','), // list of receivers
       text, // plain text body
       subject, // Subject line

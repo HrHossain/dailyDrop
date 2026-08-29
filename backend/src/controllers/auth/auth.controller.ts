@@ -114,7 +114,7 @@ export const verifyEmail = async (
   }
   const payload = verifyEmailVerificationToken(token);
 
-  const isUserExist = await prisma.users.findUnique({
+  const isUserExist = await prisma.user.findUnique({
     where: {
       id: payload.userId,
     },
@@ -127,7 +127,7 @@ export const verifyEmail = async (
     return next(createHttpError(400, 'email already verified.'));
   }
   // Update user's email verification status
-  await prisma.users.update({
+  await prisma.user.update({
     where: {
       id: payload.userId,
     },
