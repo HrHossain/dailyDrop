@@ -41,10 +41,10 @@ const router = Router();
 
 // only admin can access
 
-router.get('/admin/stock/check', manualStockCheck);
-router.get('/admin/stock/status', getStockStatus);
-router.get('/admin/stock/history/:productId', getStockHistory);
-router.post('/admin/stock/threshold', updateThreshold);
-router.post('/admin/health/heartbeat', triggerHeartbeat);
+router.get('/stock/check', manualStockCheck);
+router.get('/stock/status', getStockStatus);
+router.get('/stock/history/:productId', getStockHistory);
+router.post('/stock/threshold', updateThreshold);
+router.post('/health/heartbeat', triggerHeartbeat);
 
 export default router;
