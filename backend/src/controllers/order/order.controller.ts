@@ -17,7 +17,6 @@ export const createOrder = async (
   res: Response,
   next: NextFunction
 ) => {
-  
   const userId = req.user?.id;
   if (!userId) {
     return next(
@@ -31,17 +30,14 @@ export const createOrder = async (
     return next(createHttpError(400, 'No order items provided'));
   }
 
-  
   const productIds = items.map((item: any) => item.product);
   const products = await prisma.product.findMany({
     where: { id: { in: productIds } },
   });
 
- 
   const productMap = new Map();
   products.forEach((p) => productMap.set(p.id, p));
 
-  
   const orderItems: FormattedOrderItem[] = [];
   for (const item of items) {
     const dbProduct = productMap.get(item.product);
@@ -60,26 +56,22 @@ export const createOrder = async (
       product: dbProduct.id,
       name: dbProduct.name,
       image: dbProduct.image,
-      price: dbProduct.price, 
+      price: dbProduct.price,
       quantity: item.quantity,
       unit: dbProduct.unit,
     });
   }
 
-  
   const subTotal = orderItems.reduce(
     (sum: number, item: any) => sum + item.price * item.quantity,
     0
   );
 
-  
   const deliveryFee = subTotal >= 2000 ? 0 : 150;
   const tax = Math.round(subTotal * 0.08 * 100) / 100;
   const total = Math.round((subTotal + deliveryFee + tax) * 100) / 100;
 
-  
   const order = await prisma.$transaction(async (tx) => {
-    
     const newOrder = await tx.order.create({
       data: {
         userId,
@@ -100,7 +92,6 @@ export const createOrder = async (
       },
     });
 
-    
     for (const item of orderItems) {
       await tx.product.update({
         where: { id: item.product },
@@ -115,24 +106,24 @@ export const createOrder = async (
     return newOrder;
   });
 
-   // Inngest 
-    await inngest.send({
-      name: 'order.placed',
-      data: {
-        orderId: order.id,
-        userId: order.userId,
-        items: orderItems.map(item => ({
-          productId: item.product,
-          quantity: item.quantity,
-        })),
-      },
-    });
+  // Inngest
+  await inngest.send({
+    name: 'order.placed',
+    data: {
+      orderId: order.id,
+      userId: order.userId,
+      items: orderItems.map((item) => ({
+        productId: item.product,
+        quantity: item.quantity,
+      })),
+    },
+  });
 
   if (paymentMethod === 'card') {
     // TODO: Handle Stripe payment link integration here
   }
 
-  return res.status(201).json(
+  res.status(201).json(
     new ApiResponse({
       statusCode: 201,
       message: 'Order created successfully',

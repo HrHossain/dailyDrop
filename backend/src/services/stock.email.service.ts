@@ -15,40 +15,56 @@ export class EmailService {
     this.transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: env.GOOGLE_APP_EMAIL, 
+        user: env.GOOGLE_APP_EMAIL,
         pass: env.GOOGLE_APP_PASS,
       },
     });
   }
 
   async sendStockAlert(alerts: StockAlert[], recipients: string[]) {
-    const criticalItems = alerts.filter(a => a.priority === 'critical');
-    const warningItems = alerts.filter(a => a.priority === 'warning');
+    const criticalItems = alerts.filter((a) => a.priority === 'critical');
+    const warningItems = alerts.filter((a) => a.priority === 'warning');
 
     const htmlContent = `
       <h2>🚨 Stock Alert Report</h2>
       <p>Dear Admin,</p>
       <p>Following products are running low on stock:</p>
       
-      ${criticalItems.length > 0 ? `
+      ${
+        criticalItems.length > 0
+          ? `
         <h3 style="color: red;">🔴 Critical (Stock <= 5)</h3>
         <table border="1" cellpadding="5">
           <tr><th>Product</th><th>Current Stock</th></tr>
-          ${criticalItems.map(item => `
+          ${criticalItems
+            .map(
+              (item) => `
             <tr><td>${item.productName}</td><td style="color: red;">${item.stock}</td></tr>
-          `).join('')}
+          `
+            )
+            .join('')}
         </table>
-      ` : ''}
+      `
+          : ''
+      }
 
-      ${warningItems.length > 0 ? `
+      ${
+        warningItems.length > 0
+          ? `
         <h3 style="color: orange;">🟡 Warning (Stock 6-10)</h3>
         <table border="1" cellpadding="5">
           <tr><th>Product</th><th>Current Stock</th></tr>
-          ${warningItems.map(item => `
+          ${warningItems
+            .map(
+              (item) => `
             <tr><td>${item.productName}</td><td style="color: orange;">${item.stock}</td></tr>
-          `).join('')}
+          `
+            )
+            .join('')}
         </table>
-      ` : ''}
+      `
+          : ''
+      }
 
       <p>
         <a href="${process.env.ADMIN_PANEL_URL}/restock" 

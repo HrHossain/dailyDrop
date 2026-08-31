@@ -1,29 +1,29 @@
-
 import { logger } from '../lib/logger.js';
 import { prisma } from '../lib/prisma.js';
 import { env } from '../validations/env.schema.js';
 import { EmailService } from './stock.email.service.js';
 
-
 const emailService = new EmailService();
 
 export class StockService {
-  
   private readonly THRESHOLD = parseInt(process.env.STOCK_THRESHOLD || '10');
-  private readonly CRITICAL_THRESHOLD = parseInt(process.env.CRITICAL_THRESHOLD || '5');
-  private readonly COOLDOWN_HOURS = parseInt(process.env.ALERT_COOLDOWN_HOURS || '24');
+  private readonly CRITICAL_THRESHOLD = parseInt(
+    process.env.CRITICAL_THRESHOLD || '5'
+  );
+  private readonly COOLDOWN_HOURS = parseInt(
+    process.env.ALERT_COOLDOWN_HOURS || '24'
+  );
 
   async checkAndAlert() {
     console.log('🔍 Running stock check...');
 
-    
     const products = await prisma.product.findMany({
       where: {
         stock: {
-          lte: this.THRESHOLD, 
+          lte: this.THRESHOLD,
         },
         OR: [
-          { lastNotifiedAt: null }, 
+          { lastNotifiedAt: null },
           {
             lastNotifiedAt: {
               lt: new Date(Date.now() - this.COOLDOWN_HOURS * 60 * 60 * 1000),
@@ -43,25 +43,24 @@ export class StockService {
       return { alerted: false, count: 0 };
     }
 
-    
-    const alerts = products.map(product => ({
+    const alerts = products.map((product) => ({
       productId: product.id,
       productName: product.name,
       stock: product.stock,
-      priority: product.stock <= this.CRITICAL_THRESHOLD ? 'critical' : 'warning',
+      priority:
+        product.stock <= this.CRITICAL_THRESHOLD ? 'critical' : 'warning',
     }));
 
-    
-    const criticalProducts = alerts.filter(a => a.priority === 'critical');
+    const criticalProducts = alerts.filter((a) => a.priority === 'critical');
     if (criticalProducts.length > 0) {
-      console.log(`⚠️ ${criticalProducts.length} critical products found! Sending immediate alert.`);
+      console.log(
+        `⚠️ ${criticalProducts.length} critical products found! Sending immediate alert.`
+      );
     }
 
-    
     const recipients = env.ADMIN_EMAILS?.split(',') || [];
     const emailResult = await emailService.sendStockAlert(alerts, recipients);
 
-    
     for (const alert of alerts) {
       await prisma.stockAlertLogs.create({
         data: {
@@ -75,12 +74,11 @@ export class StockService {
       });
     }
 
-    
     if (emailResult.success) {
       await prisma.product.updateMany({
         where: {
           id: {
-            in: products.map(p => p.id),
+            in: products.map((p) => p.id),
           },
         },
         data: {
@@ -99,13 +97,14 @@ export class StockService {
     };
   }
 
-  
-  async checkAfterOrder(orderItems: Array<{ productId: number; quantity: number }>) {
-    const productIds = orderItems.map(item => item.productId);
-    
+  async checkAfterOrder(
+    orderItems: Array<{ productId: number; quantity: number }>
+  ) {
+    const productIds = orderItems.map((item) => item.productId);
+
     const products = await prisma.product.findMany({
       where: {
-        id: { in: productIds},
+        id: { in: productIds },
         stock: { lte: this.THRESHOLD },
       },
     });

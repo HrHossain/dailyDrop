@@ -4,7 +4,14 @@ import { requireAuth } from '../middlewares/requireAuth.js';
 import { admin } from '../middlewares/requireRole.js';
 import { prisma } from '../lib/prisma.js';
 import createHttpError from 'http-errors';
-import { getStockHistory, getStockStatus, manualStockCheck, triggerHeartbeat, updateThreshold } from '../controllers/admin/admin.controller.js';
+import {
+  getAdminStats,
+  getStockHistory,
+  getStockStatus,
+  manualStockCheck,
+  triggerHeartbeat,
+  updateThreshold,
+} from '../controllers/admin/admin.controller.js';
 
 const router = Router();
 
@@ -46,5 +53,5 @@ router.get('/stock/status', getStockStatus);
 router.get('/stock/history/:productId', getStockHistory);
 router.post('/stock/threshold', updateThreshold);
 router.post('/health/heartbeat', triggerHeartbeat);
-
+router.get("/stats",requireAuth,admin,getAdminStats)
 export default router;

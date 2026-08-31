@@ -36,6 +36,9 @@ model Address {
   lng       Float
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  
+  @@index([userId])
+  @@index([isDefault])
 }
 
 model Product {

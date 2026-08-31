@@ -1,0 +1,83 @@
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 11:20:29"}
+{"level":"http","message":"POST /api/v1/auth/login 200 763 - 2393.221 ms","timestamp":"2026-08-31 11:21:04"}
+{"level":"http","message":"POST /api/v1/auth/login 401 231 - 782.194 ms","timestamp":"2026-08-31 11:21:23"}
+{"level":"http","message":"POST /api/v1/auth/login 200 763 - 217.651 ms","timestamp":"2026-08-31 11:21:37"}
+{"level":"http","message":"GET /api/v1/users/address 500 1064 - 22.693 ms","timestamp":"2026-08-31 11:22:47"}
+{"level":"http","message":"GET /api/v1/users/address 500 1064 - 3.780 ms","timestamp":"2026-08-31 11:23:21"}
+{"level":"http","message":"POST /api/v1/users/address 404 992 - 2.870 ms","timestamp":"2026-08-31 11:23:36"}
+{"level":"http","message":"GET /api/v1/users/address 500 1064 - 7.324 ms","timestamp":"2026-08-31 11:24:09"}
+{"level":"http","message":"GET /api/v1/users/address 500 1064 - 3.337 ms","timestamp":"2026-08-31 11:24:22"}
+{"level":"http","message":"POST /api/v1/auth/login 200 763 - 845.838 ms","timestamp":"2026-08-31 11:24:44"}
+{"level":"http","message":"GET /api/v1/users/address 500 1064 - 5.360 ms","timestamp":"2026-08-31 11:25:17"}
+{"level":"info","message":{"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzE1OTllYy1iYjJhLTQ3NTAtYjA0Yy05Y2U1NDViNTUyNzAiLCJlbWFpbCI6Im1vZmFAZ21haWwuY29tIiwiaWF0IjoxNzg4MTUzODg0LCJleHAiOjE3ODgyNDAyODR9.igLIB2i4zTtcmpuPZO9NREa82DtzZS3XPV15X62Kx_c","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzE1OTllYy1iYjJhLTQ3NTAtYjA0Yy05Y2U1NDViNTUyNzAiLCJlbWFpbCI6Im1vZmFAZ21haWwuY29tIiwiaWF0IjoxNzg4MTUzODg0LCJleHAiOjE3ODg0MTMwODR9.nugfyytgqTXaROXl8FEGi0duam_MoEs000iX4QAf0Po"},"timestamp":"2026-08-31 11:25:52"}
+{"level":"http","message":"GET /api/v1/users/address 200 139 - 864.641 ms","timestamp":"2026-08-31 11:25:52"}
+{"level":"http","message":"GET /api/v1/users/address 401 1074 - 139.810 ms","timestamp":"2026-08-31 11:46:57"}
+{"level":"http","message":"GET /api/v1/users/address 401 1074 - 6.209 ms","timestamp":"2026-08-31 11:47:02"}
+{"level":"http","message":"GET /.well-known/appspecific/com.chrome.devtools.json 404 1007 - 11.545 ms","timestamp":"2026-08-31 11:47:02"}
+{"level":"http","message":"GET /api/v1/users/address 401 1074 - 1.530 ms","timestamp":"2026-08-31 11:47:27"}
+{"level":"http","message":"GET /.well-known/appspecific/com.chrome.devtools.json 404 1007 - 2.955 ms","timestamp":"2026-08-31 11:47:27"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 11:50:58"}
+{"level":"info","message":{"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzE1OTllYy1iYjJhLTQ3NTAtYjA0Yy05Y2U1NDViNTUyNzAiLCJlbWFpbCI6Im1vZmFAZ21haWwuY29tIiwiaWF0IjoxNzg4MTUzODg0LCJleHAiOjE3ODgyNDAyODR9.igLIB2i4zTtcmpuPZO9NREa82DtzZS3XPV15X62Kx_c","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzE1OTllYy1iYjJhLTQ3NTAtYjA0Yy05Y2U1NDViNTUyNzAiLCJlbWFpbCI6Im1vZmFAZ21haWwuY29tIiwiaWF0IjoxNzg4MTUzODg0LCJleHAiOjE3ODg0MTMwODR9.nugfyytgqTXaROXl8FEGi0duam_MoEs000iX4QAf0Po"},"timestamp":"2026-08-31 11:51:04"}
+{"level":"http","message":"GET /api/v1/users/address 200 302 - 1772.988 ms","timestamp":"2026-08-31 11:51:04"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 11:52:27"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 11:54:42"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 11:55:31"}
+{"level":"info","message":{"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzE1OTllYy1iYjJhLTQ3NTAtYjA0Yy05Y2U1NDViNTUyNzAiLCJlbWFpbCI6Im1vZmFAZ21haWwuY29tIiwiaWF0IjoxNzg4MTUzODg0LCJleHAiOjE3ODgyNDAyODR9.igLIB2i4zTtcmpuPZO9NREa82DtzZS3XPV15X62Kx_c","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzE1OTllYy1iYjJhLTQ3NTAtYjA0Yy05Y2U1NDViNTUyNzAiLCJlbWFpbCI6Im1vZmFAZ21haWwuY29tIiwiaWF0IjoxNzg4MTUzODg0LCJleHAiOjE3ODg0MTMwODR9.nugfyytgqTXaROXl8FEGi0duam_MoEs000iX4QAf0Po"},"timestamp":"2026-08-31 11:55:36"}
+{"level":"http","message":"GET /api/v1/users/address 200 31 - 1420.158 ms","timestamp":"2026-08-31 11:55:37"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 12:06:46"}
+{"level":"http","message":"GET /api/v1/users/address 200 107 - 2608.901 ms","timestamp":"2026-08-31 12:07:19"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 12:10:28"}
+{"level":"http","message":"GET /api/v1/users/address 200 103 - 1732.029 ms","timestamp":"2026-08-31 12:10:38"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 12:16:16"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 12:23:39"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 12:24:36"}
+{"level":"http","message":"GET /api/v1/users/address/123132312 500 1767 - 436.415 ms","timestamp":"2026-08-31 12:24:45"}
+{"level":"http","message":"GET /api/v1/users/address/ 500 1767 - 15.813 ms","timestamp":"2026-08-31 12:25:10"}
+{"level":"http","message":"GET /api/v1/users/address/531599ec-bb2a-4750-b04c-9ce545b55270 500 1767 - 9.947 ms","timestamp":"2026-08-31 12:25:42"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 12:30:41"}
+{"level":"http","message":"POST /api/v1/users/address/531599ec-bb2a-4750-b04c-9ce545b55270 404 992 - 14.772 ms","timestamp":"2026-08-31 12:30:46"}
+{"level":"http","message":"POST /api/v1/users/address/531599ec-bb2a-4750-b04c-9ce545b55270 404 992 - 2.870 ms","timestamp":"2026-08-31 12:33:29"}
+{"level":"http","message":"GET /api/v1/users/address/531599ec-bb2a-4750-b04c-9ce545b55270 500 1767 - 849.546 ms","timestamp":"2026-08-31 12:35:49"}
+{"level":"http","message":"GET /api/v1/users/address 500 1767 - 13.698 ms","timestamp":"2026-08-31 12:37:06"}
+{"level":"http","message":"GET /api/v1/users/addressess 404 1007 - 2.099 ms","timestamp":"2026-08-31 12:37:14"}
+{"level":"http","message":"GET /api/v1/users/address 500 1767 - 9.842 ms","timestamp":"2026-08-31 12:37:50"}
+{"level":"http","message":"POST /api/v1/auth/login 500 1775 - 58.267 ms","timestamp":"2026-08-31 12:38:11"}
+{"level":"http","message":"POST /api/v1/auth/login 200 763 - 2912.023 ms","timestamp":"2026-08-31 13:11:57"}
+{"level":"http","message":"GET /api/v1/users/address 200 103 - 1062.956 ms","timestamp":"2026-08-31 13:12:27"}
+{"level":"http","message":"GET /api/v1/users/address/531599ec-bb2a-4750-b04c-9ce545b55270 404 223 - 740.250 ms","timestamp":"2026-08-31 13:12:55"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 13:18:20"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 13:32:19"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 13:36:07"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 13:36:15"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 13:54:10"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 16:31:53"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 16:33:32"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 17:37:54"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 17:38:05"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 17:39:56"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 17:40:35"}
+{"level":"http","message":"GET /api/v1/users/address/531599ec-bb2a-4750-b04c-9ce545b55270 404 223 - 2119.429 ms","timestamp":"2026-08-31 17:40:58"}
+{"level":"http","message":"GET /api/v1/admin/stats 200 194 - 1032.550 ms","timestamp":"2026-08-31 17:41:52"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 17:47:55"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 17:48:04"}
+{"level":"http","message":"GET /api/v1/admin/stats 401 1074 - 13.018 ms","timestamp":"2026-08-31 17:48:07"}
+{"level":"http","message":"POST /api/v1/auth/login 200 763 - 2105.011 ms","timestamp":"2026-08-31 17:48:46"}
+{"level":"http","message":"GET /api/v1/admin/stats 401 1074 - 2.062 ms","timestamp":"2026-08-31 17:48:53"}
+{"level":"http","message":"GET /api/v1/admin/stats 200 194 - 1282.015 ms","timestamp":"2026-08-31 17:49:28"}
+{"level":"http","message":"GET /api/v1/admin/stats 200 194 - 1108.027 ms","timestamp":"2026-08-31 17:50:05"}
+{"level":"http","message":"POST /api/v1/auth/login 200 763 - 395.082 ms","timestamp":"2026-08-31 17:50:40"}
+{"level":"http","message":"GET /api/v1/admin/stats 200 194 - 446.317 ms","timestamp":"2026-08-31 17:51:02"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 17:53:05"}
+{"level":"http","message":"POST /api/v1/auth/login 200 763 - 1237.147 ms","timestamp":"2026-08-31 17:53:14"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 17:54:00"}
+{"level":"info","message":false,"timestamp":"2026-08-31 17:54:35"}
+{"level":"http","message":"GET /api/v1/admin/stats 403 73 - 1310.594 ms","timestamp":"2026-08-31 17:54:35"}
+{"level":"info","message":false,"timestamp":"2026-08-31 17:55:02"}
+{"level":"http","message":"GET /api/v1/admin/stats 403 73 - 185.359 ms","timestamp":"2026-08-31 17:55:02"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 17:56:09"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 17:56:26"}
+{"level":"info","message":false,"timestamp":"2026-08-31 17:56:30"}
+{"level":"http","message":"GET /api/v1/admin/stats 403 102 - 1185.911 ms","timestamp":"2026-08-31 17:56:30"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-08-31 17:57:14"}
+{"level":"info","message":true,"timestamp":"2026-08-31 17:57:18"}
+{"level":"http","message":"GET /api/v1/admin/stats 200 194 - 1585.549 ms","timestamp":"2026-08-31 17:57:19"}

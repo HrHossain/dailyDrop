@@ -3,6 +3,7 @@ import createHttpError from 'http-errors';
 import { prisma } from '../lib/prisma.js';
 import { env } from '../validations/env.schema.js';
 import { ApiResponse } from '../utils/apiresponse.js';
+import { logger } from '../lib/logger.js';
 
 export const admin = async (
   req: Request,
@@ -25,7 +26,7 @@ export const admin = async (
   const adminEmails = env.ADMIN_EMAILS
     ? env.ADMIN_EMAILS.split(',').map((email) => email.trim().toLowerCase())
     : [];
-
+logger.info(adminEmails.includes(existUser.email.toLowerCase()))
   if (adminEmails.includes(existUser.email.toLowerCase())) {
     if (req.user) {
       req.user.isAdmin = true;
@@ -35,7 +36,7 @@ export const admin = async (
     res.status(403).json(
       new ApiResponse({
         statusCode: 403,
-        message: 'User not found',
+        message: 'You are not authenticated admin member!🥮',
         data: null,
       })
     );

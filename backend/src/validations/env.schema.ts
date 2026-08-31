@@ -17,7 +17,8 @@ const envSchema = z.object({
   GOOGLE_APP_PASS: z.string().min(10, {
     message: 'GOOGLE_APP_PASS must be at least 32 characters long',
   }),
-  EMAIL_FROM:z.string()
+  EMAIL_FROM: z
+    .string()
     .email({ message: 'APP_EMAIL must be a valid email address' }),
   GOOGLE_APP_EMAIL: z
     .string()
@@ -36,14 +37,12 @@ const envSchema = z.object({
   CLOUDINARY_API_SECRET: z.string({
     message: 'cloudinary api secret name must be string',
   }),
-   INNGEST_EVENT_KEY: z.string({
+  INNGEST_EVENT_KEY: z.string({
     message: 'Inngest event name must be string',
   }),
   INNGEST_SIGNING_KEY: z.string({
     message: 'Inngest api key must be string',
-  })
- 
-
+  }),
 });
 
 const _env = envSchema.safeParse(process.env);

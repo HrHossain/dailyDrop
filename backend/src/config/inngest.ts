@@ -4,12 +4,11 @@ import { Inngest } from 'inngest';
 export const inngest = new Inngest({
   id: 'stock-alert-system',
   name: 'Stock Alert System',
-  retryFunction: (attempt:any) => ({
+  retryFunction: (attempt: any) => ({
     delay: Math.pow(2, attempt) * 1000,
     maxAttempts: 3,
   }),
 });
-
 
 export interface OrderPlacedEvent {
   name: 'order.placed';
@@ -26,6 +25,5 @@ export interface StockCheckEvent {
     triggeredBy: 'order' | 'cron';
   };
 }
-
 
 export type InngestEvents = OrderPlacedEvent | StockCheckEvent;

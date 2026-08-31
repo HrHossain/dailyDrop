@@ -15,8 +15,12 @@ import productRouter from './routes/product.router.js';
 import orderRouter from './routes/order.router.js';
 import uploadRouter from './routes/upload.router.js';
 import { inngest } from './config/inngest.js';
-import { orderTriggeredStockCheck, scheduledStockCheck } from './functions-inngest/stockMonitor.js';
+import {
+  orderTriggeredStockCheck,
+  scheduledStockCheck,
+} from './functions-inngest/stockMonitor.js';
 import { serve } from 'inngest/express';
+import addressRouter from './routes/address.route.js';
 const app = express();
 
 app.use(helmet());
@@ -54,18 +58,19 @@ app.use('/api/v1/admin', adminRouter);
 app.use('/api/v1/products', productRouter);
 app.use('/api/v1/orders', orderRouter);
 app.use('api/v1/upload', uploadRouter);
-
+app.use('/api/v1/users/address',addressRouter)
 // inngest setup
 
-app.use('/api/v1/inngest', serve({
-  client:inngest,
-  functions: [scheduledStockCheck, orderTriggeredStockCheck],
-}));
+app.use(
+  '/api/v1/inngest',
+  serve({
+    client: inngest,
+    functions: [scheduledStockCheck, orderTriggeredStockCheck],
+  })
+);
 app.use((_req, _res, next) => {
   next(createError(404, 'Route not found!'));
 });
 
 app.use(globalErrorHandler);
 export { app };
-
-
