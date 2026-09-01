@@ -5,11 +5,15 @@ import { admin } from '../middlewares/requireRole.js';
 import { prisma } from '../lib/prisma.js';
 import createHttpError from 'http-errors';
 import {
+  assignDeliveryPartner,
+  createDeliveryPartners,
   getAdminStats,
+  getDeliveryPartners,
   getStockHistory,
   getStockStatus,
   manualStockCheck,
   triggerHeartbeat,
+  updateDeliveryPartner,
   updateThreshold,
 } from '../controllers/admin/admin.controller.js';
 
@@ -54,4 +58,9 @@ router.get('/stock/history/:productId', getStockHistory);
 router.post('/stock/threshold', updateThreshold);
 router.post('/health/heartbeat', triggerHeartbeat);
 router.get("/stats",requireAuth,admin,getAdminStats)
+router.get("/delivery-partners",requireAuth,admin,getDeliveryPartners)
+router.get("/delivery-partners",requireAuth,admin,createDeliveryPartners)
+router.get("/delivery-partners/:id",requireAuth,admin,updateDeliveryPartner)
+router.get("/orders/:id/assign",requireAuth,admin,assignDeliveryPartner)
+
 export default router;

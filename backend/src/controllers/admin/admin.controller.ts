@@ -4,9 +4,10 @@ import { ApiResponse } from '../../utils/apiresponse.js';
 import { prisma } from '../../lib/prisma.js';
 import createHttpError from 'http-errors';
 import { EmailService } from '../../services/stock.email.service.js';
-import { CreateDeliveryPartnerInput, createDeliveryPartnerSchema } from '../../validations/deliveryPartner.validation.js';
+import { CreateDeliveryPartnerInput, createDeliveryPartnerSchema, DeliveryPartnerIdDTO, deliveryPartnerIdParamSchema, UpdateDeliveryPartnerInput, updateDeliveryPartnerSchema } from '../../validations/deliveryPartner.validation.js';
 import { hashedPassword } from '../../lib/hash.js';
-import { string } from 'zod';
+import { timeStamp } from 'node:console';
+
 
 const stockService = new StockService();
 
@@ -231,3 +232,122 @@ export const createDeliveryPartners = async (
     })
   );
 };
+
+// update delivery data
+export const updateDeliveryPartner = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> => {
+  // 1. Validate route parameter ID
+  const paramsValidation = deliveryPartnerIdParamSchema.safeParse(req.params);
+
+  if (!paramsValidation.success) {
+    return next(createHttpError(400, 'Invalid delivery partner ID provided in parameters'));
+  }
+
+  const { id: partnerId }: DeliveryPartnerIdDTO = paramsValidation.data;
+
+  // 2. Check if delivery partner exists
+  const existingPartner = await prisma.deliveryPartner.findUnique({
+    where: { id: partnerId },
+    select: { id: true, email: true },
+  });
+
+  if (!existingPartner) {
+    return next(createHttpError(404, 'Delivery partner not found'));
+  }
+
+  // 3. Validate request body with Zod
+  const validationResult = updateDeliveryPartnerSchema.safeParse(req.body);
+
+  if (!validationResult.success) {
+   
+    return next(createHttpError(400,"Wrong user credentials"));
+  }
+
+  const updateData: UpdateDeliveryPartnerInput = validationResult.data;
+
+  
+  if (updateData.email && updateData.email !== existingPartner.email) {
+    const emailConflict = await prisma.deliveryPartner.findUnique({
+      where: { email: updateData.email },
+      select: { id: true },
+    });
+
+    if (emailConflict) {
+      return next(createHttpError(409, 'Email is already in use by another delivery partner'));
+    }
+  }
+
+  // 5. If password is being updated, hash it securely (handling Promise<string> cleanly via await)
+  let hashedNewPassword: string | undefined = undefined;
+  if (updateData.password) {
+    const saltRounds = 10;
+    hashedNewPassword = await hashedPassword(updateData.password)
+  }
+
+  // 6. Perform the update in the database
+  const updatedPartner = await prisma.deliveryPartner.update({
+    where: { id: partnerId },
+    data: {
+      ...updateData,
+      ...(hashedNewPassword && { password: hashedNewPassword }),
+    },
+  });
+
+  // 7. Strip password out for security
+  const { password: _, ...partnerWithoutPassword } = updatedPartner;
+
+  res.status(200).json(
+    new ApiResponse({
+      statusCode: 200,
+      message: 'Delivery partner profile updated successfully',
+      data: {
+        partner: partnerWithoutPassword,
+      },
+    })
+  );
+};
+
+// assign delivery partner for order
+
+export const assignDeliveryPartner = async (req:Request,res:Response,next:NextFunction) =>{
+  const {parthnerId} = req.body;
+
+  const order = await prisma.order.findUnique({
+    where:{id:req.params.id as string}
+  })
+
+  const partner = await prisma.deliveryPartner.findUnique({
+    where:{id:parthnerId}
+  })
+  const otp = String(Math.floor(100000 + Math.random() * 900000))
+
+  let status = order?.status
+  const history:any[] = Array.isArray(order?.statusHistory) ? order.statusHistory : [];
+  if(order?.status === "Placed" || order?.status === "Confirmed"){
+    status = "Assigned";
+    history.push({
+      status:"Assigned",
+      note:`Assigned to ${partner?.name}`,
+      timeStamp:new Date()
+    })
+  }
+
+  await prisma.order.update({
+    where:{id:order!.id},
+    data:{deliveryPartnerId:partner!.id,
+         deliveryOtp:otp,
+         status,
+         statusHistory:history
+        }
+  })
+ res.status(200).json( new ApiResponse({
+      statusCode: 200,
+      message: 'Order assign to partner successfully',
+      data: {
+        order
+      },
+    })) 
+}
