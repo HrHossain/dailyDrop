@@ -5,6 +5,7 @@ import bcrypt from "bcryptjs";
 import { generateAccessToken, generateRefreshToken } from "../../utils/jwt.js";
 import { ApiResponse } from "../../utils/apiresponse.js";
 import { userLoginSchema } from "../../validations/loginSchema.js";
+import { timeStamp } from "node:console";
 
 
 // POST : api/v1/partner/login
@@ -106,4 +107,73 @@ export const getMyDeliveries = async (
       })
     );
 
+}
+
+// GET single delivery detail
+// GET /api/delivery/my-deliveries/:id
+export const getMyDeliveryDetails = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+):Promise<void> => {
+    const {id} = req.params
+    const order = await prisma.order.findFirst({
+        where:{id:id as string,deliveryPartnerId:req.partner!.id},
+        include:{
+            user:{
+                select:{
+                name:true,
+                email:true,
+                phone:true
+            }}
+        }
+    })
+
+    if(!order){
+        return next(createHttpError(404,"Delivery not found"))
+    }
+    res.status(200).json(new ApiResponse({
+        statusCode:200,
+        message:"Found delivery order successfully",
+        data:order
+    }))
+}
+
+// complete delivery with OTP
+// PUT /api/v1/delivery/my-deliveries/:id/complete
+export const completeDelivery = async(
+  req: Request,
+  res: Response,
+  next: NextFunction
+):Promise<void> => {
+    const {otp} = req.body;
+    const order = await prisma.order.findFirst({
+        where:{id:req.params.id as string,
+            deliveryPartnerId:req.partner!.id},
+    })
+
+    if(!order || order.status ==="Cancelled" || order.status ==="Delivered"){
+        return next(createHttpError(400,"Invalid Request"))
+    }
+
+    if(order.deliveryOtp !== otp){
+        return next(createHttpError(500,"Invalid OTP"))
+    }
+
+    const history = order.statusHistory as any[]
+     history.push({status:"Delivered",
+        note:"Delivered by partner",
+        timestamp:new Date()})
+    
+    const updatedOrder = await prisma.order.update({
+        where:{id:order.id},
+        data:{status:"Delivered",
+            statusHistory:history,
+            deliveryOtp:""}
+    })
+    res.status(200).json(new ApiResponse({
+        statusCode:200,
+        message:"Delivery updated successfully",
+        data:updatedOrder
+    }))
 }
