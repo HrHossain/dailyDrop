@@ -10,7 +10,6 @@ import {
   verifyEmailVerificationToken,
   verifyRefreshToken,
 } from '../../utils/jwt.js';
-import loginSchema from '../../validations/loginSchema.js';
 import bcrypt from 'bcryptjs';
 import { generateAccessToken } from '../../utils/jwt.js';
 import { generateRefreshToken } from '../../utils/jwt.js';

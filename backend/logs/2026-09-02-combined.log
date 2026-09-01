@@ -1,2 +1,6 @@
 {"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-02 01:52:46"}
 {"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-02 02:11:52"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-02 02:43:23"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-02 02:52:44"}
+{"level":"info","message":"cleared existing products","timestamp":"2026-09-02 03:15:18"}
+{"level":"info","message":"Added 27 products","timestamp":"2026-09-02 03:15:19"}

@@ -15,7 +15,8 @@
     "prettier:fix": "npx prettier . --write",
     "prettier:check": "npx prettier . --check",
     "fix": "prettier --write \"src/**/*.ts\" && eslint --fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "seed":"tsx src/seed.ts"
   },
   "lint-staged": {
     "*.ts": [
