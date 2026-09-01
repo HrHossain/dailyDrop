@@ -160,7 +160,7 @@ export const completeDelivery = async(
         return next(createHttpError(500,"Invalid OTP"))
     }
 
-    const history = order.statusHistory as any[]
+    const history = order?.statusHistory as any[]
      history.push({status:"Delivered",
         note:"Delivered by partner",
         timestamp:new Date()})
@@ -175,5 +175,107 @@ export const completeDelivery = async(
         statusCode:200,
         message:"Delivery updated successfully",
         data:updatedOrder
+    }))
+}
+
+
+// cancel delivery
+// PUT  /api/v1/delivery/my-deliveries/:id/cancel
+
+export const cancelDelivery = async(
+  req: Request,
+  res: Response,
+  next: NextFunction
+):Promise<void> => {
+    const {otp} = req.body;
+    const order = await prisma.order.findFirst({
+        where:{id:req.params.id as string,
+            deliveryPartnerId:req.partner!.id},
+    })
+    if(order!.status === "Delivery"){
+        return next(createHttpError(400,"You cannot cancel a delivered order"))
+    }
+
+    const history = order!.statusHistory as any[]
+     history.push({status:"Cancelled",
+        note: "You cancelled the order",
+        timestamp:new Date()})
+
+    const updatedOrder = await prisma.order.update({
+        where:{id:order!.id},
+        data:{status:"Cancelled",statusHistory:history}
+    })
+    res.status(200).json(new ApiResponse({
+        statusCode:200,
+        message:"Delivery cancelled",
+        data:updatedOrder
+    }))
+}
+
+// update order status
+// PUT /api/v1/delivery/my-delivery/:id/status
+
+export const updateDeliveryStatus = async(
+  req: Request,
+  res: Response,
+  next: NextFunction
+):Promise<void> => {
+    const {status} = req.body
+    const allowedStatuses = ["Packed","Out for Delivery"]
+    if(!allowedStatuses.includes(status)){
+        return next(createHttpError(400,"Invalid status update"))
+    }
+
+    const order = await prisma.order.findFirst({
+        where:{id:req.params.id as string,
+            deliveryPartnerId:req.partner!.id
+        }
+    })
+
+     const history = order?.statusHistory as any[]
+     history.push({status,
+        note:`Status updated to ${status}`,
+        timestamp:new Date()})
+    
+    const updatedOrder = await prisma.order.update({
+        where:{id:order!.id},
+        data:{status,statusHistory:history}
+    })
+
+     res.status(200).json(new ApiResponse({
+        statusCode:200,
+        message:"Update delivery status successfully",
+        data:updatedOrder
+    }))
+}
+
+// update live location
+// PUT /api/v1/delivery/my-delivery/:id/location
+
+export const updateLocation = async(
+  req: Request,
+  res: Response,
+  next: NextFunction
+):Promise<void> => {
+    const {lat,lng} = req.body
+    
+
+    const order = await prisma.order.findFirst({
+        where:{id:req.params.id as string,
+            deliveryPartnerId:req.partner!.id,
+            status:{in:["Assigned","Packed","Out for Delivery"]}
+        }
+    })
+
+    
+    await prisma.order.update({
+        where:{id:order!.id},
+        data:{liveLocation:{lat,lng,updatedAt:new Date()}}
+    })
+
+     res.status(200).json(new ApiResponse({
+        statusCode:200,
+        message:"Updated livelocation",
+        data:null
     }))
 }
