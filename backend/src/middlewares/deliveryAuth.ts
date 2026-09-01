@@ -3,7 +3,7 @@ import createHttpError from 'http-errors';
 import { jwt } from 'zod';
 import { env } from '../validations/env.schema.js';
 import { prisma } from '../lib/prisma.js';
-export const addAddress = async (
+export const deliveryAuth= async (
   req: Request,
   res: Response,
   next: NextFunction
