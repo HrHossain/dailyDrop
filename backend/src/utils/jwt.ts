@@ -7,6 +7,9 @@ type AuthPayload = {
   userId: string;
   email: string;
 };
+
+
+
 type EmailVerificationPayload = {
   userId: string;
 };

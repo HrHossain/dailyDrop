@@ -2,12 +2,16 @@ import { Request,Response,NextFunction } from "express";
 import { prisma } from "../../lib/prisma.js";
 import createHttpError from "http-errors";
 import bcrypt from "bcryptjs";
-import { generateAccessToken, generateRefreshToken } from "../../utils/jwt.js";
 import { ApiResponse } from "../../utils/apiresponse.js";
 import { userLoginSchema } from "../../validations/loginSchema.js";
-import { timeStamp } from "node:console";
+import { jwt } from "zod";
+import { env } from "../../validations/env.schema.js";
 
+// token
 
+const generateToken = (id:string)=>{
+    return jwt.sign({id,role:"delivery"},env.JWT_SECRET as string,{expiresIn:"30d"})
+}
 // POST : api/v1/partner/login
 export const loginPartner = async (
   req: Request,
@@ -41,29 +45,21 @@ export const loginPartner = async (
   }
   const { password:_, ...deliveryPartner } = isUserExist;
 
-  const accessToken = generateAccessToken(deliveryPartner.id,deliveryPartner.email);
-  const refreshToken = generateRefreshToken(deliveryPartner.id,deliveryPartner.email);
+  const token = generateToken(deliveryPartner.id);
+
   res
-    .cookie('accessToken', accessToken, {
+    .cookie('accessToken', token, {
       httpOnly: true,
       secure: true,
       sameSite: 'strict',
       maxAge: 1000 * 60 * 60 * 24,
-    })
-    .cookie('refreshToken', refreshToken, {
-      httpOnly: true,
-      secure: true,
-      sameSite: 'strict',
-      maxAge: 1000 * 60 * 60 * 24 * 3,
-    })
-    .json(
+    }).json(
       new ApiResponse({
         statusCode: 200,
         message: 'login successfully',
         data: deliveryPartner,
         meta: {
-          accessToken,
-          refreshToken,
+          token
         },
       })
     );
@@ -157,7 +153,7 @@ export const completeDelivery = async(
     }
 
     if(order.deliveryOtp !== otp){
-        return next(createHttpError(500,"Invalid OTP"))
+        return next(createHttpError(400,"Invalid OTP"))
     }
 
     const history = order?.statusHistory as any[]
