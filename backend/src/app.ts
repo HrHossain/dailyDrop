@@ -21,6 +21,7 @@ import {
 } from './functions-inngest/stockMonitor.js';
 import { serve } from 'inngest/express';
 import addressRouter from './routes/address.route.js';
+import deliveryPartnerRouter from './routes/deliveryPartner.route.js';
 const app = express();
 
 app.use(helmet());
@@ -59,6 +60,7 @@ app.use('/api/v1/products', productRouter);
 app.use('/api/v1/orders', orderRouter);
 app.use('api/v1/upload', uploadRouter);
 app.use('/api/v1/users/address',addressRouter)
+app.use('/api/v1/delivery',deliveryPartnerRouter)
 // inngest setup
 
 app.use(
