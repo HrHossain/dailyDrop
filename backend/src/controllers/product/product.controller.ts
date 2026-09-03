@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request, Response,NextFunction } from 'express';
 import { prisma } from '../../lib/prisma.js';
 import { ApiResponse } from '../../utils/apiresponse.js';
 import { getDiscount } from '../../utils/product/getDiscount.js';
@@ -38,24 +38,38 @@ export const getFlashDeals = async (req: Request, res: Response) => {
 
 // GET api/v1/products
 
-export const getProducts = async (req: Request, res: Response) => {
-  const { category, search, minPrice, maxPrice, sort } = req.query;
+export const getProducts = async (
+  req: Request, 
+  res: Response, 
+  next: NextFunction
+): Promise<void> => {
+  const { category, search, minPrice, maxPrice, sort, page = '1', limit = '10' } = req.query;
+
+  // ১. পেজিনেশন লজিক
+  const pageNumber = parseInt(page as string, 10) || 1;
+  const limitNumber = parseInt(limit as string, 10) || 10;
+  const skip = (pageNumber - 1) * limitNumber;
+
   const where: any = {};
   if (category && category !== 'all') {
     where.category = category as string;
   }
+  
   if (search) {
     where.name = { contains: search as string, mode: 'insensitive' };
   }
+
+  // ২. প্রাইস ভ্যালিডেশন (NaN রোধ করতে !isNaN চেক)
   if (minPrice || maxPrice) {
     where.price = {};
-    if (minPrice) {
+    if (minPrice && !isNaN(Number(minPrice))) {
       where.price.gte = Number(minPrice);
     }
-    if (maxPrice) {
+    if (maxPrice && !isNaN(Number(maxPrice))) {
       where.price.lte = Number(maxPrice);
     }
   }
+
   const orderBy: any = {};
   if (sort === 'price-low') {
     orderBy.price = 'asc';
@@ -65,22 +79,37 @@ export const getProducts = async (req: Request, res: Response) => {
     orderBy.createdAt = 'desc';
   }
 
-  const products = await prisma.product.findMany({ where, orderBy });
+  // ৩. একসাথে প্রোডাক্ট এবং মোট কাউন্ট ফেচ করা (Performance Optimized)
+  const [products, totalProducts] = await Promise.all([
+    prisma.product.findMany({ 
+      where, 
+      orderBy,
+      skip,
+      take: limitNumber
+    }),
+    prisma.product.count({ where })
+  ]);
 
   const productsWithDiscount = products.map((p) => {
     const discount = getDiscount(p);
-
     return {
       ...p,
       discount,
     };
   });
 
-  return res.status(200).json(
+  // ৪. রেসপন্স এবং পেজিনেশন মেটাডেটা পাঠানো
+  res.status(200).json(
     new ApiResponse({
       statusCode: 200,
       message: 'Products fetched successfully',
       data: productsWithDiscount,
+      meta: {
+        page: pageNumber,
+        limit: limitNumber,
+        total: totalProducts,
+        totalPages: Math.ceil(totalProducts / limitNumber)
+      }
     })
   );
 };
