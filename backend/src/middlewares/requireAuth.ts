@@ -8,7 +8,7 @@ export const requireAuth = async (
   res: Response,
   next: NextFunction
 ) => {
-  const authHeader = req.headers.authorization;
+  const authHeader = req.cookies.accessToken;
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
     return next(createHttpError(401, 'You are not auth user! '));
   }
