@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import createHttpError from 'http-errors';
 import { verifyAccessToken } from '../utils/jwt.js';
 import { prisma } from '../lib/prisma.js';
+import { logger } from '../lib/logger.js';
 
 export const requireAuth = async (
   req: Request,
@@ -9,11 +10,12 @@ export const requireAuth = async (
   next: NextFunction
 ) => {
   const authHeader = req.cookies.accessToken;
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+  
+  if (!authHeader) {
     return next(createHttpError(401, 'You are not auth user! '));
   }
-  const token = authHeader.split(' ')[1];
-  const user = verifyAccessToken(token);
+  // const token = authHeader.split(' ')[1];
+  const user = verifyAccessToken(authHeader);
   if (!user) {
     return next(createHttpError(401, 'You are not auth user!'));
   }
@@ -33,5 +35,5 @@ export const requireAuth = async (
     name: foundUser.name,
     isAdmin: false,
   };
-  next();
+ next()
 };

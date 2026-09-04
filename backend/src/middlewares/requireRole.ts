@@ -5,7 +5,7 @@ import { env } from '../validations/env.schema.js';
 import { ApiResponse } from '../utils/apiresponse.js';
 import { logger } from '../lib/logger.js';
 
-export const admin = async (
+export const checkAdmin = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -26,19 +26,16 @@ export const admin = async (
   const adminEmails = env.ADMIN_EMAILS
     ? env.ADMIN_EMAILS.split(',').map((email) => email.trim().toLowerCase())
     : [];
-logger.info(adminEmails.includes(existUser.email.toLowerCase()))
+
   if (adminEmails.includes(existUser.email.toLowerCase())) {
     if (req.user) {
       req.user.isAdmin = true;
       next();
     }
   } else {
-    res.status(403).json(
-      new ApiResponse({
-        statusCode: 403,
-        message: 'You are not authenticated admin member!🥮',
-        data: null,
-      })
-    );
+    if (req.user) {
+      req.user.isAdmin = false;
+      next();
+    }
   }
 };

@@ -4,11 +4,25 @@ import { dummyProducts } from '../../assets/assets'
 import { Link } from 'react-router-dom'
 import { ArrowRightIcon } from 'lucide-react'
 import ProductCard from '../ProductCard'
+import { fetchPopularProducts } from '../../api/products'
+import Loading from '../Loading'
+import { useQuery } from '@tanstack/react-query'
 const PopularProducts = () => {
-    const [products,setProducts] = useState<Product[]>([])
-    useEffect(()=>{
-        setProducts(dummyProducts.slice(0,10))
-    },[])
+
+   const {data, isLoading,isError} = useQuery({
+    queryKey: ['popularProducts'],
+    queryFn: () => fetchPopularProducts('/products?limit=10&sort=rating'), 
+    staleTime: 1000 * 60 * 5, 
+   })
+
+   const products: Product[] = data?.data?.data
+   console.log(products)
+    if(isLoading){
+        return <Loading/>
+    }
+    if(isError){
+        return <div className='text-center text-red-500'>Failed to load popular products</div>
+    }
   return (
     <section className='pb-16'>
         <div className='max-w-7xl mx-auto'>

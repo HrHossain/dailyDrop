@@ -13,7 +13,7 @@ const ProductCard = ({product}:Props) => {
     const navigate = useNavigate()
    
   return (
-    <div className="bg-mist-200 rounded-2xl overflow-hidden shadow hover:shadow-md transition-all duration-300 group animate-fade-in cursor-pointer" onClick={()=>navigate(`/products/${product._id}`)}>
+    <div className="bg-mist-200 rounded-2xl overflow-hidden shadow hover:shadow-md transition-all duration-300 group animate-fade-in cursor-pointer" onClick={()=>navigate(`/products/${product?.id}`)}>
         {/* image */}
         <div className="relative aspect-square overflow-hidden">
             

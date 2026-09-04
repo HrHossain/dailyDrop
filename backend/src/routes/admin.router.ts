@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { Request, Response, NextFunction } from 'express';
 import { requireAuth } from '../middlewares/requireAuth.js';
-import { admin } from '../middlewares/requireRole.js';
+import { admin, checkAdmin } from '../middlewares/requireRole.js';
 import { prisma } from '../lib/prisma.js';
 import createHttpError from 'http-errors';
 import {
@@ -57,10 +57,10 @@ router.get('/stock/status', getStockStatus);
 router.get('/stock/history/:productId', getStockHistory);
 router.post('/stock/threshold', updateThreshold);
 router.post('/health/heartbeat', triggerHeartbeat);
-router.get("/stats",requireAuth,admin,getAdminStats)
-router.get("/delivery-partners",requireAuth,admin,getDeliveryPartners)
-router.get("/delivery-partners",requireAuth,admin,createDeliveryPartners)
-router.get("/delivery-partners/:id",requireAuth,admin,updateDeliveryPartner)
-router.get("/orders/:id/assign",requireAuth,admin,assignDeliveryPartner)
+router.get("/stats",requireAuth,checkAdmin,getAdminStats)
+router.get("/delivery-partners",requireAuth,checkAdmin,getDeliveryPartners)
+router.get("/delivery-partners",requireAuth,checkAdmin,createDeliveryPartners)
+router.get("/delivery-partners/:id",requireAuth,checkAdmin,updateDeliveryPartner)
+router.get("/orders/:id/assign",requireAuth,checkAdmin,assignDeliveryPartner)
 
 export default router;

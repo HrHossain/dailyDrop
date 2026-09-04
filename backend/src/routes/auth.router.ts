@@ -15,6 +15,8 @@ import {
 } from '../middlewares/userValidation.middleware.js';
 import { userRegistrationSchema } from '../validations/registerSchema.js';
 import { UserLoginInput, userLoginSchema } from '../validations/loginSchema.js';
+import { checkAdmin } from '../middlewares/requireRole.js';
+import { secureUser } from '../controllers/secure/me.controller.js';
 const authRouter = Router();
 
 authRouter
@@ -25,5 +27,5 @@ authRouter.post('/refresh-token', refreshTokenHandler);
 authRouter.post('/logout', logoutHandler);
 authRouter.post('/forgot-password', forgotPassword);
 authRouter.put('/reset-password', resetPassword);
-authRouter.post('/secure', requireAuth);
+authRouter.post('/secure', requireAuth,checkAdmin,secureUser);
 export default authRouter;

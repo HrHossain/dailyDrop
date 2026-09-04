@@ -35,3 +35,424 @@
 {"level":"info","message":{"email":"mof@gmail.com","name":"mofazzel hossain","password":"mofazzel","phone":""},"timestamp":"2026-09-04 11:18:32"}
 {"level":"http","message":"POST /api/v1/auth/register 200 278 - 8230.380 ms","timestamp":"2026-09-04 11:18:40"}
 {"level":"http","message":"POST /api/v1/auth/login 200 760 - 725.034 ms","timestamp":"2026-09-04 11:19:07"}
+{"level":"http","message":"GET /api/v1/api/v1/auth/me 404 1007 - 35.761 ms","timestamp":"2026-09-04 11:25:14"}
+{"level":"http","message":"GET /api/v1/api/v1/auth/me 404 1007 - 41.473 ms","timestamp":"2026-09-04 11:30:51"}
+{"level":"info","message":{"email":"mofazzelhossain185@gmail.com","name":"mofazzel hossain","password":"mofazzel","phone":""},"timestamp":"2026-09-04 11:31:16"}
+{"level":"http","message":"POST /api/v1/auth/register 200 293 - 7240.814 ms","timestamp":"2026-09-04 11:31:23"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 314.851 ms","timestamp":"2026-09-04 11:31:39"}
+{"level":"http","message":"POST /api/v1/auth/logout 200 68 - 74.945 ms","timestamp":"2026-09-04 11:33:54"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 1145.619 ms","timestamp":"2026-09-04 11:34:41"}
+{"level":"http","message":"POST /api/v1/auth/logout 200 68 - 4.249 ms","timestamp":"2026-09-04 11:34:45"}
+{"level":"http","message":"GET /api/v1/api/v1/auth/me 404 1007 - 24.567 ms","timestamp":"2026-09-04 11:34:53"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 1742.383 ms","timestamp":"2026-09-04 11:45:31"}
+{"level":"http","message":"POST /api/v1/auth/logout 200 68 - 1.410 ms","timestamp":"2026-09-04 11:45:50"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 327.677 ms","timestamp":"2026-09-04 11:45:53"}
+{"level":"http","message":"GET /api/v1/api/v1/auth/me 404 1007 - 24.493 ms","timestamp":"2026-09-04 11:46:08"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 839.281 ms","timestamp":"2026-09-04 11:47:53"}
+{"level":"http","message":"GET /api/v1/api/v1/auth/me 404 1007 - 26.085 ms","timestamp":"2026-09-04 11:49:15"}
+{"level":"http","message":"GET /api/v1/api/v1/auth/me 404 1007 - 4.435 ms","timestamp":"2026-09-04 11:49:46"}
+{"level":"http","message":"GET /api/v1/api/v1/auth/me 404 1007 - 66.012 ms","timestamp":"2026-09-04 11:50:54"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 1160.174 ms","timestamp":"2026-09-04 11:51:12"}
+{"level":"http","message":"GET /api/v1/api/v1/auth/me 404 1007 - 2.714 ms","timestamp":"2026-09-04 11:51:22"}
+{"level":"http","message":"GET /api/v1/auth/me 404 992 - 61.869 ms","timestamp":"2026-09-04 11:52:29"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 807.236 ms","timestamp":"2026-09-04 11:52:33"}
+{"level":"http","message":"GET /api/v1/auth/me 404 992 - 8.782 ms","timestamp":"2026-09-04 11:53:00"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 256.868 ms","timestamp":"2026-09-04 11:53:17"}
+{"level":"http","message":"GET /api/v1/auth/me 404 992 - 4.689 ms","timestamp":"2026-09-04 11:53:52"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 237.979 ms","timestamp":"2026-09-04 11:54:31"}
+{"level":"http","message":"GET /api/v1/auth/me 404 992 - 2.176 ms","timestamp":"2026-09-04 11:54:39"}
+{"level":"http","message":"GET /api/v1/auth/me 404 992 - 3.722 ms","timestamp":"2026-09-04 11:57:53"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 42.695 ms","timestamp":"2026-09-04 11:59:00"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 80.907 ms","timestamp":"2026-09-04 11:59:46"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 4.750 ms","timestamp":"2026-09-04 11:59:51"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 2.217 ms","timestamp":"2026-09-04 11:59:54"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 1.754 ms","timestamp":"2026-09-04 11:59:56"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 8.971 ms","timestamp":"2026-09-04 11:59:59"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 24.700 ms","timestamp":"2026-09-04 12:00:02"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 4.525 ms","timestamp":"2026-09-04 12:00:05"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 12.135 ms","timestamp":"2026-09-04 12:00:08"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 4.320 ms","timestamp":"2026-09-04 12:00:10"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 1.955 ms","timestamp":"2026-09-04 12:00:14"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 3.004 ms","timestamp":"2026-09-04 12:00:18"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 2.474 ms","timestamp":"2026-09-04 12:00:21"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 2.998 ms","timestamp":"2026-09-04 12:00:24"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 2.143 ms","timestamp":"2026-09-04 12:00:27"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 2.296 ms","timestamp":"2026-09-04 12:00:30"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 5.353 ms","timestamp":"2026-09-04 12:00:33"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 1.966 ms","timestamp":"2026-09-04 12:00:37"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 3.319 ms","timestamp":"2026-09-04 12:00:41"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 2.247 ms","timestamp":"2026-09-04 12:00:45"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 3.113 ms","timestamp":"2026-09-04 12:00:48"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 1.739 ms","timestamp":"2026-09-04 12:00:51"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 1.566 ms","timestamp":"2026-09-04 12:00:54"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 2.242 ms","timestamp":"2026-09-04 12:01:00"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 4.467 ms","timestamp":"2026-09-04 12:01:05"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 2.231 ms","timestamp":"2026-09-04 12:01:09"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 1.633 ms","timestamp":"2026-09-04 12:01:12"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 1.867 ms","timestamp":"2026-09-04 12:01:16"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 1.748 ms","timestamp":"2026-09-04 12:01:21"}
+{"level":"http","message":"GET /api/v1/user/me 401 1074 - 1.726 ms","timestamp":"2026-09-04 12:01:26"}
+{"level":"http","message":"GET /api/v1/users/me 404 1007 - 7.834 ms","timestamp":"2026-09-04 12:02:13"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 4625.667 ms","timestamp":"2026-09-04 12:02:25"}
+{"level":"http","message":"GET /api/v1/users/me 404 1007 - 1.544 ms","timestamp":"2026-09-04 12:02:54"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-04 12:23:32"}
+{"level":"http","message":"POST /api/v1/auth/login 200 763 - 2324.177 ms","timestamp":"2026-09-04 12:23:45"}
+{"level":"http","message":"POST /api/v1/auth/secure 401 1074 - 17.189 ms","timestamp":"2026-09-04 12:23:55"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-04 12:26:49"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzE1OTllYy1iYjJhLTQ3NTAtYjA0Yy05Y2U1NDViNTUyNzAiLCJlbWFpbCI6Im1vZmFAZ21haWwuY29tIiwiaWF0IjoxNzg4NTAzMDI1LCJleHAiOjE3ODg1ODk0MjV9.7GdlFCqXsGNAhVPM9k6Srtcojw4G93K6KqpBhfNBN50","timestamp":"2026-09-04 12:26:57"}
+{"level":"http","message":"POST /api/v1/auth/secure 401 1074 - 25.341 ms","timestamp":"2026-09-04 12:26:57"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-04 12:28:46"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-04 12:29:24"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzE1OTllYy1iYjJhLTQ3NTAtYjA0Yy05Y2U1NDViNTUyNzAiLCJlbWFpbCI6Im1vZmFAZ21haWwuY29tIiwiaWF0IjoxNzg4NTAzMDI1LCJleHAiOjE3ODg1ODk0MjV9.7GdlFCqXsGNAhVPM9k6Srtcojw4G93K6KqpBhfNBN50","timestamp":"2026-09-04 12:29:29"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 121 - 1934.886 ms","timestamp":"2026-09-04 12:29:31"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-04 12:30:27"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzE1OTllYy1iYjJhLTQ3NTAtYjA0Yy05Y2U1NDViNTUyNzAiLCJlbWFpbCI6Im1vZmFAZ21haWwuY29tIiwiaWF0IjoxNzg4NTAzMDI1LCJleHAiOjE3ODg1ODk0MjV9.7GdlFCqXsGNAhVPM9k6Srtcojw4G93K6KqpBhfNBN50","timestamp":"2026-09-04 12:33:07"}
+{"level":"http","message":"POST /api/v1/auth/secure 404 818 - 1143.120 ms","timestamp":"2026-09-04 12:33:08"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-04 12:37:28"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzE1OTllYy1iYjJhLTQ3NTAtYjA0Yy05Y2U1NDViNTUyNzAiLCJlbWFpbCI6Im1vZmFAZ21haWwuY29tIiwiaWF0IjoxNzg4NTAzMDI1LCJleHAiOjE3ODg1ODk0MjV9.7GdlFCqXsGNAhVPM9k6Srtcojw4G93K6KqpBhfNBN50","timestamp":"2026-09-04 12:37:32"}
+{"level":"http","message":"POST /api/v1/auth/secure 404 818 - 1412.435 ms","timestamp":"2026-09-04 12:37:33"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-04 12:40:09"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzE1OTllYy1iYjJhLTQ3NTAtYjA0Yy05Y2U1NDViNTUyNzAiLCJlbWFpbCI6Im1vZmFAZ21haWwuY29tIiwiaWF0IjoxNzg4NTAzMDI1LCJleHAiOjE3ODg1ODk0MjV9.7GdlFCqXsGNAhVPM9k6Srtcojw4G93K6KqpBhfNBN50","timestamp":"2026-09-04 12:40:12"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 196 - 1360.443 ms","timestamp":"2026-09-04 12:40:13"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 890.333 ms","timestamp":"2026-09-04 12:41:38"}
+{"level":"http","message":"GET /api/v1/users/me 404 1007 - 83.205 ms","timestamp":"2026-09-04 12:41:51"}
+{"level":"http","message":"GET /api/v1/auth/secure 404 992 - 9.884 ms","timestamp":"2026-09-04 12:42:27"}
+{"level":"http","message":"GET /api/v1/auth/secure 404 992 - 6.659 ms","timestamp":"2026-09-04 12:42:59"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 279.654 ms","timestamp":"2026-09-04 12:43:11"}
+{"level":"http","message":"GET /api/v1/auth/secure 404 992 - 7.639 ms","timestamp":"2026-09-04 12:43:20"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 1355.817 ms","timestamp":"2026-09-04 12:46:10"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MDQzNzAsImV4cCI6MTc4ODU5MDc3MH0.53FybPZRWbM1J8P0KjGyY2SDo_xBSw-Z7Ix43l5OC9s","timestamp":"2026-09-04 12:46:22"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 643.117 ms","timestamp":"2026-09-04 12:46:22"}
+{"level":"http","message":"POST /api/v1/auth/logout 200 68 - 197.451 ms","timestamp":"2026-09-04 12:48:51"}
+{"level":"http","message":"POST /api/v1/auth/login 200 763 - 904.964 ms","timestamp":"2026-09-04 12:49:01"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzE1OTllYy1iYjJhLTQ3NTAtYjA0Yy05Y2U1NDViNTUyNzAiLCJlbWFpbCI6Im1vZmFAZ21haWwuY29tIiwiaWF0IjoxNzg4NTA0NTQxLCJleHAiOjE3ODg1OTA5NDF9.Hfvwiok7Innq4KGB9lj93DFyjQWt-OoFC_MRV0ldp0k","timestamp":"2026-09-04 12:49:53"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 196 - 1213.181 ms","timestamp":"2026-09-04 12:49:54"}
+{"level":"http","message":"POST /api/v1/auth/login 200 763 - 2443.255 ms","timestamp":"2026-09-04 14:46:40"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1MzE1OTllYy1iYjJhLTQ3NTAtYjA0Yy05Y2U1NDViNTUyNzAiLCJlbWFpbCI6Im1vZmFAZ21haWwuY29tIiwiaWF0IjoxNzg4NTExNjAwLCJleHAiOjE3ODg1OTgwMDB9.LsZA0ieLklcvhmrmvg6hD-Gse9JJ9mhvZdiWL3YIc8Y","timestamp":"2026-09-04 14:49:55"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 196 - 1438.253 ms","timestamp":"2026-09-04 14:49:57"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 265.612 ms","timestamp":"2026-09-04 14:50:06"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTE4MDYsImV4cCI6MTc4ODU5ODIwNn0.JPx95539HAo171P--yWlfcMk12S8btn4j2aSiV6Df1I","timestamp":"2026-09-04 14:50:54"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 274.589 ms","timestamp":"2026-09-04 14:50:54"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 958.193 ms","timestamp":"2026-09-04 14:52:11"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTE5MzEsImV4cCI6MTc4ODU5ODMzMX0.btC_fMIfVL-n1FQyPinkHtgstXfGkRJInW-OVJziOck","timestamp":"2026-09-04 14:52:25"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 311.330 ms","timestamp":"2026-09-04 14:52:25"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 260.337 ms","timestamp":"2026-09-04 14:53:52"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTIwMzIsImV4cCI6MTc4ODU5ODQzMn0.TjNoHp13IT0rP0ryl6T-qmvwRobELNzMuZfXXA1vX9s","timestamp":"2026-09-04 14:54:29"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 257.438 ms","timestamp":"2026-09-04 14:54:29"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 3424.335 ms","timestamp":"2026-09-04 15:01:29"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI0ODksImV4cCI6MTc4ODU5ODg4OX0.SOXwPMlewNVFCBo0-Y4B7zPTsoEbC8SUXRH5ee2sQVo","timestamp":"2026-09-04 15:01:44"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 823.866 ms","timestamp":"2026-09-04 15:01:45"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 269.832 ms","timestamp":"2026-09-04 15:02:07"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:02:19"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 168.657 ms","timestamp":"2026-09-04 15:02:19"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:40"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 407.187 ms","timestamp":"2026-09-04 15:03:41"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:42"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 152.587 ms","timestamp":"2026-09-04 15:03:42"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:42"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 132.348 ms","timestamp":"2026-09-04 15:03:42"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:42"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 124.260 ms","timestamp":"2026-09-04 15:03:42"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:42"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 139.163 ms","timestamp":"2026-09-04 15:03:42"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:43"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 245.537 ms","timestamp":"2026-09-04 15:03:43"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:43"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 123.513 ms","timestamp":"2026-09-04 15:03:43"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:43"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 120.099 ms","timestamp":"2026-09-04 15:03:43"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:43"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 126.925 ms","timestamp":"2026-09-04 15:03:43"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:43"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 124.647 ms","timestamp":"2026-09-04 15:03:43"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:43"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 111.517 ms","timestamp":"2026-09-04 15:03:43"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:44"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 114.886 ms","timestamp":"2026-09-04 15:03:44"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:44"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 116.998 ms","timestamp":"2026-09-04 15:03:44"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:44"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 124.090 ms","timestamp":"2026-09-04 15:03:44"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:44"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 113.727 ms","timestamp":"2026-09-04 15:03:44"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:44"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 110.480 ms","timestamp":"2026-09-04 15:03:44"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:44"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 131.553 ms","timestamp":"2026-09-04 15:03:44"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:44"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 115.742 ms","timestamp":"2026-09-04 15:03:45"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:45"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 123.153 ms","timestamp":"2026-09-04 15:03:45"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:45"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 118.633 ms","timestamp":"2026-09-04 15:03:45"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:45"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 126.905 ms","timestamp":"2026-09-04 15:03:45"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:45"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 130.645 ms","timestamp":"2026-09-04 15:03:45"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:45"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 135.643 ms","timestamp":"2026-09-04 15:03:45"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:45"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 119.665 ms","timestamp":"2026-09-04 15:03:46"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:46"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 133.953 ms","timestamp":"2026-09-04 15:03:46"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:46"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 122.218 ms","timestamp":"2026-09-04 15:03:46"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:46"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 155.241 ms","timestamp":"2026-09-04 15:03:46"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:46"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 121.135 ms","timestamp":"2026-09-04 15:03:46"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:46"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 127.858 ms","timestamp":"2026-09-04 15:03:47"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:47"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 118.919 ms","timestamp":"2026-09-04 15:03:47"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:47"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 118.888 ms","timestamp":"2026-09-04 15:03:47"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:47"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 145.498 ms","timestamp":"2026-09-04 15:03:47"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:47"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 126.087 ms","timestamp":"2026-09-04 15:03:47"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:47"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 115.706 ms","timestamp":"2026-09-04 15:03:47"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:47"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 403.111 ms","timestamp":"2026-09-04 15:03:48"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:48"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 121.918 ms","timestamp":"2026-09-04 15:03:48"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:48"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 138.350 ms","timestamp":"2026-09-04 15:03:48"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:48"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 127.453 ms","timestamp":"2026-09-04 15:03:48"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:48"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 135.648 ms","timestamp":"2026-09-04 15:03:49"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:49"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 157.073 ms","timestamp":"2026-09-04 15:03:49"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:49"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 129.317 ms","timestamp":"2026-09-04 15:03:49"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:49"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 116.694 ms","timestamp":"2026-09-04 15:03:49"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:49"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 128.105 ms","timestamp":"2026-09-04 15:03:49"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:49"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 116.215 ms","timestamp":"2026-09-04 15:03:49"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:49"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 117.324 ms","timestamp":"2026-09-04 15:03:49"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:49"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 114.664 ms","timestamp":"2026-09-04 15:03:50"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:50"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 113.695 ms","timestamp":"2026-09-04 15:03:50"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:50"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 133.386 ms","timestamp":"2026-09-04 15:03:50"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:50"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 136.133 ms","timestamp":"2026-09-04 15:03:50"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:50"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 159.074 ms","timestamp":"2026-09-04 15:03:50"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:50"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 131.674 ms","timestamp":"2026-09-04 15:03:50"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:50"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 113.865 ms","timestamp":"2026-09-04 15:03:51"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:51"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 112.999 ms","timestamp":"2026-09-04 15:03:51"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:51"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 194.556 ms","timestamp":"2026-09-04 15:03:51"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:51"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 198.591 ms","timestamp":"2026-09-04 15:03:51"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:51"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 133.813 ms","timestamp":"2026-09-04 15:03:51"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:51"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 160.979 ms","timestamp":"2026-09-04 15:03:52"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:52"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 158.144 ms","timestamp":"2026-09-04 15:03:52"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:52"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 131.719 ms","timestamp":"2026-09-04 15:03:52"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:52"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 158.619 ms","timestamp":"2026-09-04 15:03:52"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:52"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 117.945 ms","timestamp":"2026-09-04 15:03:52"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:52"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 204.501 ms","timestamp":"2026-09-04 15:03:53"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:53"}
+{"level":"http","message":"POST /api/v1/auth/secure - - - - ms","timestamp":"2026-09-04 15:03:53"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:03:57"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 195.575 ms","timestamp":"2026-09-04 15:03:58"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI1MjcsImV4cCI6MTc4ODU5ODkyN30.AaGr69-k6LcDwHZBMpsYeDKCpeIH2lpPjKsTS_6TaeQ","timestamp":"2026-09-04 15:05:43"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 1302.891 ms","timestamp":"2026-09-04 15:05:44"}
+{"level":"http","message":"POST /api/v1/auth/logout 200 68 - 10.705 ms","timestamp":"2026-09-04 15:06:06"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 268.238 ms","timestamp":"2026-09-04 15:06:13"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTI3NzIsImV4cCI6MTc4ODU5OTE3Mn0._rwwdwirsJuT0jAHWQK3oVRJjP01n1WsEPsv_n_Kl6o","timestamp":"2026-09-04 15:06:13"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 122.368 ms","timestamp":"2026-09-04 15:06:13"}
+{"level":"http","message":"POST /api/v1/auth/logout 200 68 - 1.155 ms","timestamp":"2026-09-04 15:08:14"}
+{"level":"http","message":"POST /api/v1/auth/login 200 768 - 975.112 ms","timestamp":"2026-09-04 15:08:23"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzYWI5NjNjNS1kZTUzLTQ4MzQtYjM0Ny1hYmQzOTM2NTBhYTIiLCJlbWFpbCI6Im1vZmF6QGdtYWlsLmNvbSIsImlhdCI6MTc4ODUxMjkwMywiZXhwIjoxNzg4NTk5MzAzfQ.w6QaO3Owj2npduaGMT73lVkciyhR2jwWmEolbBtWmn8","timestamp":"2026-09-04 15:08:23"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 197 - 195.948 ms","timestamp":"2026-09-04 15:08:23"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzYWI5NjNjNS1kZTUzLTQ4MzQtYjM0Ny1hYmQzOTM2NTBhYTIiLCJlbWFpbCI6Im1vZmF6QGdtYWlsLmNvbSIsImlhdCI6MTc4ODUxMjkwMywiZXhwIjoxNzg4NTk5MzAzfQ.w6QaO3Owj2npduaGMT73lVkciyhR2jwWmEolbBtWmn8","timestamp":"2026-09-04 15:08:54"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 197 - 406.712 ms","timestamp":"2026-09-04 15:08:54"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzYWI5NjNjNS1kZTUzLTQ4MzQtYjM0Ny1hYmQzOTM2NTBhYTIiLCJlbWFpbCI6Im1vZmF6QGdtYWlsLmNvbSIsImlhdCI6MTc4ODUxMjkwMywiZXhwIjoxNzg4NTk5MzAzfQ.w6QaO3Owj2npduaGMT73lVkciyhR2jwWmEolbBtWmn8","timestamp":"2026-09-04 15:08:59"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 197 - 203.894 ms","timestamp":"2026-09-04 15:09:00"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzYWI5NjNjNS1kZTUzLTQ4MzQtYjM0Ny1hYmQzOTM2NTBhYTIiLCJlbWFpbCI6Im1vZmF6QGdtYWlsLmNvbSIsImlhdCI6MTc4ODUxMjkwMywiZXhwIjoxNzg4NTk5MzAzfQ.w6QaO3Owj2npduaGMT73lVkciyhR2jwWmEolbBtWmn8","timestamp":"2026-09-04 15:09:24"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 197 - 644.624 ms","timestamp":"2026-09-04 15:09:24"}
+{"level":"http","message":"POST /api/v1/auth/logout 200 68 - 1.807 ms","timestamp":"2026-09-04 15:10:17"}
+{"level":"http","message":"POST /api/v1/auth/login 200 768 - 247.222 ms","timestamp":"2026-09-04 15:10:32"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzYWI5NjNjNS1kZTUzLTQ4MzQtYjM0Ny1hYmQzOTM2NTBhYTIiLCJlbWFpbCI6Im1vZmF6QGdtYWlsLmNvbSIsImlhdCI6MTc4ODUxMzAzMiwiZXhwIjoxNzg4NTk5NDMyfQ.j90kELvyq5PS58myUof4NneRItkBsajd3KJr-CXVzx0","timestamp":"2026-09-04 15:10:32"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 197 - 108.362 ms","timestamp":"2026-09-04 15:10:32"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-04 15:11:36"}
+{"level":"http","message":"POST /api/v1/auth/login 200 768 - 1254.539 ms","timestamp":"2026-09-04 15:11:39"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzYWI5NjNjNS1kZTUzLTQ4MzQtYjM0Ny1hYmQzOTM2NTBhYTIiLCJlbWFpbCI6Im1vZmF6QGdtYWlsLmNvbSIsImlhdCI6MTc4ODUxMzA5OSwiZXhwIjoxNzg4NTk5NDk5fQ.xkO3PWq_3PJgyOaYlH5MPW6p9b5Fe6gBgxXirL8cy-I","timestamp":"2026-09-04 15:11:40"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 198 - 214.728 ms","timestamp":"2026-09-04 15:11:40"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzYWI5NjNjNS1kZTUzLTQ4MzQtYjM0Ny1hYmQzOTM2NTBhYTIiLCJlbWFpbCI6Im1vZmF6QGdtYWlsLmNvbSIsImlhdCI6MTc4ODUxMzA5OSwiZXhwIjoxNzg4NTk5NDk5fQ.xkO3PWq_3PJgyOaYlH5MPW6p9b5Fe6gBgxXirL8cy-I","timestamp":"2026-09-04 15:11:56"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 198 - 443.164 ms","timestamp":"2026-09-04 15:11:57"}
+{"level":"http","message":"POST /api/v1/auth/login 200 815 - 474.649 ms","timestamp":"2026-09-04 15:12:05"}
+{"level":"info","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkMzg5ODIwNy0zZjQ1LTQ3OGMtOTkzZS1jYjZiNzBkM2YwY2MiLCJlbWFpbCI6Im1vZmF6emVsaG9zc2FpbjE4NUBnbWFpbC5jb20iLCJpYXQiOjE3ODg1MTMxMjUsImV4cCI6MTc4ODU5OTUyNX0.662KlJMxtB1TSc-wRjxK9R26JnkM1QysK-Eubgju9VM","timestamp":"2026-09-04 15:12:05"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 116.334 ms","timestamp":"2026-09-04 15:12:05"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-04 15:12:51"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 200 4841 - 2606.737 ms","timestamp":"2026-09-04 15:29:29"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 147.985 ms","timestamp":"2026-09-04 15:29:33"}
+{"level":"http","message":"POST /api/v1/products?limit=10&sort=rating 500 1736 - 598.425 ms","timestamp":"2026-09-04 15:30:10"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 200 4841 - 111.559 ms","timestamp":"2026-09-04 15:30:21"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 475.205 ms","timestamp":"2026-09-04 15:31:03"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 300.566 ms","timestamp":"2026-09-04 15:31:03"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 56.250 ms","timestamp":"2026-09-04 15:31:10"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating - - - - ms","timestamp":"2026-09-04 15:40:09"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 200 4841 - 287.025 ms","timestamp":"2026-09-04 15:40:14"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 555.677 ms","timestamp":"2026-09-04 15:40:15"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 65.397 ms","timestamp":"2026-09-04 15:40:21"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 252.722 ms","timestamp":"2026-09-04 15:43:30"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 66.724 ms","timestamp":"2026-09-04 15:43:30"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 68.687 ms","timestamp":"2026-09-04 15:43:30"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 65.096 ms","timestamp":"2026-09-04 15:43:32"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 63.200 ms","timestamp":"2026-09-04 15:43:38"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 65.387 ms","timestamp":"2026-09-04 15:43:38"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 61.939 ms","timestamp":"2026-09-04 15:43:38"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 65.676 ms","timestamp":"2026-09-04 15:43:41"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 67.345 ms","timestamp":"2026-09-04 15:43:41"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 124.419 ms","timestamp":"2026-09-04 15:43:46"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 1206.920 ms","timestamp":"2026-09-04 15:45:50"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 121.782 ms","timestamp":"2026-09-04 15:45:50"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 73.172 ms","timestamp":"2026-09-04 15:45:50"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 62.994 ms","timestamp":"2026-09-04 15:45:55"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 931.923 ms","timestamp":"2026-09-04 15:47:05"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 95.958 ms","timestamp":"2026-09-04 15:47:10"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 189.970 ms","timestamp":"2026-09-04 15:47:11"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 72.792 ms","timestamp":"2026-09-04 15:47:11"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 165.307 ms","timestamp":"2026-09-04 15:47:22"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 490.992 ms","timestamp":"2026-09-04 15:47:23"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 61.464 ms","timestamp":"2026-09-04 15:47:30"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 107.028 ms","timestamp":"2026-09-04 15:47:30"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 61.925 ms","timestamp":"2026-09-04 15:47:30"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 792.557 ms","timestamp":"2026-09-04 15:48:13"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 1081.849 ms","timestamp":"2026-09-04 15:48:13"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 64.463 ms","timestamp":"2026-09-04 15:48:19"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 1607.647 ms","timestamp":"2026-09-04 15:53:17"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 588.682 ms","timestamp":"2026-09-04 15:54:23"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 952.981 ms","timestamp":"2026-09-04 15:54:23"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 70.504 ms","timestamp":"2026-09-04 15:54:34"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 330.053 ms","timestamp":"2026-09-04 15:55:40"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 293.225 ms","timestamp":"2026-09-04 15:55:42"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 1121.928 ms","timestamp":"2026-09-04 15:59:29"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 83.902 ms","timestamp":"2026-09-04 15:59:34"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 284.567 ms","timestamp":"2026-09-04 16:00:33"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 686.791 ms","timestamp":"2026-09-04 16:01:05"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 1127.595 ms","timestamp":"2026-09-04 16:01:06"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 2505.683 ms","timestamp":"2026-09-04 16:06:17"}
+{"level":"http","message":"GET /api/v1/products? 200 4841 - 2789.232 ms","timestamp":"2026-09-04 17:07:09"}
+{"level":"http","message":"GET /api/v1/products?category=fruits-vegetables 200 5143 - 321.213 ms","timestamp":"2026-09-04 17:07:44"}
+{"level":"http","message":"GET /api/v1/products?category=personal-care 200 139 - 128.676 ms","timestamp":"2026-09-04 17:07:46"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 679.093 ms","timestamp":"2026-09-04 17:08:00"}
+{"level":"http","message":"GET /api/v1/products?category=personal-care 304 - - 781.367 ms","timestamp":"2026-09-04 17:08:01"}
+{"level":"http","message":"GET /api/v1/products?category=bakery 200 1059 - 168.135 ms","timestamp":"2026-09-04 17:08:02"}
+{"level":"http","message":"GET /api/v1/products?category=pantry-staples 200 3416 - 81.929 ms","timestamp":"2026-09-04 17:08:04"}
+{"level":"http","message":"GET /api/v1/products?category=fruits-vegetables 304 - - 60.404 ms","timestamp":"2026-09-04 17:08:06"}
+{"level":"http","message":"GET /api/v1/products? 304 - - 119.840 ms","timestamp":"2026-09-04 17:08:07"}
+{"level":"http","message":"GET /api/v1/products?category=beverages 200 1997 - 77.785 ms","timestamp":"2026-09-04 17:08:09"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 805.189 ms","timestamp":"2026-09-04 17:10:12"}
+{"level":"http","message":"GET /api/v1/products?sort=price_asc 200 4841 - 441.520 ms","timestamp":"2026-09-04 17:10:42"}
+{"level":"http","message":"GET /api/v1/products?sort=price_desc 200 4841 - 80.456 ms","timestamp":"2026-09-04 17:10:44"}
+{"level":"http","message":"GET /api/v1/products?sort=rating 200 4841 - 69.877 ms","timestamp":"2026-09-04 17:10:46"}
+{"level":"http","message":"GET /api/v1/products?sort=rating&page=2 200 4989 - 1375.621 ms","timestamp":"2026-09-04 17:12:11"}
+{"level":"http","message":"GET /api/v1/products?sort=rating&page=3 200 3586 - 127.601 ms","timestamp":"2026-09-04 17:12:15"}
+{"level":"http","message":"GET /api/v1/products?sort=rating&category=dairy-eggs 200 2075 - 313.731 ms","timestamp":"2026-09-04 17:12:45"}
+{"level":"http","message":"GET /api/v1/products?sort=rating&category=baby-care 200 139 - 83.282 ms","timestamp":"2026-09-04 17:12:46"}
+{"level":"http","message":"GET /api/v1/products?sort=rating&category=frozen-foods 200 139 - 69.264 ms","timestamp":"2026-09-04 17:12:48"}
+{"level":"http","message":"GET /api/v1/products?sort=rating&category=snacks 200 139 - 63.403 ms","timestamp":"2026-09-04 17:12:49"}
+{"level":"http","message":"GET /api/v1/products?sort=rating&category=meat-seafood 200 139 - 69.089 ms","timestamp":"2026-09-04 17:12:50"}
+{"level":"http","message":"GET /api/v1/products?sort=rating&category=beverages 200 1997 - 61.222 ms","timestamp":"2026-09-04 17:12:51"}
+{"level":"http","message":"GET /api/v1/products?sort=rating&category=bakery 200 1059 - 106.214 ms","timestamp":"2026-09-04 17:12:52"}
+{"level":"http","message":"GET /api/v1/products?sort=rating&category=pantry-staples 200 3416 - 67.461 ms","timestamp":"2026-09-04 17:12:53"}
+{"level":"http","message":"GET /api/v1/products?sort=rating&category=personal-care 200 139 - 56.468 ms","timestamp":"2026-09-04 17:12:54"}
+{"level":"http","message":"GET /api/v1/products?sort=rating&category=fruits-vegetables 200 5143 - 57.867 ms","timestamp":"2026-09-04 17:12:56"}
+{"level":"http","message":"GET /api/v1/products? 304 - - 758.266 ms","timestamp":"2026-09-04 17:13:13"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-04 17:15:01"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 1535.547 ms","timestamp":"2026-09-04 17:15:47"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 324.268 ms","timestamp":"2026-09-04 17:15:58"}
+{"level":"http","message":"GET /api/v1/products? 200 12217 - 546.141 ms","timestamp":"2026-09-04 17:15:58"}
+{"level":"http","message":"GET /api/v1/products?minPrice=1 200 12217 - 281.703 ms","timestamp":"2026-09-04 17:17:31"}
+{"level":"http","message":"GET /api/v1/products?minPrice=0 200 12217 - 114.613 ms","timestamp":"2026-09-04 17:17:32"}
+{"level":"http","message":"GET /api/v1/products?minPrice=2 200 12217 - 76.563 ms","timestamp":"2026-09-04 17:17:36"}
+{"level":"http","message":"GET /api/v1/products?minPrice=3 200 12217 - 67.141 ms","timestamp":"2026-09-04 17:17:37"}
+{"level":"http","message":"GET /api/v1/products?minPrice=4 200 12217 - 60.712 ms","timestamp":"2026-09-04 17:17:37"}
+{"level":"http","message":"GET /api/v1/products?minPrice=5 200 12217 - 61.313 ms","timestamp":"2026-09-04 17:17:38"}
+{"level":"http","message":"GET /api/v1/products?minPrice=23 200 12175 - 83.297 ms","timestamp":"2026-09-04 17:17:40"}
+{"level":"http","message":"GET /api/v1/products?minPrice=50 200 8741 - 112.902 ms","timestamp":"2026-09-04 17:17:46"}
+{"level":"http","message":"GET /api/v1/products?minPrice=500 200 621 - 61.682 ms","timestamp":"2026-09-04 17:17:46"}
+{"level":"http","message":"GET /api/v1/products?minPrice=50&maxPrice=8 200 139 - 466.557 ms","timestamp":"2026-09-04 17:18:01"}
+{"level":"http","message":"GET /api/v1/products?minPrice=50&maxPrice=80 200 3928 - 112.083 ms","timestamp":"2026-09-04 17:18:02"}
+{"level":"http","message":"GET /api/v1/products?minPrice=50&maxPrice=80&sort=asc 200 3928 - 1099.123 ms","timestamp":"2026-09-04 17:22:47"}
+{"level":"http","message":"GET /api/v1/products?minPrice=50&maxPrice=80&sort=desc 200 3928 - 66.449 ms","timestamp":"2026-09-04 17:22:48"}
+{"level":"http","message":"GET /api/v1/products?minPrice=50&maxPrice=80&sort=rating 200 3928 - 60.805 ms","timestamp":"2026-09-04 17:22:51"}
+{"level":"http","message":"GET /api/v1/products?minPrice=50&maxPrice=80 304 - - 920.556 ms","timestamp":"2026-09-04 17:25:20"}
+{"level":"http","message":"GET /api/v1/products? 304 - - 512.227 ms","timestamp":"2026-09-04 17:25:50"}
+{"level":"http","message":"GET /api/v1/products?sort=asc 200 12217 - 219.883 ms","timestamp":"2026-09-04 17:25:52"}
+{"level":"http","message":"GET /api/v1/products?sort=desc 200 12217 - 63.265 ms","timestamp":"2026-09-04 17:25:55"}
+{"level":"http","message":"GET /api/v1/products?sort=rating 200 12217 - 1160.771 ms","timestamp":"2026-09-04 17:28:36"}
+{"level":"http","message":"GET /api/v1/products?sort=name 200 12217 - 122.747 ms","timestamp":"2026-09-04 17:29:03"}
+{"level":"http","message":"GET /api/v1/products?sort=desc&category=fruits-vegetables 200 5143 - 526.562 ms","timestamp":"2026-09-04 17:29:58"}
+{"level":"http","message":"GET /api/v1/products?sort=desc&category=personal-care 200 139 - 153.647 ms","timestamp":"2026-09-04 17:30:00"}
+{"level":"http","message":"GET /api/v1/products?sort=desc 304 - - 621.165 ms","timestamp":"2026-09-04 17:31:03"}
+{"level":"http","message":"GET /api/v1/products?sort=asc 304 - - 105.556 ms","timestamp":"2026-09-04 17:31:09"}
+{"level":"http","message":"GET /api/v1/products?sort=asc 304 - - 1223.354 ms","timestamp":"2026-09-04 17:33:49"}
+{"level":"http","message":"GET /api/v1/products?sort=desc 304 - - 92.080 ms","timestamp":"2026-09-04 17:33:52"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-04 17:39:08"}
+{"level":"http","message":"GET /api/v1/products?sort=desc 304 - - 2692.600 ms","timestamp":"2026-09-04 17:41:57"}
+{"level":"http","message":"GET /api/v1/products?sort=price-low 200 12188 - 135.544 ms","timestamp":"2026-09-04 17:41:57"}
+{"level":"http","message":"GET /api/v1/products?sort=price-high 200 12123 - 158.299 ms","timestamp":"2026-09-04 17:42:02"}
+{"level":"http","message":"GET /api/v1/products?sort=rating 304 - - 211.423 ms","timestamp":"2026-09-04 17:42:07"}
+{"level":"http","message":"GET /api/v1/products?sort=name 200 12142 - 236.064 ms","timestamp":"2026-09-04 17:42:12"}
+{"level":"http","message":"GET /api/v1/products?sort=name&category=fruits-vegetables 200 5143 - 220.821 ms","timestamp":"2026-09-04 17:42:21"}
+{"level":"http","message":"GET /api/v1/products?sort=name&category=personal-care 200 139 - 132.493 ms","timestamp":"2026-09-04 17:42:22"}
+{"level":"http","message":"GET /api/v1/products?sort=name&category=pantry-staples 200 3416 - 67.461 ms","timestamp":"2026-09-04 17:42:23"}
+{"level":"http","message":"GET /api/v1/products?sort=name&category=bakery 200 1059 - 59.691 ms","timestamp":"2026-09-04 17:42:24"}
+{"level":"http","message":"GET /api/v1/products?sort=name&category=beverages 200 1997 - 64.805 ms","timestamp":"2026-09-04 17:42:26"}
+{"level":"http","message":"GET /api/v1/products?sort=name&category=meat-seafood 200 139 - 397.513 ms","timestamp":"2026-09-04 17:42:27"}
+{"level":"http","message":"GET /api/v1/products?sort=name&category=snacks 200 139 - 62.846 ms","timestamp":"2026-09-04 17:42:29"}
+{"level":"http","message":"GET /api/v1/products?sort=name&category=frozen-foods 200 139 - 57.423 ms","timestamp":"2026-09-04 17:42:30"}
+{"level":"http","message":"GET /api/v1/products?sort=name&category=baby-care 200 139 - 57.326 ms","timestamp":"2026-09-04 17:42:31"}
+{"level":"http","message":"GET /api/v1/products?sort=name&category=dairy-eggs 200 2075 - 61.313 ms","timestamp":"2026-09-04 17:42:32"}
+{"level":"http","message":"GET /api/v1/products?category=dairy-eggs 200 2075 - 113.352 ms","timestamp":"2026-09-04 17:42:35"}
+{"level":"http","message":"GET /api/v1/products?category=dairy-eggs&sort=price-low 200 2075 - 113.073 ms","timestamp":"2026-09-04 17:42:38"}
+{"level":"http","message":"GET /api/v1/products?category=dairy-eggs&sort=price-high 200 2075 - 115.959 ms","timestamp":"2026-09-04 17:42:40"}
+{"level":"http","message":"GET /api/v1/products?category=dairy-eggs&sort=rating 200 2075 - 167.902 ms","timestamp":"2026-09-04 17:42:43"}
+{"level":"http","message":"GET /api/v1/products?category=dairy-eggs&sort=name 200 2075 - 59.776 ms","timestamp":"2026-09-04 17:42:45"}
+{"level":"http","message":"GET /api/v1/products?category=dairy-eggs&sort=name&minPrice=9 200 2075 - 169.777 ms","timestamp":"2026-09-04 17:42:53"}
+{"level":"http","message":"GET /api/v1/products?category=dairy-eggs&sort=name&minPrice=90 200 641 - 115.688 ms","timestamp":"2026-09-04 17:42:53"}
+{"level":"http","message":"GET /api/v1/products?category=dairy-eggs&sort=name&minPrice=90&maxPrice=1 200 139 - 113.023 ms","timestamp":"2026-09-04 17:42:57"}
+{"level":"http","message":"GET /api/v1/products?category=dairy-eggs&sort=name&minPrice=90&maxPrice=12 200 139 - 59.057 ms","timestamp":"2026-09-04 17:42:58"}
+{"level":"http","message":"GET /api/v1/products?category=dairy-eggs&sort=name&minPrice=90&maxPrice=120 200 139 - 112.271 ms","timestamp":"2026-09-04 17:43:00"}
+{"level":"http","message":"GET /api/v1/products?category=dairy-eggs&sort=name&minPrice=90&maxPrice=1200 200 641 - 60.645 ms","timestamp":"2026-09-04 17:43:01"}
+{"level":"http","message":"GET /api/v1/products?category=meat-seafood&sort=name 200 139 - 506.747 ms","timestamp":"2026-09-04 17:45:59"}
+{"level":"http","message":"GET /api/v1/products?category=beverages&sort=name 200 1997 - 81.208 ms","timestamp":"2026-09-04 17:46:00"}
+{"level":"http","message":"GET /api/v1/products?category=bakery&sort=name 200 1059 - 89.184 ms","timestamp":"2026-09-04 17:46:00"}
+{"level":"http","message":"GET /api/v1/products?category=personal-care&sort=name 200 139 - 64.067 ms","timestamp":"2026-09-04 17:46:02"}
+{"level":"http","message":"GET /api/v1/products? 304 - - 128.720 ms","timestamp":"2026-09-04 17:46:07"}
+{"level":"http","message":"GET /api/v1/products?page=1 200 12217 - 1061.225 ms","timestamp":"2026-09-04 17:49:42"}
+{"level":"http","message":"GET /api/v1/products?page=2 200 1060 - 137.199 ms","timestamp":"2026-09-04 17:49:49"}
+{"level":"http","message":"GET /api/v1/products?sort=price-low 304 - - 991.039 ms","timestamp":"2026-09-04 17:52:23"}
+{"level":"http","message":"GET /api/v1/products?sort=price-low&page=2 200 1089 - 69.384 ms","timestamp":"2026-09-04 17:52:33"}
+{"level":"http","message":"GET /api/v1/products?sort=price-high 304 - - 163.603 ms","timestamp":"2026-09-04 17:52:36"}
+{"level":"http","message":"GET /api/v1/products?sort=rating 304 - - 254.438 ms","timestamp":"2026-09-04 17:52:39"}
+{"level":"http","message":"GET /api/v1/products?sort=name 304 - - 121.479 ms","timestamp":"2026-09-04 17:52:43"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 3216.754 ms","timestamp":"2026-09-04 18:00:48"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 275.036 ms","timestamp":"2026-09-04 18:01:11"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 240.269 ms","timestamp":"2026-09-04 18:01:30"}
+{"level":"http","message":"GET /api/v1/products?sort=rating 304 - - 780.146 ms","timestamp":"2026-09-04 18:01:31"}
+{"level":"http","message":"GET /api/v1/products/flash-deals 200 3920 - 1415.261 ms","timestamp":"2026-09-04 18:08:43"}
+{"level":"http","message":"GET /api/v1/products/flash-deals 304 - - 747.243 ms","timestamp":"2026-09-04 18:09:48"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 1233.138 ms","timestamp":"2026-09-04 18:09:49"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 294.184 ms","timestamp":"2026-09-04 18:10:29"}

@@ -2,7 +2,7 @@ import { Request, Response,NextFunction } from 'express';
 import { prisma } from '../../lib/prisma.js';
 import { ApiResponse } from '../../utils/apiresponse.js';
 import { getDiscount } from '../../utils/product/getDiscount.js';
-
+import { Prisma } from '@prisma/client';
 // GET /api/v1/products/flash-deals
 export const getFlashDeals = async (req: Request, res: Response) => {
   // 1. Fetch only the required 8 items directly from the database (Performance boost)
@@ -15,7 +15,7 @@ export const getFlashDeals = async (req: Request, res: Response) => {
     orderBy: {
       originalPrice: 'desc', // Fixed typo consistency
     },
-    take: 8, // Replaces .slice(0, 8) in memory
+    take: 12, // Replaces .slice(0, 8) in memory
   });
 
   // 2. Map and calculate discount safely
@@ -43,7 +43,7 @@ export const getProducts = async (
   res: Response, 
   next: NextFunction
 ): Promise<void> => {
-  const { category, search, minPrice, maxPrice, sort, page = '1', limit = '10' } = req.query;
+  const { category, search, minPrice, maxPrice, sort, page = '1', limit = '25' } = req.query;
 
   // ১. পেজিনেশন লজিক
   const pageNumber = parseInt(page as string, 10) || 1;
@@ -70,14 +70,20 @@ export const getProducts = async (
     }
   }
 
-  const orderBy: any = {};
-  if (sort === 'price-low') {
-    orderBy.price = 'asc';
-  } else if (sort === 'price-high') {
-    orderBy.price = 'desc';
-  } else {
-    orderBy.createdAt = 'desc';
+ const orderBy: Prisma.ProductOrderByWithRelationInput = (() => {
+  switch (sort) {
+    case 'price-low':
+      return { price: 'asc' };
+    case 'price-high':
+      return { price: 'desc' };
+    case 'rating':
+      return { rating: 'desc' }; // Add if you support rating sorting
+    case 'name':
+      return { name: 'asc' };
+    default:
+      return { createdAt: 'desc' }; // Default fallback (Newest)
   }
+})();
 
   // ৩. একসাথে প্রোডাক্ট এবং মোট কাউন্ট ফেচ করা (Performance Optimized)
   const [products, totalProducts] = await Promise.all([

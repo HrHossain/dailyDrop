@@ -8,7 +8,7 @@ import {
   updateProduct,
 } from '../controllers/product/product.controller.js';
 import { requireAuth } from '../middlewares/requireAuth.js';
-import { admin } from '../middlewares/requireRole.js';
+import { checkAdmin } from '../middlewares/requireRole.js';
 
 const productRouter = Router();
 
@@ -16,8 +16,8 @@ productRouter.get('/flash-deals', getFlashDeals);
 
 productRouter.get('/', getProducts);
 productRouter.get('/:id', getProduct);
-productRouter.post('/', requireAuth, admin, createProduct);
-productRouter.put('/:id', requireAuth, admin, updateProduct);
-productRouter.delete('/:id', requireAuth, admin, deleteProduct);
+productRouter.post('/', requireAuth, checkAdmin, createProduct);
+productRouter.put('/:id', requireAuth, checkAdmin, updateProduct);
+productRouter.delete('/:id', requireAuth, checkAdmin, deleteProduct);
 
 export default productRouter;

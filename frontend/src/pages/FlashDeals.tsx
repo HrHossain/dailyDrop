@@ -4,15 +4,30 @@ import type { Product } from "../types"
 import { Zap } from "lucide-react"
 import Loading from "../components/Loading"
 import ProductCard from "../components/ProductCard"
+import { useQuery } from "@tanstack/react-query"
+import { fetchPopularProducts } from "../api/products"
+
 
 const FlashDeals = () => {
-  const [products,setProducts] = useState<Product[]>([])
-  const [loading,setLoading] = useState(true)
 
-  useEffect(()=>{
-    setProducts(dummyProducts.filter((p:any)=>p.stock > 0))
-    setTimeout(()=> setLoading(false),1400)
-  },[])
+  const { data, isLoading,isError } = useQuery({
+      queryKey: ["flash-deals"],
+      queryFn: () => fetchPopularProducts("/products/flash-deals"),
+      staleTime: 1000 * 60 * 5, 
+      placeholderData: (previousData) => previousData, 
+    });
+  const products = data?.data?.data
+ 
+if(isLoading){
+  return <Loading/>
+}
+
+if(isError){
+  return <div className="flex items-center justify-center min-h-[50vh] w-full">
+  <h5 className="text-charcoal font-medium text-lg">Products loading failed</h5>
+</div>
+}
+  
   return (
     <div className="min-h-screen bg-mist">
       {/* banner */}
@@ -28,7 +43,7 @@ const FlashDeals = () => {
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {
-          loading ? (<Loading/>):(
+          isLoading ? (<Loading/>):(
             products.length === 0 ? (
               <div className="text-center py-16">
                 <Zap className="size-6 fill-white"/>

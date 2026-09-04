@@ -25,10 +25,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const [loading, setLoading] = useState<boolean>(true); // ইনিশিয়াল লোড চেক করার জন্য true রাখা ভালো
     
     // অ্যাপ রিলোড হলে ইউজার সেশন চেক করার জন্য (Optionally)
-    useEffect(() => {
-        const checkAuth = async () => {
+
+     const checkAuth = async () => {
             try {
-                const res = await api.get('/api/v1/auth/me'); // ব্যাকএন্ডে এমন এন্ডপয়েন্ট থাকলে ডেটা ফেচ হবে
+                const res = await api.post('auth/secure'); // ব্যাকএন্ডে এমন এন্ডপয়েন্ট থাকলে ডেটা ফেচ হবে
                 if (res.data?.data) {
                     setUser(res.data.data);
                 }
@@ -38,6 +38,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
                 setLoading(false);
             }
         };
+    useEffect(() => {
+       
         checkAuth();
     }, []);
 
@@ -53,6 +55,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
             const res = await api.post('/auth/login', { email, password });
             const responseData = res.data;
+            if(responseData){
+                 checkAuth();
+            }
             setUser(responseData.data)
             // আপনার ApiResponse স্ট্রাকচার অনুযায়ী
             if (responseData.statusCode && responseData.statusCode !== 200) {
