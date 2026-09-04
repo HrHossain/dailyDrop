@@ -26,9 +26,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     
     // অ্যাপ রিলোড হলে ইউজার সেশন চেক করার জন্য (Optionally)
 
-     const checkAuth = async () => {
+     
+    useEffect(() => {
+       const checkAuth = async () => {
             try {
-                const res = await api.post('auth/secure'); // ব্যাকএন্ডে এমন এন্ডপয়েন্ট থাকলে ডেটা ফেচ হবে
+                const res = await api.post('/auth/secure');
                 if (res.data?.data) {
                     setUser(res.data.data);
                 }
@@ -38,8 +40,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
                 setLoading(false);
             }
         };
-    useEffect(() => {
-       
         checkAuth();
     }, []);
 
@@ -55,16 +55,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
             const res = await api.post('/auth/login', { email, password });
             const responseData = res.data;
-            if(responseData){
-                 checkAuth();
-            }
+            // if(responseData){
+            //      checkAuth();
+            // }
             setUser(responseData.data)
             // আপনার ApiResponse স্ট্রাকচার অনুযায়ী
             if (responseData.statusCode && responseData.statusCode !== 200) {
                 throw new Error(responseData.message || "Login failed");
             }
 
-            setUser(responseData.data);
+            
             if (responseData.meta?.accessToken) {
                 setToken(responseData.meta.accessToken);
             }

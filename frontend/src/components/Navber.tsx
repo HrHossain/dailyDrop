@@ -17,7 +17,7 @@ const Navber = () => {
     const handleSearch = (e:React.SubmitEvent)=>{
         e.preventDefault()
         if(searchQuery.trim()){
-            navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`)
+            navigate(`products/search?q=${encodeURIComponent(searchQuery.trim())}`)
             setSearchQuery("")
         }
     }
@@ -26,6 +26,7 @@ const Navber = () => {
         setUserMenuOpen(false)
         navigate("/")
     }
+    console.log(user)
   return (
     <nav className="bg-mist sticky top-0 z-50 border-b border-[#e5e7eb]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  flex items-center justify-between h-16 gap-4">

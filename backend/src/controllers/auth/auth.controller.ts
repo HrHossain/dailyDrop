@@ -17,6 +17,7 @@ import { logger } from '../../lib/logger.js';
 import { z } from 'zod';
 import crypto from 'crypto';
 import { sendPasswordResetEmail } from '../../services/auth.service.js';
+import { env } from '../../validations/env.schema.js';
 
 export const registerUser = async (
   req: Request,
@@ -76,6 +77,10 @@ export const loginUser = async (
 
   const accessToken = generateAccessToken(user.id, user.email);
   const refreshToken = generateRefreshToken(user.id, user.email);
+   const adminEmails = env.ADMIN_EMAILS
+      ? env.ADMIN_EMAILS.split(',').map((email) => email.trim().toLowerCase())
+      : [];
+
   return res
     .cookie('accessToken', accessToken, {
       httpOnly: true,
@@ -93,7 +98,10 @@ export const loginUser = async (
       new ApiResponse({
         statusCode: 200,
         message: 'login successfully',
-        data: user,
+        data:{
+          ...user,
+          isAdmin: adminEmails.includes(user.email.toLowerCase()),
+        },
         meta: {
           accessToken,
           refreshToken,

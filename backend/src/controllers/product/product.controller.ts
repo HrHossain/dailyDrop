@@ -3,6 +3,7 @@ import { prisma } from '../../lib/prisma.js';
 import { ApiResponse } from '../../utils/apiresponse.js';
 import { getDiscount } from '../../utils/product/getDiscount.js';
 import { Prisma } from '@prisma/client';
+import createHttpError from 'http-errors';
 // GET /api/v1/products/flash-deals
 export const getFlashDeals = async (req: Request, res: Response) => {
   // 1. Fetch only the required 8 items directly from the database (Performance boost)
@@ -118,6 +119,65 @@ export const getProducts = async (
       }
     })
   );
+};
+
+// GET api/v1/products/search
+
+export const searchProducts =  async (
+  req: Request, 
+  res: Response, 
+  next: NextFunction
+): Promise<void> => {
+ 
+    const { q } = req.query;
+
+    // Check if search query exists
+    if (!q || typeof q !== 'string' || q.trim() === '') {
+      return next(createHttpError(400, 'Search query is required'));
+    }
+
+    const searchQuery = q.trim();
+
+    // Query the database using Prisma
+    const products = await prisma.product.findMany({
+      where: {
+        OR: [
+          {
+            name: {
+              contains: searchQuery,
+              mode: 'insensitive', // Case-insensitive match for name
+            },
+          },
+          {
+            description: {
+              contains: searchQuery,
+              mode: 'insensitive', // Case-insensitive match for description
+            },
+          },
+        ],
+      },
+      take: 20, // Limit search results to 20 items for performance
+    });
+ if(!products || products.length === 0){
+  return next(createHttpError(404, 'No products found for the given search query'));
+ }
+    // Map and calculate discount for each product
+    const productsWithDiscount = products.map((p) => {
+      const discount = getDiscount(p);
+      return {
+        ...p,
+        discount,
+      };
+    });
+    res.status(200).json(
+      new ApiResponse({
+        statusCode: 200,
+        message: 'Search results fetched successfully',
+        data: productsWithDiscount,
+      })
+    );
+
+ 
 };
 
 // GET api/v1/product/:id

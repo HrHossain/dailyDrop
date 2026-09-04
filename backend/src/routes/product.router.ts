@@ -5,6 +5,7 @@ import {
   getFlashDeals,
   getProduct,
   getProducts,
+  searchProducts,
   updateProduct,
 } from '../controllers/product/product.controller.js';
 import { requireAuth } from '../middlewares/requireAuth.js';
@@ -15,6 +16,7 @@ const productRouter = Router();
 productRouter.get('/flash-deals', getFlashDeals);
 
 productRouter.get('/', getProducts);
+productRouter.get('/search', searchProducts);
 productRouter.get('/:id', getProduct);
 productRouter.post('/', requireAuth, checkAdmin, createProduct);
 productRouter.put('/:id', requireAuth, checkAdmin, updateProduct);

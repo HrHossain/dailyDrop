@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import createHttpError from 'http-errors';
 import { verifyAccessToken } from '../utils/jwt.js';
 import { prisma } from '../lib/prisma.js';
-import { logger } from '../lib/logger.js';
+import {env} from '../validations/env.schema.js';
 
 export const requireAuth = async (
   req: Request,
@@ -28,12 +28,15 @@ export const requireAuth = async (
   if (!foundUser) {
     return next(createHttpError(401, 'user not found !'));
   }
+
+ 
   const authReq = req as any;
+
   authReq.user = {
     id: foundUser.id,
     email: foundUser.email,
     name: foundUser.name,
-    isAdmin: false,
+    
   };
  next()
 };

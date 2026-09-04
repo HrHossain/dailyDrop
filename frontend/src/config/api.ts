@@ -8,12 +8,19 @@ const api = axios.create({
 api.interceptors.response.use(
     response => response,
     error => {
+        // শুধুমাত্র তখনই রিডাইরেক্ট করবে যদি রেসপন্স 401 হয় 
+        // এবং ইউজার ইতিমধ্যে '/login' পেজে না থাকে
         if (error.response && error.response.status === 401) {
-            // Handle unauthorized error (e.g., redirect to login page)
-            window.location.href = '/login';
+            const currentPath = window.location.pathname;
+            
+            // যদি হোম পেজ বা পাবলিক পেজ হয়, তবে জোর করে লগইন পেজে পাঠাবেন না
+            // শুধুমাত্র প্রটেক্টেড পেজে থাকলেই রিডাইরেক্ট করুন
+            if (currentPath !== '/login' && currentPath !== '/register' && currentPath !== '/') {
+                window.location.href = '/';
+            }
         }
         return Promise.reject(error);
     }
+);
 
-)
 export default api;
