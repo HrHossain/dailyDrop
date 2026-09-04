@@ -1,14 +1,14 @@
-import { ArrowUpRightIcon, BikeIcon, CarFrontIcon, CarIcon, ChevronDownIcon, LogOutIcon, MapPinIcon, MenuIcon, PackageIcon, SearchIcon, ShieldIcon, ShoppingCart, UserIcon, XIcon } from "lucide-react";
+import { ArrowUpRightIcon, CarIcon, ChevronDownIcon, LogOutIcon, MapPinIcon, MenuIcon, PackageIcon, SearchIcon, ShieldIcon, ShoppingCart, UserIcon, XIcon } from "lucide-react";
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CarContext";
+import { useAuth } from "../context/AuthContext";
 
 
 const Navber = () => {
-    const user:any = {
-        name:"Bulbul",
-        email:"bulbul@gmail.com"
-    }
+    const {user:realUser} = useAuth()
+    
+    const user:any = realUser
 
     const {cartCount , setIsCartOpen} = useCart()
     

@@ -21,6 +21,7 @@ import DeliveryLogin from "./components/Delivery/DeliveryLogin"
 import DeliveryLayout from "./components/Delivery/DeliveryLayout"
 import DeliveryDashboard from "./components/Delivery/DeliveryDashboard"
 import AdminDeliveryPartners from "./components/admin/AdminDeliveryPartners"
+import Register from "./pages/registration"
 function App() {
   
 
@@ -38,6 +39,7 @@ function App() {
          
          <Routes>
           <Route path="/login" element={<Login/>}/>
+          <Route path="/signup" element={<Register/>}/>
           <Route path="/" element={<AppLayout/>}>
               <Route index  element={<Home/>}/>
               <Route path="products" element={<Products/>}/>

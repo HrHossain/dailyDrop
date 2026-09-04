@@ -1,45 +1,50 @@
 import { useState } from "react";
-import { Mail, Lock, Eye, EyeOff, Leaf } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff, Leaf, User as UserIcon } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 /**
- * dailyDrop — Login Page
- * Left: brand panel with a "drop" illustration + tagline (replaces a stock photo,
- * keeps the signature drop-shape motif from the theme).
- * Right: centered email/password form, forgot password, and a link to sign up.
- *
- * Uses only theme tokens from index.css (@theme block):
- * forest / leaf / mango / mist / charcoal / tomato colors,
- * font-display (Sora) / font-sans (Inter), rounded-card / rounded-pill / rounded-drop.
+ * dailyDrop — Register Page
+ * Left: brand panel with signature drop-shape motif.
+ * Right: registration form (Name, Email, Password) and link to login.
  */
-export default function Login() {
+export default function Register() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [errors, setErrors] = useState({});
-  const {login} = useAuth();
-  async function handleSubmit (e:any){
+  const [errors, setErrors] = useState<{ name?: string; email?: string; password?: string }>({});
+  
+  const { register } = useAuth();
+
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const nextErrors: { email: string; password: string } = {
+    const nextErrors: { name: string; email: string; password: string } = {
+      name: '',
       email: '',
       password: ''
     };
+
+    if (!name) nextErrors.name = "Enter your full name.";
     if (!email) nextErrors.email = "Enter your email address.";
-    if (!password) nextErrors.password = "Enter your password.";
+    if (!password) nextErrors.password = "Enter a secure password.";
+    
     setErrors(nextErrors);
 
-   try{
-    await login(email,password)
-   }catch(err){
- toast.error("Wrong user's credentials")
-   }
+    if (!name || !email || !password) return;
+
+    try {
+      await register(name, email, password);
+    } catch (err) {
+        toast.error("Wrong user's credentials")
+      
+    }
   }
 
   return (
     <div className="min-h-screen flex bg-mist">
-   
+      {/* ---------------- Left: Brand Panel ---------------- */}
       <div className="hidden lg:flex lg:w-1/2 relative bg-forest overflow-hidden flex-col justify-between p-13">
-       
         <div className="pointer-events-none absolute -top-24 -left-16 w-72 h-72 rounded-drop bg-leaf-500/30" />
         <div className="pointer-events-none absolute bottom-10 right-0 w-96 h-96 rounded-drop bg-mango/10 rotate-180" />
 
@@ -52,11 +57,10 @@ export default function Login() {
 
         <div className="relative max-w-md">
           <h1 className="font-display font-bold text-hero text-mist mb-4">
-            Fresh, every drop.
+            Join the daily drop.
           </h1>
           <p className="font-sans text-body text-leaf-100">
-            Groceries picked this morning, at your door before you finish your coffee.
-            Log in to track today's drop and reorder your usuals in a tap.
+            Create your account today and get morning groceries delivered fresh to your door before you finish your coffee.
           </p>
         </div>
 
@@ -67,7 +71,7 @@ export default function Login() {
         </div>
       </div>
 
-      {/* ---------------- Right: form ---------------- */}
+      {/* ---------------- Right: Registration Form ---------------- */}
       <div className="w-full lg:w-1/2 flex items-center justify-center px-gutter py-18">
         <div className="w-full max-w-sm">
           {/* Mobile-only brand mark */}
@@ -78,12 +82,35 @@ export default function Login() {
             <span className="font-display font-bold text-h4 text-forest-700">dailyDrop</span>
           </div>
 
-          <h2 className="font-display text-h2 text-forest-700 mb-2">Welcome back</h2>
+          <h2 className="font-display text-h2 text-forest-700 mb-2">Create an account</h2>
           <p className="font-sans text-small text-charcoal-600 mb-8">
-            Log in to see what's fresh today.
+            Start getting fresh groceries delivered daily.
           </p>
 
           <form onSubmit={handleSubmit} noValidate className="space-y-4.5">
+            {/* Full Name */}
+            <div>
+              <label htmlFor="name" className="block font-sans text-small font-medium text-charcoal mb-1.5">
+                Full Name
+              </label>
+              <div className="relative">
+                <UserIcon className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-charcoal-400" />
+                <input
+                  id="name"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="John Doe"
+                  className={`w-full font-sans text-body bg-white text-charcoal placeholder-charcoal-400
+                    border rounded-card pl-10 pr-4 py-2.5 outline-none transition-colors
+                    ${errors.name ? "border-tomato" : "border-mist-200 focus:border-leaf-500"}`}
+                />
+              </div>
+              {errors.name && (
+                <p className="mt-1 font-sans text-caption text-tomato">{errors.name}</p>
+              )}
+            </div>
+
             {/* Email */}
             <div>
               <label htmlFor="email" className="block font-sans text-small font-medium text-charcoal mb-1.5">
@@ -109,14 +136,9 @@ export default function Login() {
 
             {/* Password */}
             <div>
-              <div className="flex items-center justify-between mb-1.5">
-                <label htmlFor="password" className="block font-sans text-small font-medium text-charcoal">
-                  Password
-                </label>
-                <a href="/forgot-password" className="font-sans text-caption text-leaf-700 hover:text-mango-700">
-                  Forgot password?
-                </a>
-              </div>
+              <label htmlFor="password" className="block font-sans text-small font-medium text-charcoal mb-1.5">
+                Password
+              </label>
               <div className="relative">
                 <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-charcoal-400" />
                 <input
@@ -147,17 +169,17 @@ export default function Login() {
             <button
               type="submit"
               className="w-full bg-mango hover:bg-mango-700 text-white font-display font-semibold
-                text-body rounded-pill py-2.5 shadow-badge transition-colors duration-150"
+                text-body rounded-pill py-2.5 shadow-badge transition-colors duration-150 cursor-pointer"
             >
-              Log in
+              Sign up
             </button>
           </form>
 
-          {/* Sign up link */}
+          {/* Login link */}
           <p className="mt-8 text-center font-sans text-small text-charcoal-600">
-            Don't have an account?{" "}
-            <a href="/signup" className="text-leaf-700 font-medium hover:text-mango-700">
-              Sign up
+            Already have an account?{" "}
+            <a href="/login" className="text-leaf-700 font-medium hover:text-mango-700">
+              Log in
             </a>
           </p>
         </div>
