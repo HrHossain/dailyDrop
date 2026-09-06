@@ -24,7 +24,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const [token, setToken] = useState<string | null>(null);
     const [loading, setLoading] = useState<boolean>(true); // ইনিশিয়াল লোড চেক করার জন্য true রাখা ভালো
     
-    // অ্যাপ রিলোড হলে ইউজার সেশন চেক করার জন্য (Optionally)
+    
 
      
     useEffect(() => {
@@ -43,7 +43,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         checkAuth();
     }, []);
 
-    // ১. লগইন ফাংশন
+   
     const login = async (email: string, password: string) => {
         setLoading(true);
        
@@ -55,11 +55,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
             const res = await api.post('/auth/login', { email, password });
             const responseData = res.data;
-            // if(responseData){
-            //      checkAuth();
-            // }
+            
             setUser(responseData.data)
-            // আপনার ApiResponse স্ট্রাকচার অনুযায়ী
+            
             if (responseData.statusCode && responseData.statusCode !== 200) {
                 throw new Error(responseData.message || "Login failed");
             }
@@ -69,7 +67,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
                 setToken(responseData.meta.accessToken);
             }
             toast.success("Login successful");
-            navigate('/'); // সফল লগইন হলে রিডাইরেক্ট
+            navigate('/'); 
         } catch (err: any) {
             toast.error(err.response?.data?.message || err.message || "Something went wrong");
             
@@ -78,7 +76,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         }
     };
 
-    // ২. রেজিস্টার ফাংশন
+   
     const register = async (name: string, email: string, password: string) => {
         setLoading(true);
         
@@ -94,7 +92,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
                 throw new Error(responseData.message || "Registration failed");
             }
 
-            navigate('/login'); // সফল রেজিস্টার হলে লগইন পেজে পাঠানো
+            navigate('/login');
         } catch (err: any) {
             toast.error(err.response?.data?.message || err.message || "Registration failed");
         } finally {
@@ -102,7 +100,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         }
     };
 
-    // ৩. লগআউট ফাংশন
+    
     const logout = async () => {
         try {
             await api.post('/auth/logout');
@@ -115,7 +113,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         }
     };
 
-    // ৪. ইউজার আপডেট ফাংশন
+   
     const updateUser = (updatedFields: Partial<User>) => {
         setUser((prev) => (prev ? { ...prev, ...updatedFields } : null));
     };

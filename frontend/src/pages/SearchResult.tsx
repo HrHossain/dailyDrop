@@ -4,7 +4,6 @@ import { ArrowRight, Home, Search } from "lucide-react";
 import type { Product } from "../types";
 import Loading from "../components/Loading";
 import ProductCard from "../components/ProductCard";
-import { useDebounce } from "../hooks/useDebounce";
 import { fetchSearchResults } from "../api/products";
 
 
@@ -16,6 +15,14 @@ const SearchResult = () => {
   
 
   // TanStack Query to fetch search results dynamically
+  if(!query || query.trim() === ""){
+    return (
+      <div className="flex items-center justify-center min-h-[40vh]">
+        <p className="text-charcoal font-medium">Please enter a search term.</p>
+      </div>
+    );
+  }
+
   const { data, isLoading, isError } = useQuery({
     queryKey: ["searchProducts", query],
     queryFn: () => fetchSearchResults(query),
@@ -23,7 +30,7 @@ const SearchResult = () => {
     staleTime: 1000 * 60 * 5, // Cache for 5 minutes
   });
 
-  // Extract products safely from response (handles both array or object payloads)
+ 
   const products: Product[] = data?.data ??  [];
 
   return (
