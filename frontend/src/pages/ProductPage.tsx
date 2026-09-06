@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Star, Minus, Plus, ShoppingCart, Heart, Truck, ShieldCheck,
   Clock, Leaf, ChevronRight,
@@ -6,10 +6,10 @@ import {
 } from "lucide-react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useCart } from "../context/CarContext";
-import type { Product } from "../types";
-import { dummyProducts } from "../assets/assets";
 import Loading from "../components/Loading";
 import ProductCard from "../components/ProductCard";
+import { useQuery } from "@tanstack/react-query";
+import { fetchPopularProducts } from "../api/products";
 
 interface Review {
   id: string;
@@ -19,10 +19,7 @@ interface Review {
   comment: string;
 }
 
-// Placeholder reviews — dummyProducts/Product doesn't carry review records yet.
-// Swap this for a real `product.reviews` field or a `/products/:id/reviews`
-// fetch once that endpoint exists; the ReviewsSection below already accepts
-// any Review[] via props so no JSX changes will be needed then.
+
 const sampleReviews: Review[] = [
   {
     id: "r1",
@@ -61,51 +58,59 @@ const sampleReviews: Review[] = [
   },
 ];
 
-export default function ProductPage() {
 
-  const {id} = useParams();
+export default function ProductPage() {
+  const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { items, addToCart, updateQuantity, removefromCart,setIsCartOpen } = useCart()
-  const [product,setProduct] = useState<Product>()
-  const [relatedProducts,setRelatedProducts] = useState<Product[]>([])
-  const [loading,setLoading] = useState(true)
-  const [localQuantity,setLocalQuantity] = useState(1)
+  const { items, addToCart, updateQuantity, removeFromCart, setIsCartOpen } = useCart();
+  
+  const [localQuantity, setLocalQuantity] = useState(1);
   const [wishlisted, setWishlisted] = useState(false);
 
-  useEffect(()=>{
-    setLoading(true)
-    setLocalQuantity(1)
-    window.scrollTo(0,0)
-    const getProduct = dummyProducts.find((p)=>p._id === id)
-    setProduct(getProduct)
-    setRelatedProducts(dummyProducts.filter(p=>p._id !== id))
-    setLoading(false)
-  },[id,navigate])
+ 
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ['product', id],
+    queryFn: () => fetchPopularProducts(`/products/${id}`),
+    enabled: !!id, // আইডি থাকলেই কেবল কুয়েরি রান হবে
+  });
 
-  if(loading) return <Loading/>
-  if(!product) return null;
+  const { data: relatedData, isLoading: isRelatedLoading } = useQuery({
+    queryKey: ['related-products', data?.data?.data?.category, id],
+    queryFn: ()=>fetchPopularProducts(`/products?category=${data?.data?.data?.category}`),
+    enabled: !!data?.data?.data?.category && !!id, // কেবল তখনই রান হবে যখন প্রোডাক্ট ডেটা লোড হয়েছে এবং আইডি আছে
+  });
 
-  const cartItem = items.find(item=>item.product._id === product._id)
+  // ব্যাকএন্ড রেসপন্স স্ট্রাকচার অনুযায়ী ডেটা এক্সট্রাক্ট করা
+  const product = data?.data?.data || [] 
+  
+  if (isLoading) return <Loading />;
+  if (isError || !product) return <div className="text-center py-20 text-tomato">Product not found or error loading.</div>;
+
+  const cartItem = items.find((item) => item.product.id === product.id);
   const inCart = !!cartItem;
-  const displayQuantity = inCart ? cartItem.quantity : localQuantity
+  const displayQuantity = inCart ? cartItem.quantity : localQuantity;
 
-  const categoryLabel = product.category.replace(/-/g," ")
+  const categoryLabel = product.category ? product.category.replace(/-/g, " ") : "";
 
   const {
     name, description, price, originalPrice, image, category,
     unit, stock, isOrganic, rating, reviewCount, discount,
   } = product;
 
-  const savings = originalPrice - price;
+  
+
+  const savings = originalPrice > price ? originalPrice - price : 0;
   const lowStock = stock > 0 && stock <= 10;
   const outOfStock = stock <= 0;
-  const relatedProductsBySliced = relatedProducts.slice(0,6)
+  const relatedProductsBySliced = relatedData?.data?.data || [];
+
+
   function handleDecrease() {
     if (inCart && cartItem) {
       if (cartItem.quantity <= 1) {
-        removefromCart(product!._id);
+        removeFromCart(product.id);
       } else {
-        updateQuantity(product!._id, cartItem.quantity - 1);
+        updateQuantity(product.id, cartItem.quantity - 1);
       }
     } else {
       setLocalQuantity((q) => Math.max(1, q - 1));
@@ -114,7 +119,7 @@ export default function ProductPage() {
 
   function handleIncrease() {
     if (inCart && cartItem) {
-      updateQuantity(product!._id, Math.min(stock, cartItem.quantity + 1));
+      updateQuantity(product.id, Math.min(stock, cartItem.quantity + 1));
     } else {
       setLocalQuantity((q) => Math.min(stock, q + 1));
     }
@@ -122,7 +127,7 @@ export default function ProductPage() {
 
   function handleAddToCart() {
     if (!inCart) {
-      addToCart(product!, localQuantity);
+      addToCart(product, localQuantity);
     } else {
       setIsCartOpen(true);
     }
@@ -133,11 +138,11 @@ export default function ProductPage() {
       <div className="max-w-container mx-auto px-gutter py-10 lg:py-18">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-1.5 font-sans text-caption text-charcoal-400 mb-8">
-          <Link to="/" className="hover:text-forest-700"><HomeIcon className="size-4"/></Link>
+          <Link to="/" className="hover:text-forest-700"><HomeIcon className="size-4" /></Link>
           <ChevronRight className="w-3 h-3" />
-          <Link to='/products' className="capitalize hover:text-forest-700">Products</Link>
+          <Link to="/products" className="capitalize hover:text-forest-700">Products</Link>
           <ChevronRight className="w-3 h-3" />
-          <Link to={`/products?category=${product.category}`} className="capitalize hover:text-forest-700">{categoryLabel}</Link>
+          <Link to={`/products?category=${category}`} className="capitalize hover:text-forest-700">{categoryLabel}</Link>
         </nav>
 
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
@@ -174,13 +179,13 @@ export default function ProductPage() {
                   <Star
                     key={i}
                     className={`w-4 h-4 ${
-                      i < Math.round(rating) ? "text-gold fill-gold" : "text-mist-200 fill-mist-200"
+                      i < Math.round(rating || 0) ? "text-gold fill-gold" : "text-mist-200 fill-mist-200"
                     }`}
                   />
                 ))}
               </div>
               <span className="font-sans text-small text-charcoal-600">
-                {rating} <span className="text-charcoal-400">({reviewCount} reviews)</span>
+                {rating || 0} <span className="text-charcoal-400">({reviewCount || 0} reviews)</span>
               </span>
             </div>
 
@@ -259,25 +264,25 @@ export default function ProductPage() {
 
             {/* Trust features */}
             <div className="grid grid-cols-3 gap-3 pt-6 border-t border-mist-200">
-              <Feature icon={Clock} label="45-min delivery" />
-              <Feature icon={ShieldCheck} label="Freshness guarantee" />
-              <Feature icon={Truck} label="Free over ৳2000" />
+              {/* Feature component assumed existing */}
+              <div className="flex items-center gap-2 text-small text-charcoal-600"><Clock className="w-4 h-4 text-leaf-700"/> 45-min delivery</div>
+              <div className="flex items-center gap-2 text-small text-charcoal-600"><ShieldCheck className="w-4 h-4 text-leaf-700"/> Freshness guarantee</div>
+              <div className="flex items-center gap-2 text-small text-charcoal-600"><Truck className="w-4 h-4 text-leaf-700"/> Free over ৳2000</div>
             </div>
           </div>
         </div>
 
+        {/* Reviews Section */}
         <ReviewsSection reviews={sampleReviews} rating={rating} reviewCount={reviewCount} />
 
-        {
-          relatedProductsBySliced.length > 0 && (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mt-10">
-              {
-                relatedProductsBySliced.map(product => <ProductCard key={product._id} product={product}/>)
-              }
-
-            </div>
-          )
-        }
+        {/* Related Products */}
+        {relatedProductsBySliced.length > 0 && (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mt-10">
+            {relatedProductsBySliced.map((relatedProduct: any) => (
+              <ProductCard key={relatedProduct.id || relatedProduct._id} product={relatedProduct} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

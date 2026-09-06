@@ -197,15 +197,13 @@ export const getProduct = async (req: Request, res: Response) => {
   }
   const discount = getDiscount(product);
 
-  return res.status(404).json(
+  return res.status(200).json(
     new ApiResponse({
-      statusCode: 404,
-      message: 'Product not found',
+      statusCode: 200,
+      message: 'Product found successfully',
       data: {
-        product: {
           ...product,
           discount,
-        },
       },
     })
   );
