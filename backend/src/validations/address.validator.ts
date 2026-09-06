@@ -48,7 +48,7 @@ export const updateAddressSchema = z.object({
     .optional(),
   
   zip: z.string()
-    .regex(/^[0-9]{5,10}$/, 'Zip must be 5-10 digits')
+    .regex(/^[0-9]{3,10}$/, 'Zip must be 3-10 digits')
     .optional(),
   
   isDefault: z.boolean().optional(),

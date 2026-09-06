@@ -3,7 +3,7 @@ import { verifyAccessToken } from "../../utils/jwt.js"
 import { prisma } from "../../lib/prisma.js"
 import createHttpError from "http-errors"
 import { ApiResponse } from "../../utils/apiresponse.js";
-import { AddressIdDTO, addressIdSchema, addressSchema, CreateAddressDTO } from "../../validations/address.validator.js";
+import { AddressIdDTO, addressIdSchema, addressSchema, CreateAddressDTO, UpdateAddressDTO, updateAddressSchema } from "../../validations/address.validator.js";
 
 /**
  * // GET : /api/v1/users/address/
@@ -57,7 +57,6 @@ export const getAllAddresses = async (
   
   }));
 };
-
 
 // GET : /api/v1/users/address/:id 
 export const getAddressById = async (
@@ -158,7 +157,7 @@ export const addAddress = async (
   const validationResult = addressSchema.safeParse(req.body);
 
   if (!validationResult.success) {
-    return next(createHttpError(400,"data not given perfectly"));
+    return next(createHttpError(400,"data send failed"));
   }
 
   const { label, address, city, state, zip, isDefault, lat, lng }:CreateAddressDTO = validationResult.data;
@@ -166,7 +165,7 @@ export const addAddress = async (
   
   if (isDefault) {
     // If this address is set as default, unset any existing default addresses for this user first
-    [_, newAddress] = await prisma.$transaction([
+    [, newAddress] = await prisma.$transaction([
       prisma.address.updateMany({
         where: { userId: existUser.id, isDefault: true },
         data: { isDefault: false },
@@ -211,8 +210,6 @@ export const addAddress = async (
 };
 
 // PUT : /api/v1/user/address/:id
-
-
 
 export const updateAddress = async (
   req: Request,
@@ -274,11 +271,11 @@ export const updateAddress = async (
   }
 
   const updateData = validationResult.data;
-  let updatedAddress;
+  let updatedAddress:any;
 
   // 7. Handle Default Address Logic via Transaction (if isDefault is being changed to true)
   if (updateData.isDefault === true) {
-    const [_, result] = await prisma.$transaction([
+    const transactionResults = await prisma.$transaction([
       // Unset other default addresses for this user, excluding the current one
       prisma.address.updateMany({
         where: {
@@ -291,10 +288,10 @@ export const updateAddress = async (
       // Update the target address
       prisma.address.update({
         where: { id: addressId },
-        data: updateData,
+        data: updateData ,
       }),
     ]);
-    updatedAddress = result;
+    updatedAddress = transactionResults[1];
   } else {
     // Regular update if isDefault is false or not being modified
     updatedAddress = await prisma.address.update({
