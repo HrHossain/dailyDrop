@@ -29,10 +29,11 @@ const Addresses = () => {
     try {
       setLoading(true);
       const res = await api.get('/users/address/');
-      const addressData = res.data?.data || res.data || [];
+      const addressData = res.data?.data || [];
       setAddresses(addressData);
+      updateUser({addresses})
     } catch (error) {
-      console.error('Failed to fetch addresses', error);
+      toast.error('Failed to fetch addresses');
     } finally {
       setLoading(false);
     }
@@ -122,7 +123,7 @@ const Addresses = () => {
     setEditingId(add.id);
     setShowForm(true);
   };
-console.log(addresses)
+
   return (
     <div className="min-h-screen bg-mist-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

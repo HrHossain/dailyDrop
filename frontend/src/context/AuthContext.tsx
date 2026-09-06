@@ -22,7 +22,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const navigate = useNavigate();
     const [user, setUser] = useState<User | null>(null);
     const [token, setToken] = useState<string | null>(null);
-    const [loading, setLoading] = useState<boolean>(true); // ইনিশিয়াল লোড চেক করার জন্য true রাখা ভালো
+    const [loading, setLoading] = useState<boolean>(true); 
     
     
 

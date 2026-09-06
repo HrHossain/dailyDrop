@@ -1,23 +1,25 @@
 import { useNavigate } from "react-router-dom"
 import { useCart } from "../context/CarContext"
-import { dummyAddressData } from "../assets/assets"
-import { useState } from "react"
+
+import { useEffect, useState } from "react"
 
 import { ArrowLeft, CheckIcon, ChevronRightIcon, CreditCardIcon, MapPinIcon } from "lucide-react"
 import type { Address } from "../types"
 import CheckoutAddress from "../components/Checkout/CheckoutAddress"
 import CheckoutPayment from "../components/Checkout/CheckoutPayment"
 import CheckoutReview from "../components/Checkout/CheckoutReview"
-
+import api from "../config/api"
+import { toast } from "react-hot-toast"
+import { useAuth } from "../context/AuthContext"
 const Checkout = () => {
   const navigate = useNavigate()
   const currency = import.meta.env.VITE_CURRENCY || "taka"
-  const {items,cartTotal} = useCart()
-  const {user} = {user:{addresses:dummyAddressData}}
-  const [step,setStep] = useState()
+  const {items,cartTotal,clearCart} = useCart()
+  const {user,updateUser} = useAuth()
+  const [step,setStep] = useState("address")
   const [loading,setLoading] = useState(false)
   const [address,setAddress] = useState<Address>({
-    _id:"",
+    id:"",
     label:"Home",
     address:"",
     city:"",
@@ -39,24 +41,8 @@ const Checkout = () => {
     {key:"review",label:"Review",icon:CheckIcon},
    ]
 
-  //  populate address from user's default address
-  useState(()=>{
-    if(user?.addresses?.length){
-      const defaultAddr = user.addresses.find(a=>a.isDefault || user.addresses[0])
-      setAddress({
-        _id:defaultAddr?._id,
-        label:defaultAddr?.label,
-        address:defaultAddr?.address,
-        city:defaultAddr?.city,
-        state:defaultAddr?.state,
-        zip:defaultAddr?.zip,
-        isDefault:defaultAddr?.isDefault,
-        lat:defaultAddr?.lat,
-        lng:defaultAddr?.lng
-      })
-    }
-  })
-
+  
+ 
   if(items.length === 0){
     return (
       <div className="min-h-screen bg-mist flex-center">
@@ -71,8 +57,38 @@ const Checkout = () => {
 
    const handlePlaceOrder = async () =>{
     setLoading(true)
-    navigate("/orders")
+    try{
+      const orderData = {
+        items:items.map(item =>({
+          product:item.product.id,
+          quantity:item.quantity,
+        })),
+        shippingAddress:address,
+        paymentMethod:paymentMethod
+      }
+
+      const {data} = await api.post("/orders",orderData)
+      console.log("Order placed successfully",orderData)
+      if(data.url){
+        window.location.href = data.url
+        return
+      }
+      setLoading(false)
+      clearCart()
+      toast.success("Order placed successfully")
+      navigate(`/orders/${data.data.id}`)
+    }catch(err){
+    console.error("Failed to place order",err)
+   }finally{
+    setLoading(false)
+    scrollTo(0,0)
    }
+  }
+
+  useEffect(()=>{
+    api.get('/users/address/')
+    .then(data=>updateUser({addresses:data?.data?.data})).catch(err=>toast.error(err.message))
+  },[])
   return (
     <div className="min-h-screen bg-mist-200 ">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

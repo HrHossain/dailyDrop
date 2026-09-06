@@ -3,7 +3,7 @@ import type { Address } from "../../types";
 import api from "../../config/api";
 import { toast } from "react-hot-toast/headless";
 import type { AxiosResponse } from "axios";
-
+import { useAuth } from "../../context/AuthContext";
 interface AddressCardProps {
     addr: Address;
     onEditHandler: (addr: Address) => void;
@@ -12,6 +12,7 @@ interface AddressCardProps {
 
 
 const AddressCard = ({ addr, onEditHandler, setAddresses }: AddressCardProps) => {
+    const {updateUser} = useAuth()
     const handleDelete = async (id: string): Promise<void> => {
         try {
             const confirm = window.confirm("Are you sure you want to delete this address?");
@@ -20,9 +21,12 @@ const AddressCard = ({ addr, onEditHandler, setAddresses }: AddressCardProps) =>
             
             if (res.status === 200) {
                
-                setAddresses(prevAddresses => 
-                    prevAddresses.filter(address => address.id !== id)
-                );
+                setAddresses(prevAddresses => {
+                    const addresses = prevAddresses.filter(address => address.id !== id)
+                    updateUser({addresses})
+                    return addresses;
+                });
+                toast.success("Address deleted successfully");
             }
         } catch (error) {
             toast.error('Failed to delete address');  
