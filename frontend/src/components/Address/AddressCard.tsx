@@ -14,6 +14,8 @@ interface AddressCardProps {
 const AddressCard = ({ addr, onEditHandler, setAddresses }: AddressCardProps) => {
     const handleDelete = async (id: string): Promise<void> => {
         try {
+            const confirm = window.confirm("Are you sure you want to delete this address?");
+            if (!confirm) return;
             const res: AxiosResponse = await api.delete(`/users/address/${id}`);
             
             if (res.status === 200) {
