@@ -204,7 +204,7 @@ export const getOrder = async (
   next: NextFunction
 ) => {
   const order = await prisma.order.findFirst({
-    where: { id: req.params.is as string, userId: req.user!.id },
+    where: { id: req.params.id as string, userId: req.user!.id },
     include: {
       deliveryPartner: {
         select: { name: true, phone: true, avatar: true, vehicleType: true },
