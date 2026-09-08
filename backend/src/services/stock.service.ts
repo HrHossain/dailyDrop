@@ -6,16 +6,16 @@ import { EmailService } from './stock.email.service.js';
 const emailService = new EmailService();
 
 export class StockService {
-  private readonly THRESHOLD = parseInt(process.env.STOCK_THRESHOLD || '10');
+  private readonly THRESHOLD = parseInt(env.STOCK_THRESHOLD || '10');
   private readonly CRITICAL_THRESHOLD = parseInt(
-    process.env.CRITICAL_THRESHOLD || '5'
+    env.CRITICAL_THRESHOLD || '5'
   );
   private readonly COOLDOWN_HOURS = parseInt(
-    process.env.ALERT_COOLDOWN_HOURS || '24'
+    env.ALERT_COOLDOWN_HOURS || '24'
   );
 
   async checkAndAlert() {
-    console.log('🔍 Running stock check...');
+   logger.info('🔍 Running stock check...');
 
     const products = await prisma.product.findMany({
       where: {

@@ -14,7 +14,7 @@ export default function AdminLayout() {
         { to: "/admin/delivery-partners", label: "Delivery Partners", icon: Truck },
         { to: "/", label: "Exit", icon: LogOutIcon },
     ]
-    console.log("user", user)
+   
  if(!user?.isAdmin){
     return <Navigate to="/login" replace/>
  }

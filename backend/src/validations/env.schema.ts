@@ -43,6 +43,9 @@ const envSchema = z.object({
   INNGEST_SIGNING_KEY: z.string({
     message: 'Inngest api key must be string',
   }),
+  STOCK_THRESHOLD:z.string().default('10'),
+  CRITICAL_THRESHOLD:z.string().default('5'),
+  ALERT_COOLDOWN_HOURS:z.string().default('24')
 });
 
 const _env = envSchema.safeParse(process.env);
