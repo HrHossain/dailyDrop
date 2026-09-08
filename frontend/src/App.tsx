@@ -53,8 +53,6 @@ function App() {
                 <Route path="addresses" element={<Addresses/>}/>
               </Route>
           </Route>
-          {/* admin pages */}
-
           <Route path="/admin" element={<AdminLayout/>}>
             <Route index element={<AdminDashboard/>}/>
             <Route path="products" element={<AdminProducts/>}/>

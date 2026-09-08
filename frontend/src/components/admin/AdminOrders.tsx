@@ -1,48 +1,79 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { TruckIcon } from "lucide-react";
 import toast from "react-hot-toast";
 import type { DeliveryPartner } from "../../types";
 import Loading from "../../components/Loading";
-import { dummyDashboardOrdersData, dummyDeliveryPartnerData } from "../../assets/assets";
+import api from "../../config/api";
 
 export default function AdminOrders() {
-
     const currency = import.meta.env.VITE_CURRENCY || "$";
+    const queryClient = useQueryClient();
 
-    const [orders, setOrders] = useState<any[]>([]);
-    const [partners, setPartners] = useState<DeliveryPartner[]>([]);
-    const [loading, setLoading] = useState(true);
     const [assignModal, setAssignModal] = useState<string | null>(null);
     const [selectedPartner, setSelectedPartner] = useState("");
 
-    const fetchOrders = async () => {
-        setOrders(dummyDashboardOrdersData)
-        setTimeout(() => setLoading(false), 1000)
+    const { data: orders = [], isLoading: isOrdersLoading } = useQuery<any[]>({
+        queryKey: ["admin-orders"],
+        queryFn: async () => {
+            const response = await api.get("/orders/all");
+            return response.data.data || response.data;
+        },
+    });
+
+    // ২. ডেলিভারি পার্টনার ফেচ করার জন্য TanStack Query
+    const { data: partners = [], isLoading: isPartnersLoading } = useQuery<DeliveryPartner[]>({
+        queryKey: ["delivery-partners"],
+        queryFn: async () => {
+            const response = await api.get("/admin/delivery-partners");
+            return response.data.data || response.data;
+        },
+    });
+console.log(partners)
+
+    const updateStatusMutation = useMutation({
+        mutationFn: async ({ id, newStatus }: { id: string; newStatus: string }) => {
+            const response = await api.patch(`/orders/${id}/status`, { status: newStatus });
+            return response.data.data || response.data;
+        },
+        onSuccess: () => {
+            toast.success("Order status updated!");
+            queryClient.invalidateQueries({ queryKey: ["admin-orders"] });
+        },
+        onError: () => {
+            toast.error("Failed to update status.");
+        },
+    });
+
+    
+    const assignPartnerMutation = useMutation({
+        mutationFn: async ({ orderId, partnerId }: { orderId: string; partnerId: string }) => {
+            const response = await api.post(`/admin/orders/${orderId}/assign`, { partnerId});
+            return response.data;
+        },
+        onSuccess: () => {
+            toast.success("Delivery partner assigned!");
+            setAssignModal(null);
+            setSelectedPartner("");
+            queryClient.invalidateQueries({ queryKey: ["admin-orders"] });
+        },
+        onError: () => {
+            toast.error("Failed to assign partner.");
+        },
+    });
+
+    const handleStatusChange = (id: string, newStatus: string) => {
+        updateStatusMutation.mutate({ id, newStatus });
+        console.log({ id, newStatus })
     };
 
-    const fetchPartners = async () => {
-        setPartners(dummyDeliveryPartnerData as any)
-        setTimeout(() => setLoading(false), 1000)
-    };
-
-    useEffect(() => {
-        fetchOrders();
-        fetchPartners();
-    }, []);
-
-    const handleStatusChange = async (id: string, newStatus: string) => {
-        console.log(id, newStatus);
-    };
-
-    const handleAssign = async () => {
+    const handleAssign = () => {
         if (!assignModal || !selectedPartner) return;
-        toast.success("Delivery partner assigned!");
-        setAssignModal(null);
-        setSelectedPartner("");
+        assignPartnerMutation.mutate({ orderId: assignModal, partnerId: selectedPartner });
     };
 
     const statusOptions = ["Placed", "Confirmed", "Assigned", "Packed", "Out for Delivery", "Delivered", "Cancelled"];
-    const statusColors: any = {
+    const statusColors: Record<string, string> = {
         Placed: "bg-blue-100 text-blue-800",
         Confirmed: "bg-amber-100 text-amber-800",
         Assigned: "bg-indigo-100 text-indigo-800",
@@ -52,7 +83,8 @@ export default function AdminOrders() {
         Cancelled: "bg-red-100 text-red-800",
     };
 
-    if (loading) return <Loading />
+
+    if (isOrdersLoading || isPartnersLoading) return <Loading />;
 
     return (
         <>
@@ -78,9 +110,9 @@ export default function AdminOrders() {
                                 </tr>
                             ) : (
                                 orders.map((order: any) => (
-                                    <tr key={order._id} className="hover:bg-zinc-50/50 transition-colors">
+                                    <tr key={order.id} className="hover:bg-zinc-50/50 transition-colors">
                                         <td className="px-6 py-4">
-                                            <p className="font-semibold text-zinc-900">#{order._id.slice(-6)}</p>
+                                            <p className="font-semibold text-zinc-900">#{order.id.slice(-6)}</p>
                                             <p className="text-xs text-zinc-500">{new Date(order.createdAt).toLocaleString()}</p>
                                         </td>
                                         <td className="px-6 py-4">
@@ -100,7 +132,7 @@ export default function AdminOrders() {
                                                     </div>
                                                 </div>
                                             ) : (
-                                                <button onClick={() => { setAssignModal(order._id); setSelectedPartner(""); }} className="px-3 py-1.5 text-xs font-medium bg-indigo-50 text-indigo-700 rounded-lg hover:bg-indigo-100 transition-colors flex items-center gap-1">
+                                                <button onClick={() => { setAssignModal(order.id); setSelectedPartner(""); }} className="px-3 py-1.5 text-xs font-medium bg-indigo-50 text-indigo-700 rounded-lg hover:bg-indigo-100 transition-colors flex items-center gap-1">
                                                     <TruckIcon className="size-3" /> Assign
                                                 </button>
                                             )}
@@ -108,7 +140,7 @@ export default function AdminOrders() {
                                         <td className="px-6 py-4">
                                             <select
                                                 value={order.status}
-                                                onChange={(e) => handleStatusChange(order._id, e.target.value)}
+                                                onChange={(e) => handleStatusChange(order.id, e.target.value)}
                                                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold border-r-8 border-transparent outline-none cursor-pointer leading-tight ${statusColors[order.status] || "bg-zinc-100 text-zinc-800"}`}
                                             >
                                                 {statusOptions.map((s) => (<option key={s} value={s}>{s}</option>))}
@@ -125,17 +157,17 @@ export default function AdminOrders() {
             {/* Assign Modal */}
             {assignModal && (
                 <>
-                    <div className="fixed inset-0 bg-app-cream/80 backdrop-blur z-50" onClick={() => setAssignModal(null)} />
+                    <div className="fixed inset-0 bg-app-cream/85 backdrop-blur z-50" onClick={() => setAssignModal(null)} />
                     <div className="fixed inset-0 z-50 flex-center p-4">
-                        <div className="bg-white rounded-2xl p-6 w-full max-w-sm animate-fade-in">
+                        <div className="bg-white rounded-2xl p-6 w-full max-w-sm animate-fade-in shadow-lg">
                             <h3 className="text-lg font-semibold text-app-green mb-4">Assign Delivery Partner</h3>
                             {partners.length === 0 ? (
                                 <p className="text-sm text-zinc-500 mb-4">No active delivery partners. Please onboard a partner first.</p>
                             ) : (
                                 <div className="space-y-2 mb-5 max-h-60 overflow-y-auto">
-                                    {partners.map((p) => (
-                                        <label key={p._id} className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-colors ${selectedPartner === p._id ? "border-app-green bg-app-green/5" : "border-app-border hover:bg-app-cream"}`}>
-                                            <input type="radio" name="partner" value={p._id} checked={selectedPartner === p._id} onChange={() => setSelectedPartner(p._id)} className="text-app-green" />
+                                    {partners?.map((p) => (
+                                        <label key={p.id} className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-colors ${selectedPartner === p.id ? "border-app-green bg-app-green/5" : "border-app-border hover:bg-app-cream"}`}>
+                                            <input type="radio" name="partner" value={p.id} checked={selectedPartner === p.id} onChange={() => setSelectedPartner(p.id)} className="text-app-green" />
                                             <div className="size-8 rounded-full bg-app-green flex-center">
                                                 <span className="text-white text-xs font-semibold">{p.name.charAt(0)}</span>
                                             </div>
@@ -149,7 +181,9 @@ export default function AdminOrders() {
                             )}
                             <div className="flex gap-2">
                                 <button onClick={() => setAssignModal(null)} className="flex-1 py-2.5 text-sm font-medium text-zinc-600 bg-zinc-100 rounded-xl hover:bg-zinc-200 transition-colors">Cancel</button>
-                                <button onClick={handleAssign} disabled={!selectedPartner} className="flex-1 py-2.5 text-sm font-medium text-white bg-app-green rounded-xl hover:bg-app-green-light transition-colors disabled:opacity-50">Assign</button>
+                                <button onClick={handleAssign} disabled={!selectedPartner || assignPartnerMutation.isPending} className="flex-1 py-2.5 text-sm font-medium text-white bg-app-green rounded-xl hover:bg-app-green-light transition-colors disabled:opacity-50">
+                                    {assignPartnerMutation.isPending ? "Assigning..." : "Assign"}
+                                </button>
                             </div>
                         </div>
                     </div>
