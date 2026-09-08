@@ -2,9 +2,9 @@ import nodemailer from 'nodemailer';
 import { env } from '../validations/env.schema.js';
 
 interface StockAlert {
-  productId: number;
+  productId: string;
   productName: string;
-  stock: number;
+  stock: number ;
   priority: 'critical' | 'warning';
 }
 

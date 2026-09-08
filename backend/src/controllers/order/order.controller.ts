@@ -264,7 +264,7 @@ export const updateOrderStatus = async (
     where: { id: id as string },
     data: {
       status,
-      statusHistory: updatedHistory as any, // Prisma JSON field compatibility
+      statusHistory: updatedHistory as any, 
     },
   });
 

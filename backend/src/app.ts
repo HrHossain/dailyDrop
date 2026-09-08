@@ -28,7 +28,6 @@ const app = express();
 const allowedOrigins = ['http://localhost:5173', 'http://localhost:3000'];
 app.use(cors({
     origin: (origin, callback) => {
-      // Postman বা সার্ভার টু সার্ভার রিকোয়েস্টের জন্য origin undefined হতে পারে
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
@@ -36,7 +35,7 @@ app.use(cors({
       }
     },
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    methods: ['GET', 'POST','PATCH','PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   }));
   app.use(helmet());

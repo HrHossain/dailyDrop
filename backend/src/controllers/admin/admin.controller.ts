@@ -171,7 +171,7 @@ export const getDeliveryPartners = async (
     statusCode:200,
     message:"All delivery partners retrive successfully",
     data:{
-      partners
+      ...partners
     }
 
   }))

@@ -43,17 +43,22 @@ export class StockService {
       return { alerted: false, count: 0 };
     }
 
-    const alerts = products.map((product) => ({
+    const alerts:{
+    productId: string;
+    productName: string;
+    stock: number;
+    priority: 'critical' | 'warning';
+}[] = products.map((product) => ({
       productId: product.id,
       productName: product.name,
       stock: product.stock,
       priority:
-        product.stock <= this.CRITICAL_THRESHOLD ? 'critical' : 'warning',
+         (product.stock ?? 0)  <= this.CRITICAL_THRESHOLD ? 'critical' : 'warning',
     }));
 
     const criticalProducts = alerts.filter((a) => a.priority === 'critical');
     if (criticalProducts.length > 0) {
-      console.log(
+      logger.info(
         `⚠️ ${criticalProducts.length} critical products found! Sending immediate alert.`
       );
     }
@@ -62,14 +67,14 @@ export class StockService {
     const emailResult = await emailService.sendStockAlert(alerts, recipients);
 
     for (const alert of alerts) {
-      await prisma.stockAlertLogs.create({
+      await prisma.stockAlertLog.create({
         data: {
           productId: alert.productId,
           productName: alert.productName,
           stockAtAlert: alert.stock,
           recipientEmail: recipients.join(', '),
           status: emailResult.success ? 'SUCCESS' : 'FAILED',
-          errorMessage: emailResult.success ? null : emailResult.error?.message,
+          errorMessage: emailResult.success ? null : emailResult.error,
         },
       });
     }

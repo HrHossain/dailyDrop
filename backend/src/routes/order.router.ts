@@ -17,7 +17,7 @@ orderRouter
   .get('/', requireAuth, getUserOrders)
   .get('/all', requireAuth, checkAdmin, getAllOrders)
   .get('/:id', requireAuth, getOrder)
-  .put('/:id/status', requireAuth, checkAdmin, updateOrderStatus)
+  .patch('/:id/status', requireAuth, checkAdmin, updateOrderStatus)
   .get('/:id/location', requireAuth, getOrderLocation);
 
 export default orderRouter;

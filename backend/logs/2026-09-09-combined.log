@@ -1,0 +1,33 @@
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-09 00:07:29"}
+{"level":"http","message":"GET /api/v1/admin/delivery-partners 304 - - 6043.120 ms","timestamp":"2026-09-09 00:20:49"}
+{"level":"http","message":"GET /api/v1/orders/all 304 - - 7462.669 ms","timestamp":"2026-09-09 00:20:49"}
+{"level":"http","message":"GET /api/v1/admin/delivery-partners 304 - - 605.852 ms","timestamp":"2026-09-09 00:21:41"}
+{"level":"http","message":"GET /api/v1/orders/all 304 - - 814.474 ms","timestamp":"2026-09-09 00:21:41"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-09 00:23:56"}
+{"level":"http","message":"PATCH /api/v1/orders/3a151d54-c6d8-4d2d-81e4-593dfe848efd/status 500 1767 - 20346.946 ms","timestamp":"2026-09-09 00:24:29"}
+{"level":"http","message":"PATCH /api/v1/orders/3a151d54-c6d8-4d2d-81e4-593dfe848efd/status 500 1767 - 6997.643 ms","timestamp":"2026-09-09 00:24:29"}
+{"level":"http","message":"PATCH /api/v1/orders/8bd279fa-efd2-4301-8968-0eebce25fe90/status 200 1027 - 1910.550 ms","timestamp":"2026-09-09 00:26:27"}
+{"level":"http","message":"GET /api/v1/orders/all 200 6743 - 573.017 ms","timestamp":"2026-09-09 00:26:27"}
+{"level":"http","message":"PATCH /api/v1/orders/3a151d54-c6d8-4d2d-81e4-593dfe848efd/status 200 1454 - 348.756 ms","timestamp":"2026-09-09 00:26:34"}
+{"level":"http","message":"GET /api/v1/orders/all 200 6843 - 349.427 ms","timestamp":"2026-09-09 00:26:35"}
+{"level":"http","message":"GET /api/v1/admin/delivery-partners 304 - - 1715.068 ms","timestamp":"2026-09-09 00:32:34"}
+{"level":"http","message":"GET /api/v1/orders/all 304 - - 2437.043 ms","timestamp":"2026-09-09 00:32:35"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 22543.779 ms","timestamp":"2026-09-09 00:36:26"}
+{"level":"http","message":"POST /api/v1/auth/login 200 830 - 5353.662 ms","timestamp":"2026-09-09 00:37:44"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 2018.330 ms","timestamp":"2026-09-09 00:37:46"}
+{"level":"http","message":"GET /api/v1/admin/delivery-partners 304 - - 457.315 ms","timestamp":"2026-09-09 00:38:01"}
+{"level":"http","message":"GET /api/v1/orders/all 304 - - 751.912 ms","timestamp":"2026-09-09 00:38:02"}
+{"level":"http","message":"POST /api/v1/auth/secure - - - - ms","timestamp":"2026-09-09 00:39:32"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 139.708 ms","timestamp":"2026-09-09 00:39:39"}
+{"level":"http","message":"POST /api/v1/auth/login 200 830 - 245.619 ms","timestamp":"2026-09-09 00:40:02"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 207.472 ms","timestamp":"2026-09-09 00:40:02"}
+{"level":"http","message":"GET /api/v1/admin/delivery-partners 304 - - 329.395 ms","timestamp":"2026-09-09 00:40:31"}
+{"level":"http","message":"GET /api/v1/orders/all 304 - - 499.577 ms","timestamp":"2026-09-09 00:40:31"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 247.162 ms","timestamp":"2026-09-09 00:41:35"}
+{"level":"http","message":"POST /api/v1/auth/login 200 830 - 635.198 ms","timestamp":"2026-09-09 00:41:55"}
+{"level":"http","message":"GET /api/v1/admin/delivery-partners 304 - - 295.712 ms","timestamp":"2026-09-09 00:42:06"}
+{"level":"http","message":"GET /api/v1/orders/all 304 - - 324.974 ms","timestamp":"2026-09-09 00:42:06"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-09 00:43:33"}
+{"level":"http","message":"GET /api/v1/admin/delivery-partners 200 98 - 8437.254 ms","timestamp":"2026-09-09 01:00:15"}
+{"level":"http","message":"GET /api/v1/orders/all 304 - - 10012.920 ms","timestamp":"2026-09-09 01:00:16"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-09 01:00:44"}

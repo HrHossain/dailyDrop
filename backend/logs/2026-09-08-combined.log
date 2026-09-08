@@ -76,3 +76,59 @@
 {"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-08 19:39:09"}
 {"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-08 19:46:54"}
 {"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-08 19:47:17"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-08 20:02:43"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-08 21:16:49"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-08 21:18:36"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-08 21:20:44"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-08 21:20:52"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-08 21:21:12"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-08 21:24:30"}
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-08 21:25:12"}
+{"level":"http","message":"GET /api/v1/admin/stats 200 6900 - 4948.742 ms","timestamp":"2026-09-08 22:13:00"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 835.269 ms","timestamp":"2026-09-08 22:14:30"}
+{"level":"http","message":"POST /api/v1/auth/login 200 830 - 588.432 ms","timestamp":"2026-09-08 22:14:50"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 285.990 ms","timestamp":"2026-09-08 22:14:51"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 383.893 ms","timestamp":"2026-09-08 22:16:20"}
+{"level":"http","message":"POST /api/v1/auth/login 200 830 - 261.245 ms","timestamp":"2026-09-08 22:16:30"}
+{"level":"http","message":"GET /api/v1/admin/stats 304 - - 677.312 ms","timestamp":"2026-09-08 22:16:38"}
+{"level":"http","message":"GET /api/v1/admin/stats 304 - - 2235.859 ms","timestamp":"2026-09-08 22:18:39"}
+{"level":"http","message":"GET /api/v1/admin/stats 304 - - 583.776 ms","timestamp":"2026-09-08 22:18:48"}
+{"level":"http","message":"GET /api/v1/admin/stats 304 - - 584.040 ms","timestamp":"2026-09-08 22:19:00"}
+{"level":"http","message":"GET /api/v1/admin/stats 304 - - 426.865 ms","timestamp":"2026-09-08 22:19:18"}
+{"level":"http","message":"GET /api/v1/admin/stats 304 - - 364.155 ms","timestamp":"2026-09-08 22:19:31"}
+{"level":"http","message":"GET /api/v1/admin/stats 304 - - 540.110 ms","timestamp":"2026-09-08 22:20:16"}
+{"level":"http","message":"GET /api/v1/admin/stats 304 - - 334.313 ms","timestamp":"2026-09-08 22:20:29"}
+{"level":"http","message":"GET /api/v1/admin/stats 304 - - 628.279 ms","timestamp":"2026-09-08 22:20:42"}
+{"level":"http","message":"GET /api/v1/admin/stats 304 - - 1685.474 ms","timestamp":"2026-09-08 22:23:46"}
+{"level":"http","message":"GET /api/v1/admin/stats 304 - - 1223.725 ms","timestamp":"2026-09-08 22:24:04"}
+{"level":"http","message":"GET /api/v1/admin/stats 304 - - 985.699 ms","timestamp":"2026-09-08 22:28:47"}
+{"level":"http","message":"GET /api/v1/admin/stats 304 - - 2259.976 ms","timestamp":"2026-09-08 22:36:16"}
+{"level":"http","message":"GET /api/v1/admin/stats 500 1765 - 32654.000 ms","timestamp":"2026-09-08 23:20:00"}
+{"level":"http","message":"GET /api/v1/admin/stats 200 6900 - 14895.513 ms","timestamp":"2026-09-08 23:20:19"}
+{"level":"http","message":"GET /api/v1/delivery-partners 404 1007 - 713.394 ms","timestamp":"2026-09-08 23:23:51"}
+{"level":"http","message":"GET /api/v1/delivery-partners 404 1007 - 1.624 ms","timestamp":"2026-09-08 23:23:53"}
+{"level":"http","message":"GET /api/v1/delivery-partners 404 1007 - 109.492 ms","timestamp":"2026-09-08 23:24:00"}
+{"level":"http","message":"GET /api/v1/orders/all 200 6643 - 13680.603 ms","timestamp":"2026-09-08 23:24:02"}
+{"level":"http","message":"GET /api/v1/delivery-partners 404 1007 - 1.203 ms","timestamp":"2026-09-08 23:24:04"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 2873.376 ms","timestamp":"2026-09-08 23:39:43"}
+{"level":"http","message":"POST /api/v1/auth/login 200 830 - 271.500 ms","timestamp":"2026-09-08 23:39:52"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 718.555 ms","timestamp":"2026-09-08 23:39:53"}
+{"level":"http","message":"GET /api/v1/delivery-partners 404 1007 - 44.596 ms","timestamp":"2026-09-08 23:40:04"}
+{"level":"http","message":"GET /api/v1/orders/all 304 - - 777.322 ms","timestamp":"2026-09-08 23:40:05"}
+{"level":"http","message":"GET /api/v1/delivery-partners 404 1007 - 1.467 ms","timestamp":"2026-09-08 23:40:06"}
+{"level":"http","message":"GET /api/v1/delivery-partners 404 1007 - 2.191 ms","timestamp":"2026-09-08 23:40:08"}
+{"level":"http","message":"GET /api/v1/delivery-partners 404 1007 - 1.189 ms","timestamp":"2026-09-08 23:40:12"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 262.494 ms","timestamp":"2026-09-08 23:40:55"}
+{"level":"http","message":"POST /api/v1/auth/login 200 830 - 311.850 ms","timestamp":"2026-09-08 23:41:12"}
+{"level":"http","message":"GET /api/v1/orders/all 304 - - 387.569 ms","timestamp":"2026-09-08 23:41:19"}
+{"level":"http","message":"GET /api/v1/admin/delivery-partners 200 111 - 446.893 ms","timestamp":"2026-09-08 23:41:20"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 216.054 ms","timestamp":"2026-09-08 23:43:18"}
+{"level":"http","message":"POST /api/v1/auth/login 200 830 - 354.217 ms","timestamp":"2026-09-08 23:43:32"}
+{"level":"http","message":"GET /api/v1/admin/delivery-partners 304 - - 440.606 ms","timestamp":"2026-09-08 23:43:39"}
+{"level":"http","message":"GET /api/v1/orders/all 304 - - 509.851 ms","timestamp":"2026-09-08 23:43:39"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 500 2019 - 12904.779 ms","timestamp":"2026-09-08 23:57:08"}
+{"level":"http","message":"POST /api/v1/auth/secure 500 1765 - 12810.032 ms","timestamp":"2026-09-08 23:57:08"}
+{"level":"http","message":"POST /api/v1/auth/login 200 830 - 1292.328 ms","timestamp":"2026-09-08 23:57:10"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 200 4995 - 1370.438 ms","timestamp":"2026-09-08 23:57:11"}
+{"level":"http","message":"GET /api/v1/admin/delivery-partners 304 - - 722.704 ms","timestamp":"2026-09-08 23:57:19"}
+{"level":"http","message":"GET /api/v1/orders/all 304 - - 991.630 ms","timestamp":"2026-09-08 23:57:19"}

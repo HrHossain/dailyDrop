@@ -102,11 +102,10 @@ model DeliveryPartner {
 
 model StockAlertLog {
   id              Int      @id @default(autoincrement())
-  productId       Int
+  productId       String
   productName     String
   stockAtAlert    Int
   sentAt          DateTime @default(now())
   recipientEmail  String
-  status          String   // SUCCESS, FAILED
-  errorMessage    String?  // যদি ফেইল হয়
-}
+  status          String  
+  errorMessage    String? 
