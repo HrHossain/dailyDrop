@@ -325,7 +325,7 @@ export const getOrderLocation = async (
   if (!order) {
     return next(createHttpError(404, 'Order not found'));
   }
-  return res.status(200).json(
+ res.status(200).json(
     new ApiResponse({
       statusCode: 200,
       message: 'All orders list here',
