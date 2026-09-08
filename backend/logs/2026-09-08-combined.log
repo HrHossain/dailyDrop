@@ -1,0 +1,19 @@
+{"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-08 12:22:41"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 4697.737 ms","timestamp":"2026-09-08 14:34:33"}
+{"level":"http","message":"GET /api/v1/products?limit=10&sort=rating 304 - - 5732.305 ms","timestamp":"2026-09-08 14:34:34"}
+{"level":"http","message":"GET /api/v1/orders 304 - - 584.039 ms","timestamp":"2026-09-08 14:36:19"}
+{"level":"http","message":"GET /api/v1/orders/61fba3ad-33e8-4118-a35f-585817c351ec 200 931 - 221.026 ms","timestamp":"2026-09-08 14:36:25"}
+{"level":"http","message":"GET /api/v1/orders 304 - - 277.550 ms","timestamp":"2026-09-08 14:36:38"}
+{"level":"http","message":"GET /api/v1/orders/bd23bca7-3cf9-4a9f-bb40-106090e6f80a 200 925 - 149.041 ms","timestamp":"2026-09-08 14:36:39"}
+{"level":"http","message":"GET /api/v1/orders 304 - - 156.190 ms","timestamp":"2026-09-08 14:36:45"}
+{"level":"http","message":"GET /api/v1/orders/9f71da42-b5d6-4b7c-8869-f28232e81e6e 200 1156 - 155.898 ms","timestamp":"2026-09-08 14:36:48"}
+{"level":"http","message":"GET /api/v1/orders 200 6349 - 1138.257 ms","timestamp":"2026-09-08 14:47:58"}
+{"level":"http","message":"GET /api/v1/orders?status=placed 304 - - 286.426 ms","timestamp":"2026-09-08 14:48:00"}
+{"level":"http","message":"GET /api/v1/orders?status=out%20for%20delivery 304 - - 184.991 ms","timestamp":"2026-09-08 14:48:01"}
+{"level":"http","message":"GET /api/v1/orders?status=delivered 200 88 - 141.207 ms","timestamp":"2026-09-08 14:48:02"}
+{"level":"http","message":"GET /api/v1/orders 304 - - 141.105 ms","timestamp":"2026-09-08 14:48:04"}
+{"level":"http","message":"GET /api/v1/orders/61fba3ad-33e8-4118-a35f-585817c351ec 200 934 - 208.370 ms","timestamp":"2026-09-08 14:48:07"}
+{"level":"http","message":"GET /api/v1/orders 304 - - 210.489 ms","timestamp":"2026-09-08 14:48:23"}
+{"level":"http","message":"GET /api/v1/orders/bd23bca7-3cf9-4a9f-bb40-106090e6f80a 304 - - 159.376 ms","timestamp":"2026-09-08 14:48:25"}
+{"level":"http","message":"GET /api/v1/orders 304 - - 140.726 ms","timestamp":"2026-09-08 14:48:28"}
+{"level":"http","message":"GET /api/v1/orders/61fba3ad-33e8-4118-a35f-585817c351ec 304 - - 153.865 ms","timestamp":"2026-09-08 14:48:29"}

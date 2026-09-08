@@ -1,5 +1,5 @@
 export interface User {
-    _id: string;
+    id: string;
     name: string;
     email: string;
     phone: string;
@@ -60,7 +60,7 @@ export interface OrderItem {
 }
 
 export interface DeliveryPartner {
-    _id: string;
+    id: string;
     name: string;
     email: string;
     phone: string;
@@ -71,7 +71,7 @@ export interface DeliveryPartner {
 }
 
 export interface Order {
-    _id: string;
+    id: string;
     user: string | { _id: string; name: string; email: string; phone?: string };
     items: OrderItem[];
     shippingAddress: Omit<Address, "_id" | "isDefault">;

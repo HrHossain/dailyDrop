@@ -6,7 +6,8 @@ import { useEffect } from "react";
 import "leaflet/dist/leaflet.css";
 
 export default function LiveMap({ order, liveLocation }: { order: any, liveLocation: any }) {
-
+    // 
+    
     // Custom delivery truck icon
     const truckIcon = new L.Icon({
         iconUrl: iconsForLeafpad.truck,
@@ -31,7 +32,7 @@ export default function LiveMap({ order, liveLocation }: { order: any, liveLocat
         }, [center, map]);
         return null;
     }
-
+console.log(liveLocation)
     return (
         <>
             {order.status !== "Delivered" && order.status !== "Cancelled" && (
@@ -50,12 +51,14 @@ export default function LiveMap({ order, liveLocation }: { order: any, liveLocat
                             <MapUpdater center={[liveLocation.lat, liveLocation.lng]} />
                         </MapContainer>
                     ) : order.shippingAddress.lat && order.shippingAddress.lng ? (
-                        <MapContainer center={[order.shippingAddress.lat, order.shippingAddress.lng]} zoom={15} style={{ height: "100%", width: "100%" }} zoomControl={false}>
+                        <div style={{ height: "400px", width: "100%" }}>
+                        <MapContainer style={{ height: "100%", width: "100%" }} center={[order.shippingAddress.lat, order.shippingAddress.lng]} zoom={15} style={{ height: "100%", width: "100%" }} zoomControl={false}>
                             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                             <Marker position={[order.shippingAddress.lat, order.shippingAddress.lng]} icon={destinationIcon}>
                                 <Popup>Delivery Address</Popup>
                             </Marker>
                         </MapContainer>
+                        </div>
                     ) : (
                         <div className="h-full bg-app-green/5 flex-center">
                             <div className="text-center">

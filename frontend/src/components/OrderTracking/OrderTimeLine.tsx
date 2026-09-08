@@ -4,7 +4,7 @@ export default function OrderTimeLine({ order }: { order: any }) {
 
     const allStatuses = ["Placed", "Confirmed", "Assigned", "Packed", "Out for Delivery", "Delivered"];
     const currentIdx = allStatuses.indexOf(order.status);
-
+ console.log(order)
     const statusIcons: any = {
         Placed: ClockIcon,
         Confirmed: CheckIcon,
@@ -13,7 +13,7 @@ export default function OrderTimeLine({ order }: { order: any }) {
         "Out for Delivery": TruckIcon,
         Delivered: CheckIcon,
     };
-console.log(currentIdx)
+
     return (
           <div className="bg-white rounded-card shadow-card p-6">
       <h2 className="font-display text-lg font-semibold text-forest-700 mb-6">Delivery Progress</h2>
@@ -23,7 +23,7 @@ console.log(currentIdx)
           const isCompleted = i <= currentIdx;
           const isCurrent = i === currentIdx;
  
-          const historyEntry = order.statusHistory.find((h: any) => h.status === status);
+          const historyEntry = order.statusHistory.find((h: any) => h.status.toLowerCase() === status.toLocaleLowerCase());
  console.log(order)
           return (
             <div key={status} className="flex gap-4">
@@ -46,7 +46,9 @@ console.log(currentIdx)
                 </p>
                 {historyEntry && (
                   <p className="text-xs text-charcoal-400 mt-0.5">
-                    {new Date(historyEntry.timestamp).toLocaleString("en-US", {
+                    {
+                     
+                    new Date(historyEntry.titmestamp).toLocaleString("en-US", {
                       month: "short", day: "numeric", hour: "2-digit", minute: "2-digit",
                     })}
                   </p>

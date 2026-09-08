@@ -87,7 +87,7 @@ const Checkout = () => {
 
   useEffect(()=>{
     api.get('/users/address/')
-    .then(data=>updateUser({addresses:data?.data?.data})).catch(err=>toast.error(err.message))
+    .then(data=>updateUser({addresses:data?.data?.data ?? []})).catch(err=>toast.error(err.message))
   },[])
   return (
     <div className="min-h-screen bg-mist-200 ">

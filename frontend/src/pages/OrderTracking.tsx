@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom"
 import type { Order } from "../types";
-import { dummyDashboardOrdersData } from "../assets/assets";
 import Loading from "../components/Loading";
 import { ArrowLeftIcon, MapIcon, PhoneIcon } from "lucide-react";
 import OrderOTP from "../components/OrderTracking/OrderOTP";
 import LiveMap from "../components/OrderTracking/LiveMap";
 import OrderTimeLine from "../components/OrderTracking/OrderTimeLine";
+import api from "../config/api";
 
 const OrderTracking = () => {
   const {id} = useParams();
@@ -16,12 +16,17 @@ const OrderTracking = () => {
   const [liveLocation,setLiveLocation] = useState<{lat:number;lng:number} | null>(null)
 const currency = "৳"
   useEffect(()=>{
-    setOrder(dummyDashboardOrdersData.find(o=>o._id === id) as any)
-    setLoading(false)
+    api.get(`orders/${id}`).then(data=>{
+      console.log(data?.data?.data)
+      setOrder(data?.data?.data ?? [])}
+      ).catch((err)=>{console.log(err.message)
+        }).finally(()=>setLoading(false))
+   
   },[id,navigate])
 
   if(loading) return <Loading/>
   if(!order) null
+  console.log(id,order)
   return (
     <div className="min-h-screen mb-20 bg-mist">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -32,7 +37,7 @@ const currency = "৳"
           {/* order id,date,status */}
           <div className="flex items-center justify-between mb-8">
               <div>
-                <h1>Order #{order!._id.slice(-8).toUpperCase()}</h1>
+                <h1>Order #{order.id.slice(-8).toUpperCase()}</h1>
                 <p className="text-forest-300 text-sm mt-1">Placed on {new Date(order!.createdAt).toLocaleDateString('en-US',{
                   month:"long",
                   day:"numeric",
