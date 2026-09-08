@@ -77,10 +77,10 @@ const Addresses = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // ডিভাইসের জিওলোকেশন ফেচ করা
+      
       const coords = await getUserCoordinates();
 
-      // পেলোড তৈরি
+     
       const rawData = {
         ...form,
         lat: coords.lat,
@@ -109,7 +109,7 @@ const Addresses = () => {
     }
   };
 
-  // ৪. এডিট মোডে ডাটা লোড করার হ্যান্ডলার
+ 
   const onEditHandler = (add: Address) => {
     setForm({
       label: add.label,
@@ -127,7 +127,7 @@ const Addresses = () => {
   return (
     <div className="min-h-screen bg-mist-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* page header */}
+       
         <div className="flex items-center justify-between mb-8">
           <h1 className="font-semibold text-[34px] text-charcoal">My Addresses</h1>
           <button
@@ -141,7 +141,7 @@ const Addresses = () => {
           </button>
         </div>
 
-        {/* form modal */}
+        
         {showForm && (
           <AddressForm
             resetForm={resetForm}
@@ -152,7 +152,7 @@ const Addresses = () => {
           />
         )}
 
-        {/* address list */}
+        
         {loading ? (
           <Loading />
         ) : addresses.length === 0 ? (
