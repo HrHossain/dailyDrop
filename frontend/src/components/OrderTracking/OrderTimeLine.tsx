@@ -4,7 +4,6 @@ export default function OrderTimeLine({ order }: { order: any }) {
 
     const allStatuses = ["Placed", "Confirmed", "Assigned", "Packed", "Out for Delivery", "Delivered"];
     const currentIdx = allStatuses.indexOf(order.status);
- console.log(order)
     const statusIcons: any = {
         Placed: ClockIcon,
         Confirmed: CheckIcon,
@@ -24,7 +23,7 @@ export default function OrderTimeLine({ order }: { order: any }) {
           const isCurrent = i === currentIdx;
  
           const historyEntry = order.statusHistory.find((h: any) => h.status.toLowerCase() === status.toLocaleLowerCase());
- console.log(order)
+
           return (
             <div key={status} className="flex gap-4">
               <div className="flex flex-col items-center">

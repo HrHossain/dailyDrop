@@ -2,8 +2,9 @@ import { KeyRoundIcon } from 'lucide-react'
 
 export default function OrderOTP({ order }: { order: any }) {
     const showOtp = order.deliveryOtp && ["Assigned", "Packed", "Out for Delivery"].includes(order.status);
+    
     if (!showOtp) return null;
-    console.log(order.deliveryOtp)
+    
     return (
         <div className="bg-linear-to-r from-charcoal to-leaf rounded-2xl p-6 text-white">
             <div className="flex items-center gap-3 mb-3">
