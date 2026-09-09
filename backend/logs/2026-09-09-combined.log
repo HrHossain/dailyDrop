@@ -31,3 +31,5 @@
 {"level":"http","message":"GET /api/v1/admin/delivery-partners 200 98 - 8437.254 ms","timestamp":"2026-09-09 01:00:15"}
 {"level":"http","message":"GET /api/v1/orders/all 304 - - 10012.920 ms","timestamp":"2026-09-09 01:00:16"}
 {"level":"info","message":"\u001b[41mServer running on http://localhost:3000\u001b[49m","timestamp":"2026-09-09 01:00:44"}
+{"level":"http","message":"GET /api/v1/orders/all - - - - ms","timestamp":"2026-09-09 01:05:43"}
+{"level":"http","message":"GET /api/v1/admin/delivery-partners - - - - ms","timestamp":"2026-09-09 01:05:43"}
