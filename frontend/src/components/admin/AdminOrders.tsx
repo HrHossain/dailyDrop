@@ -7,7 +7,7 @@ import Loading from "../../components/Loading";
 import api from "../../config/api";
 
 export default function AdminOrders() {
-    const currency = import.meta.env.VITE_CURRENCY || "$";
+    const currency = "৳"
     const queryClient = useQueryClient();
 
     const [assignModal, setAssignModal] = useState<string | null>(null);
