@@ -1,38 +1,51 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { PlusIcon, EditIcon, XIcon } from "lucide-react";
-import type { Product } from "../../types";
 import Loading from "../../components/Loading";
-import { dummyProducts } from "../../assets/assets";
-
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { fetchPopularProducts } from "../../api/products";
+import api from "../../config/api";
+import toast from "react-hot-toast";
+import type { Product } from "../../types";
 export default function AdminProducts() {
+    const queryClient = useQueryClient()
+    const currency = "৳"
+      const { data, isLoading,isError } = useQuery({
+        queryKey: ["admin-products"],
+        queryFn: () => fetchPopularProducts('/products'),
+        staleTime: 1000 * 60 * 5, 
+        placeholderData: (previousData) => previousData, 
+      });
 
-    const currency = import.meta.env.VITE_CURRENCY_SYMBOL || "$";
-
-    const [products, setProducts] = useState<Product[]>([]);
-    const [loading, setLoading] = useState(true);
-
-    const fetchProducts = async () => {
-        setProducts(dummyProducts);
-        setTimeout(() => {
-            setLoading(false);
-        }, 1000);
-    };
-
-    useEffect(() => {
-        fetchProducts();
-    }, []);
+      const products:Product[] = data?.data?.data || []
+   
+      const deleteMutation = useMutation({
+        mutationFn: async (id: string) => {
+            const res = await api.delete(`/products/${id}`);
+            return res.data.data;
+        },
+        onSuccess: () => {
+            toast.success("Product marked as out of stock");
+           
+            queryClient.invalidateQueries({ queryKey: ["admin-products"] });
+        },
+        onError: () => {
+            toast.error("Failed to update product");
+        },
+    });
 
     const handleMarkOutOfStock = async (id: string, name: string) => {
         if (!window.confirm(`Are you sure you want to mark "${name}" as out of stock?`)) return;
         console.log(id);
+       deleteMutation.mutate(id);
+      
     };
 
-    if (loading) return <Loading />
-
+    if (isLoading) return <Loading/>
+    if (isError) return <p>Product fetch error</p>
+  
     return (
         <>
-            <div className="bg-white rounded-2xl shadow-sm border border-app-border overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-sm  overflow-hidden">
                 <div className="px-6 py-5 border-b border-app-border flex items-center justify-between gap-4 flex-wrap">
                     <h2 className="text-xl font-semibold text-zinc-900">Products</h2>
                     <Link to="/admin/products/new" className="flex items-center gap-2 px-4 py-2 bg-app-green text-white rounded-xl hover:bg-green-950 transition-colors font-medium text-sm">
@@ -56,7 +69,7 @@ export default function AdminProducts() {
                                 </tr>
                             ) : (
                                 products.map(product => (
-                                    <tr key={product._id} className="hover:bg-zinc-50/50 transition-colors">
+                                    <tr key={product.id} className="hover:bg-zinc-50/50 transition-colors">
                                         <td className="px-6 py-4">
                                             <div className="flex items-center gap-3">
                                                 <img src={product.image} alt={product.name} className="size-12 rounded-lg object-cover" />
@@ -74,10 +87,10 @@ export default function AdminProducts() {
                                         </td>
                                         <td className="px-6 py-4 text-right">
                                             <div className="flex items-center justify-end gap-2">
-                                                <Link to={`/admin/products/${product._id}/edit`} className="p-2 text-zinc-500 hover:text-app-orange bg-zinc-100 hover:bg-orange-50 rounded-lg transition-colors">
+                                                <Link to={`/admin/products/${product.id}/edit`} className="p-2 text-zinc-500 hover:text-app-orange bg-zinc-100 hover:bg-orange-50 rounded-lg transition-colors">
                                                     <EditIcon className="size-4" />
                                                 </Link>
-                                                <button onClick={() => handleMarkOutOfStock(product._id, product.name)} title="Mark Out of Stock" className="p-2 text-zinc-500 hover:text-red-600 bg-zinc-100 hover:bg-red-50 rounded-lg transition-colors">
+                                                <button onClick={() => handleMarkOutOfStock(product.id, product.name)} title="Mark Out of Stock" className="p-2 text-zinc-500 hover:text-red-600 bg-zinc-100 hover:bg-red-50 rounded-lg transition-colors">
                                                     <XIcon className="size-4" />
                                                 </button>
                                             </div>
