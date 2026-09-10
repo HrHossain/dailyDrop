@@ -1,0 +1,8 @@
+{"level":"http","message":"GET /api/v1/products 304 - - 9177.466 ms","timestamp":"2026-09-10 00:40:59"}
+{"level":"http","message":"GET /api/v1/products/fc568bcb-2c08-4b19-a321-0937276ff8d0 304 - - 1689.296 ms","timestamp":"2026-09-10 00:41:06"}
+{"level":"http","message":"GET /api/v1/products/fc568bcb-2c08-4b19-a321-0937276ff8d0 304 - - 384.645 ms","timestamp":"2026-09-10 00:43:11"}
+{"level":"http","message":"POST /api/v1/upload 404 1007 - 449.186 ms","timestamp":"2026-09-10 00:43:24"}
+{"level":"http","message":"POST /api/v1/upload 404 1007 - 56.174 ms","timestamp":"2026-09-10 00:45:36"}
+{"level":"http","message":"GET /api/v1/products/fc568bcb-2c08-4b19-a321-0937276ff8d0 304 - - 22910.900 ms","timestamp":"2026-09-10 17:34:02"}
+{"level":"http","message":"GET /api/v1/products/fc568bcb-2c08-4b19-a321-0937276ff8d0 304 - - 4612.551 ms","timestamp":"2026-09-10 17:54:38"}
+{"level":"http","message":"POST /api/v1/auth/secure 200 210 - 12543.647 ms","timestamp":"2026-09-10 17:55:23"}
